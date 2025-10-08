@@ -20,6 +20,8 @@ public class PlayerController : MonoBehaviour
     public int lives;
     private Vector3 startPos;
     public float stunTimer;
+    private bool isGravityFlipped = false;
+    private Vector3 originalGravity;
 
 
 
@@ -29,6 +31,7 @@ public class PlayerController : MonoBehaviour
         //set the reference to the rigidBody thats attached to the player
         rigidBody = GetComponent<Rigidbody>();
         startPos = transform.position;
+        originalGravity = Physics.gravity;
     }
 
     // Update is called once per frame
@@ -38,6 +41,23 @@ public class PlayerController : MonoBehaviour
         if (transform.position.y < -15)//if the player falls off platform
         {
             Respawn();
+        }
+
+        //flipping global gravity (everything including the player will flip)
+        if (Input.GetKey(KeyCode.F))
+        {
+            isGravityFlipped = !isGravityFlipped;
+            //pressing f inverts gravity
+            if (isGravityFlipped)
+            {
+                Physics.gravity = -originalGravity;
+            }
+            else
+            {
+                Physics.gravity = originalGravity;
+            }
+
+            transform.Rotate(0, 0, 180);//rotate player to be upright
         }
     }
 
@@ -98,19 +118,24 @@ public class PlayerController : MonoBehaviour
         }
         if (Input.GetKey(KeyCode.D))
         {
+            //transform.Rotate(0, 90, 0);
             //transform.position += Vector3.right * moveSpeed * Time.deltaTime;
             rigidBody.MovePosition(rigidBody.position + Vector3.right * moveSpeed * Time.fixedDeltaTime);
         }
         if (Input.GetKey(KeyCode.S))
         {
+           // transform.Rotate(0, 180, 0);
             //transform.position += Vector3.right * moveSpeed * Time.deltaTime;
             rigidBody.MovePosition(rigidBody.position + Vector3.back * moveSpeed * Time.fixedDeltaTime);
         }
         if (Input.GetKey(KeyCode.W))
         {
+           // transform.Rotate(0, -90, 0);
             //transform.position += Vector3.right * moveSpeed * Time.deltaTime;
             rigidBody.MovePosition(rigidBody.position + Vector3.forward * moveSpeed * Time.fixedDeltaTime);
         }
+
+        
     }
 
     /// <summary>
