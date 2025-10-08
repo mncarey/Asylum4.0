@@ -113,25 +113,56 @@ public class PlayerController : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.A))
         {
-            //transform.position += Vector3.left * moveSpeed * Time.deltaTime;
+
+            if (isGravityFlipped == true)
+            {
+                transform.rotation = Quaternion.LookRotation(Vector3.left);
+                transform.Rotate(0, 0, 180);
+            }
+            else
+            {
+                transform.rotation = Quaternion.LookRotation(Vector3.left);
+            }
             rigidBody.MovePosition(rigidBody.position + Vector3.left * moveSpeed * Time.fixedDeltaTime);
         }
         if (Input.GetKey(KeyCode.D))
         {
-            //transform.Rotate(0, 90, 0);
-            //transform.position += Vector3.right * moveSpeed * Time.deltaTime;
+            if (isGravityFlipped == true)
+            {
+                transform.rotation = Quaternion.LookRotation(Vector3.right);
+                transform.Rotate(0, 0, 180);
+            }
+            else
+            {
+                transform.rotation = Quaternion.LookRotation(Vector3.right);
+            }
+
             rigidBody.MovePosition(rigidBody.position + Vector3.right * moveSpeed * Time.fixedDeltaTime);
         }
         if (Input.GetKey(KeyCode.S))
         {
-           // transform.Rotate(0, 180, 0);
-            //transform.position += Vector3.right * moveSpeed * Time.deltaTime;
+            if (isGravityFlipped == true)
+            {
+                transform.rotation = Quaternion.LookRotation(Vector3.back);
+                transform.Rotate(0, 0, 180);
+            }
+            else
+            {
+                transform.rotation = Quaternion.LookRotation(Vector3.back);
+            }
             rigidBody.MovePosition(rigidBody.position + Vector3.back * moveSpeed * Time.fixedDeltaTime);
         }
         if (Input.GetKey(KeyCode.W))
         {
-           // transform.Rotate(0, -90, 0);
-            //transform.position += Vector3.right * moveSpeed * Time.deltaTime;
+            if (isGravityFlipped == true)
+            {
+                transform.rotation = Quaternion.LookRotation(Vector3.forward);
+                transform.Rotate(0, 0, 180);
+            }
+            else
+            {
+                transform.rotation = Quaternion.LookRotation(Vector3.forward);
+            }
             rigidBody.MovePosition(rigidBody.position + Vector3.forward * moveSpeed * Time.fixedDeltaTime);
         }
 
