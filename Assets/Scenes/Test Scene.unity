@@ -1542,8 +1542,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8aa02fded999ec48828e4b1ed55546d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpForce: 2
-  moveSpeed: 15
+  jumpForce: 6
+  moveSpeed: 10
   coinCount: 0
   lives: 0
   stunTimer: 0
@@ -1946,7 +1946,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2033464919}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.02081887, y: 0.0024952767, z: -0.00005196027, w: 0.9997802}
+  m_LocalRotation: {x: 0.02081887, y: 0.0024952744, z: -0.000051960225, w: 0.9997802}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0

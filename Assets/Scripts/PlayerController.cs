@@ -94,22 +94,22 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKey(KeyCode.A))
         {
             //transform.position += Vector3.left * moveSpeed * Time.deltaTime;
-            rigidBody.MovePosition(transform.position + Vector3.left * moveSpeed * Time.deltaTime);
+            rigidBody.MovePosition(rigidBody.position + Vector3.left * moveSpeed * Time.fixedDeltaTime);
         }
         if (Input.GetKey(KeyCode.D))
         {
             //transform.position += Vector3.right * moveSpeed * Time.deltaTime;
-            rigidBody.MovePosition(transform.position + Vector3.right * moveSpeed * Time.deltaTime);
+            rigidBody.MovePosition(rigidBody.position + Vector3.right * moveSpeed * Time.fixedDeltaTime);
         }
         if (Input.GetKey(KeyCode.S))
         {
             //transform.position += Vector3.right * moveSpeed * Time.deltaTime;
-            rigidBody.MovePosition(transform.position + Vector3.back * moveSpeed * Time.deltaTime);
+            rigidBody.MovePosition(rigidBody.position + Vector3.back * moveSpeed * Time.fixedDeltaTime);
         }
         if (Input.GetKey(KeyCode.W))
         {
             //transform.position += Vector3.right * moveSpeed * Time.deltaTime;
-            rigidBody.MovePosition(transform.position + Vector3.forward * moveSpeed * Time.deltaTime);
+            rigidBody.MovePosition(rigidBody.position + Vector3.forward * moveSpeed * Time.fixedDeltaTime);
         }
     }
 
