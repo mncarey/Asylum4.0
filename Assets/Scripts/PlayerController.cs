@@ -43,22 +43,7 @@ public class PlayerController : MonoBehaviour
             Respawn();
         }
 
-        //flipping global gravity (everything including the player will flip)
-        if (Input.GetKey(KeyCode.F))
-        {
-            isGravityFlipped = !isGravityFlipped;
-            //pressing f inverts gravity
-            if (isGravityFlipped)
-            {
-                Physics.gravity = -originalGravity;
-            }
-            else
-            {
-                Physics.gravity = originalGravity;
-            }
-
-            transform.Rotate(0, 0, 180);//rotate player to be upright
-        }
+        GravityFlip();
     }
 
     public void FixedUpdate()//called in fixed intervals at the same rate as the physics system - 50 rates per frame
@@ -103,6 +88,56 @@ public class PlayerController : MonoBehaviour
             }
 
 
+        }
+    }
+
+    private void GravityFlip()
+    {
+        {
+            if (Input.GetKeyDown(KeyCode.F))
+            {
+                RaycastHit hit;
+
+                //if raycast returns that it hit something, that means the player is touching the ground
+                if (Physics.Raycast(transform.position, Vector3.down, out hit, 1f))
+                {
+                    Debug.Log("Touching the ground.");
+                    isGravityFlipped = !isGravityFlipped;
+                    //pressing f inverts gravity
+                    if (isGravityFlipped)
+                    {
+                        Physics.gravity = -originalGravity;
+                    }
+                    else
+                    {
+                        Physics.gravity = originalGravity;
+                    }
+
+                    transform.Rotate(0, 0, 180);//rotate player to be upright //impulse gives it velocity as the player jumps upwards with some force
+                }
+                if (Physics.Raycast(transform.position, Vector3.up, out hit, 1f))
+                {
+                    Debug.Log("Touching the ceiling.");
+                    isGravityFlipped = !isGravityFlipped;
+                    //pressing f inverts gravity
+                    if (isGravityFlipped)
+                    {
+                        Physics.gravity = -originalGravity;
+                    }
+                    else
+                    {
+                        Physics.gravity = originalGravity;
+                    }
+
+                    transform.Rotate(0, 0, 180);//rotate player to be upright //impulse gives it velocity as the player jumps upwards with some force
+                }
+                else
+                {
+                    Debug.Log("The player is not touching the ground.");
+                }
+
+
+            }
         }
     }
 
