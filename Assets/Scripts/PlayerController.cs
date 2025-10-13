@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 
 /*
@@ -146,62 +147,48 @@ public class PlayerController : MonoBehaviour
     /// </summary>
     private void PlayerMove()
     {
+        Vector3 moveDirection = Vector3.zero;
+
         if (Input.GetKey(KeyCode.A))
         {
-
-            if (isGravityFlipped == true)
-            {
-                transform.rotation = Quaternion.LookRotation(Vector3.left);
-                transform.Rotate(0, 0, 180);
-            }
-            else
-            {
-                transform.rotation = Quaternion.LookRotation(Vector3.left);
-            }
-            rigidBody.MovePosition(rigidBody.position + Vector3.left * moveSpeed * Time.fixedDeltaTime);
+            moveDirection += Vector3.left;
         }
         if (Input.GetKey(KeyCode.D))
         {
-            if (isGravityFlipped == true)
-            {
-                transform.rotation = Quaternion.LookRotation(Vector3.right);
-                transform.Rotate(0, 0, 180);
-            }
-            else
-            {
-                transform.rotation = Quaternion.LookRotation(Vector3.right);
-            }
-
-            rigidBody.MovePosition(rigidBody.position + Vector3.right * moveSpeed * Time.fixedDeltaTime);
+            moveDirection += Vector3.right;
         }
         if (Input.GetKey(KeyCode.S))
         {
-            if (isGravityFlipped == true)
-            {
-                transform.rotation = Quaternion.LookRotation(Vector3.back);
-                transform.Rotate(0, 0, 180);
-            }
-            else
-            {
-                transform.rotation = Quaternion.LookRotation(Vector3.back);
-            }
-            rigidBody.MovePosition(rigidBody.position + Vector3.back * moveSpeed * Time.fixedDeltaTime);
+            moveDirection += Vector3.back;
         }
         if (Input.GetKey(KeyCode.W))
         {
+            moveDirection += Vector3.forward;
+        }
+
+        // Normalize the movement direction if there is any input
+        if (moveDirection != Vector3.zero)
+        {
+            moveDirection.Normalize();
+
+            // Handle rotation based on gravity flip
+            Quaternion targetRotation;
             if (isGravityFlipped == true)
             {
-                transform.rotation = Quaternion.LookRotation(Vector3.forward);
-                transform.Rotate(0, 0, 180);
+                // If gravity is flipped, the character should appear to be upside down,
+                // so we rotate to face the direction and then rotate 180 degrees around Z axis.
+                targetRotation = Quaternion.LookRotation(moveDirection) * Quaternion.Euler(0, 0, 180);
             }
             else
             {
-                transform.rotation = Quaternion.LookRotation(Vector3.forward);
+                targetRotation = Quaternion.LookRotation(moveDirection);
             }
-            rigidBody.MovePosition(rigidBody.position + Vector3.forward * moveSpeed * Time.fixedDeltaTime);
-        }
 
-        
+            transform.rotation = targetRotation;
+
+            // Apply movement
+            rigidBody.MovePosition(rigidBody.position + moveDirection * moveSpeed * Time.fixedDeltaTime);
+        }
     }
 
     /// <summary>
