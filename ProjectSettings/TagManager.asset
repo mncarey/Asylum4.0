@@ -6,6 +6,8 @@ TagManager:
   tags:
   - DeathFloor
   - Environment
+  - LabKey
+  - Room1ExitDoor
   layers:
   - Default
   - TransparentFX
