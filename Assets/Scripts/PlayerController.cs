@@ -5,9 +5,9 @@ using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 
 /*
- * Author: [Carey, Madison]
- * Date Created: [10/17/2024]
- * Last Updated: [10/26/2024]
+ * Author: [Carey, Madison], [Barajas, Daniela]
+ * Date Created: [10/02/2025]
+ * Last Updated: [10/15/2025]
  * [This will handle movement and collision for the player.]
  */
 
@@ -23,6 +23,8 @@ public class PlayerController : MonoBehaviour
     public float stunTimer;
     private bool isGravityFlipped = false;
     private Vector3 originalGravity;
+
+    public int labKeys = 0;
 
 
 
@@ -197,6 +199,14 @@ public class PlayerController : MonoBehaviour
     /// <param name="other"> the other object the playeer is colliding with that is triggered</param>
     private void OnTriggerEnter(Collider other)
     {
+        if(other.gameObject.tag == "LabKey")
+        {
+            Debug.Log("Collected lab Key");
+            labKeys++;
+            other.gameObject.SetActive(false);
+
+        }
+
         /*
         if (other.gameObject.tag == "Coin")
         {
@@ -229,6 +239,35 @@ public class PlayerController : MonoBehaviour
             transform.position = startPos;
         }
         */
+    }
+
+    /// <summary>
+    /// This function handles collision events for the doors.
+    /// </summary>
+    /// <param name="collision">The collision that is being returned.</param>
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Room1ExitDoor")
+        {
+            if (labKeys >= collision.transform.GetComponent<Door>().Locks)
+            {
+                labKeys -= collision.transform.GetComponent<Door>().Locks;
+                collision.gameObject.SetActive(false);
+                Debug.Log("Unlocked Lab Door");
+            }
+            else
+            {
+                if (labKeys < collision.transform.GetComponent<Door>().Locks)
+                {
+                    int missingLabKeys = collision.transform.GetComponent<Door>().Locks - labKeys;
+                    Debug.Log("need " + missingLabKeys + " more lab key(s)");
+                }
+             
+            }
+            labKeys = 0;
+          
+        }
     }
 
     /// <summary>
