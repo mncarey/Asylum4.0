@@ -264,8 +264,8 @@ MonoBehaviour:
   m_StreamingVersion: 20170927
   m_Priority: 10
   m_StandbyUpdate: 2
-  m_LookAt: {fileID: 574767624}
-  m_Follow: {fileID: 1648615354}
+  m_LookAt: {fileID: 0}
+  m_Follow: {fileID: 0}
   m_CommonLens: 1
   m_Lens:
     FieldOfView: 40
@@ -1121,7 +1121,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1091257265}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.08440666, y: -0.000000034289958, z: 0.0000000029046665, w: 0.9964314}
+  m_LocalRotation: {x: 0.08440665, y: 0.000000017144975, z: -0.0000000014523328, w: 0.9964314}
   m_LocalPosition: {x: 0, y: 3.98, z: -12}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1174,7 +1174,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f640a1cb11d2f842bc83756f9d159d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 1648615354}
+  target: {fileID: 0}
   offset: {x: 0, y: 5, z: -8}
   followSpeed: 1
   rotateSpeed: 1
@@ -1249,7 +1249,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1208370596}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.08440665, y: -0.00000001714498, z: 0.0000000014523331, w: 0.9964314}
+  m_LocalRotation: {x: 0.08440665, y: 0.000000017144977, z: -0.0000000014523328, w: 0.9964314}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1631,8 +1631,9 @@ MonoBehaviour:
   moveSpeed: 7
   coinCount: 0
   lives: 0
-  spawnPoint: {x: 0, y: 0, z: 0}
+  spawnPoint: {x: 15.68, y: 1.5, z: 0}
   stunTimer: 0
+  labKeys: 0
 --- !u!54 &1648615350
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2237,7 +2238,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1933218880}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.10251726, y: 0.00000000427893, z: -4.4098764e-10, w: 0.99473125}
+  m_LocalRotation: {x: 0.10251726, y: -0.0000000042789328, z: 4.409879e-10, w: 0.99473125}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
