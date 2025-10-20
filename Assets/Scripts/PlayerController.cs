@@ -271,10 +271,44 @@ public class PlayerController : MonoBehaviour
                     int missingLabKeys = collision.transform.GetComponent<Door>().Locks - labKeys;
                     Debug.Log("need " + missingLabKeys + " more lab key(s)");
                 }
-             
             }
             labKeys = 0;
-          
+        }
+        if (collision.gameObject.tag == "Room2EntranceDoor")
+        {
+            if (labKeys >= collision.transform.GetComponent<Door>().Locks)
+            {
+                labKeys -= collision.transform.GetComponent<Door>().Locks;
+                collision.gameObject.SetActive(false);
+                Debug.Log("Unlocked Lab Door");
+            }
+            else
+            {
+                if (labKeys < collision.transform.GetComponent<Door>().Locks)
+                {
+                    int missingLabKeys = collision.transform.GetComponent<Door>().Locks - labKeys;
+                    Debug.Log("need " + missingLabKeys + " more lab key(s)");
+                }
+            }
+            labKeys = 0;
+        }
+        if (collision.gameObject.tag == "Room2ExitDoor")
+        {
+            if (labKeys >= collision.transform.GetComponent<Door>().Locks)
+            {
+                labKeys -= collision.transform.GetComponent<Door>().Locks;
+                collision.gameObject.SetActive(false);
+                Debug.Log("Unlocked Lab Door");
+            }
+            else
+            {
+                if (labKeys < collision.transform.GetComponent<Door>().Locks)
+                {
+                    int missingLabKeys = collision.transform.GetComponent<Door>().Locks - labKeys;
+                    Debug.Log("need " + missingLabKeys + " more lab key(s)");
+                }
+            }
+            labKeys = 0;
         }
     }
 

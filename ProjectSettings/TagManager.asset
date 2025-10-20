@@ -9,6 +9,8 @@ TagManager:
   - LabKey
   - Room1ExitDoor
   - Checkpoint
+  - Room2EntranceDoor
+  - Room2ExitDoor
   layers:
   - Default
   - TransparentFX
