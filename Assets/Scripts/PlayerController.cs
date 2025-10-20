@@ -152,46 +152,33 @@ public class PlayerController : MonoBehaviour
     /// </summary>
     private void PlayerMove()
     {
-        Vector3 moveDirection = Vector3.zero;
+       
 
-        if (Input.GetKey(KeyCode.A))
-        {
-            moveDirection += Vector3.left;
-        }
-        if (Input.GetKey(KeyCode.D))
-        {
-            moveDirection += Vector3.right;
-        }
-        if (Input.GetKey(KeyCode.S))
-        {
-            moveDirection += Vector3.back;
-        }
-        if (Input.GetKey(KeyCode.W))
-        {
-            moveDirection += Vector3.forward;
-        }
+        float horizontal = Input.GetAxisRaw("Horizontal");
+        float vertical = Input.GetAxisRaw("Vertical");
 
-        // Normalize the movement direction if there is any input
-        if (moveDirection != Vector3.zero)
+        Vector3 camForward = Camera.main.transform.forward;
+        Vector3 camRight = Camera.main.transform.right;
+        camForward.y = 0;
+        camRight.y = 0;
+
+        camForward.Normalize();
+        camRight.Normalize();
+
+        //moveDirection will change based on camera direction
+        Vector3 moveDirection = (camForward * vertical + camRight * horizontal).normalized;
+
+        //Normalize the movement direction if there is any input
+        if (moveDirection.magnitude > 0)
         {
             moveDirection.Normalize();
 
-            // Handle rotation based on gravity flip
-            Quaternion targetRotation;
-            if (isGravityFlipped == true)
-            {
-                // If gravity is flipped, the character should appear to be upside down,
-                // so we rotate to face the direction and then rotate 180 degrees around Z axis.
-                targetRotation = Quaternion.LookRotation(moveDirection) * Quaternion.Euler(0, 0, 180);
-            }
-            else
-            {
-                targetRotation = Quaternion.LookRotation(moveDirection);
-            }
+            //Handle rotation based on gravity flip
+            //Rotate player to face movement direction
+            Quaternion targetRotation = Quaternion.LookRotation(moveDirection);
+            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, 10f * Time.deltaTime);
 
-            transform.rotation = targetRotation;
-
-            // Apply movement
+            //Apply movement
             rigidBody.MovePosition(rigidBody.position + moveDirection * moveSpeed * Time.fixedDeltaTime);
         }
     }
