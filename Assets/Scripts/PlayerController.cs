@@ -21,6 +21,7 @@ public class PlayerController : MonoBehaviour
     public int lives;
     public Object spawnPoint;
     private Vector3 startPos;
+    private Vector3 currentCheckpoint;
     public float stunTimer;
     private bool isGravityFlipped = false;
     private Vector3 originalGravity;
@@ -36,6 +37,7 @@ public class PlayerController : MonoBehaviour
         rigidBody = GetComponent<Rigidbody>();
         //startPos = spawnPoint;
         originalGravity = Physics.gravity;
+        currentCheckpoint = startPos;
     }
 
     // Update is called once per frame
@@ -63,7 +65,7 @@ public class PlayerController : MonoBehaviour
     private void Respawn()
     {
         lives--;
-        transform.position = startPos;
+        transform.position = currentCheckpoint;
 
         if (lives == 0)
         {
@@ -208,6 +210,11 @@ public class PlayerController : MonoBehaviour
 
         }
 
+        if(other.gameObject.tag == "Checkpoint")
+        {
+            currentCheckpoint = other.transform.position;
+            Debug.Log("Checkpoint reached at: " + currentCheckpoint);
+        }
         /*
         if (other.gameObject.tag == "Coin")
         {
