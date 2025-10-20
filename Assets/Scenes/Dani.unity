@@ -1085,8 +1085,8 @@ Transform:
   m_GameObject: {fileID: 408442819}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.936634, y: -27.214474, z: 7.3391647}
-  m_LocalScale: {x: 12, y: 10, z: 1}
+  m_LocalPosition: {x: 2.78, y: -27.214474, z: 7.53}
+  m_LocalScale: {x: 12, y: 11.317, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1354100271}
@@ -1868,7 +1868,7 @@ Transform:
   m_GameObject: {fileID: 651674884}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.7999973, y: -6.905482, z: 113.040436}
+  m_LocalPosition: {x: 0.7999973, y: -6.905482, z: 113.71}
   m_LocalScale: {x: 40, y: 1, z: 23.519148}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3265,7 +3265,7 @@ Transform:
   m_GameObject: {fileID: 958039982}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -16.372269, y: -81, z: 109.20436}
+  m_LocalPosition: {x: -16.372269, y: -82.4, z: 109.20436}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4686,7 +4686,7 @@ Transform:
   m_GameObject: {fileID: 1472222986}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.4, y: -21.5, z: 26.97}
+  m_LocalPosition: {x: 2.92, y: -21.5, z: 26.97}
   m_LocalScale: {x: 21.185625, y: 17.37097, z: 29.081}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4775,6 +4775,7 @@ GameObject:
   - component: {fileID: 1490569896}
   - component: {fileID: 1490569895}
   - component: {fileID: 1490569894}
+  - component: {fileID: 1490569897}
   m_Layer: 0
   m_Name: Room2EntranceDoor
   m_TagString: Room2EntranceDoor
@@ -4868,6 +4869,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1490569892}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1490569897
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1490569892}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71fea899833d08c4f93dd87934a1ca64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Locks: 1
 --- !u!1 &1559881767
 GameObject:
   m_ObjectHideFlags: 0
@@ -6486,6 +6500,7 @@ GameObject:
   - component: {fileID: 1990574887}
   - component: {fileID: 1990574886}
   - component: {fileID: 1990574885}
+  - component: {fileID: 1990574889}
   m_Layer: 0
   m_Name: Room2ExitDoor
   m_TagString: Room2ExitDoor
@@ -6579,6 +6594,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1354100271}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1990574889
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1990574884}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71fea899833d08c4f93dd87934a1ca64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Locks: 1
 --- !u!1 &1994628003
 GameObject:
   m_ObjectHideFlags: 0
