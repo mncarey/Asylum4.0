@@ -215,6 +215,11 @@ public class PlayerController : MonoBehaviour
             currentCheckpoint = other.transform.position;
             Debug.Log("Checkpoint reached at: " + currentCheckpoint);
         }
+
+        if (other.gameObject.tag == "Obstacle")
+        {
+            Respawn();
+        }
         /*
         if (other.gameObject.tag == "Coin")
         {
@@ -229,10 +234,7 @@ public class PlayerController : MonoBehaviour
         {
             StartCoroutine(Stun());
         }
-        if (other.gameObject.tag == "Obstacle")
-        {
-            Respawn();
-        }
+      
         if (other.gameObject.tag == "Portal")
         {
             //reset the start pos to the spawn point pos
@@ -260,9 +262,11 @@ public class PlayerController : MonoBehaviour
         {
             if (labKeys >= collision.transform.GetComponent<Door>().Locks)
             {
-                labKeys -= collision.transform.GetComponent<Door>().Locks;
+                //labKeys -= collision.transform.GetComponent<Door>().Locks;
                 collision.gameObject.SetActive(false);
                 Debug.Log("Unlocked Lab Door");
+                labKeys = 0;
+                Debug.Log("Keys left: " + labKeys);
             }
             else
             {
@@ -272,15 +276,16 @@ public class PlayerController : MonoBehaviour
                     Debug.Log("need " + missingLabKeys + " more lab key(s)");
                 }
             }
-            labKeys = 0;
+            
         }
         if (collision.gameObject.tag == "Room2EntranceDoor")
         {
             if (labKeys >= collision.transform.GetComponent<Door>().Locks)
             {
-                labKeys -= collision.transform.GetComponent<Door>().Locks;
+                //labKeys -= collision.transform.GetComponent<Door>().Locks;
                 collision.gameObject.SetActive(false);
                 Debug.Log("Unlocked Lab Door");
+                labKeys = 0;
             }
             else
             {
@@ -290,7 +295,7 @@ public class PlayerController : MonoBehaviour
                     Debug.Log("need " + missingLabKeys + " more lab key(s)");
                 }
             }
-            labKeys = 0;
+         
         }
         if (collision.gameObject.tag == "Room2ExitDoor")
         {
@@ -299,6 +304,7 @@ public class PlayerController : MonoBehaviour
                 labKeys -= collision.transform.GetComponent<Door>().Locks;
                 collision.gameObject.SetActive(false);
                 Debug.Log("Unlocked Lab Door");
+                labKeys = 0;
             }
             else
             {
@@ -308,7 +314,6 @@ public class PlayerController : MonoBehaviour
                     Debug.Log("need " + missingLabKeys + " more lab key(s)");
                 }
             }
-            labKeys = 0;
         }
     }
 
