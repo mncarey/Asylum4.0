@@ -19,7 +19,7 @@ public class PlayerController : MonoBehaviour
     public int moveSpeed;
     public int coinCount;
     public int lives;
-    public Vector3 spawnPoint;
+    public Object spawnPoint;
     private Vector3 startPos;
     public float stunTimer;
     private bool isGravityFlipped = false;
@@ -34,7 +34,7 @@ public class PlayerController : MonoBehaviour
     {
         //set the reference to the rigidBody thats attached to the player
         rigidBody = GetComponent<Rigidbody>();
-        startPos = spawnPoint;
+        //startPos = spawnPoint;
         originalGravity = Physics.gravity;
     }
 

@@ -8,6 +8,7 @@ TagManager:
   - Environment
   - LabKey
   - Room1ExitDoor
+  - Checkpoint
   layers:
   - Default
   - TransparentFX
