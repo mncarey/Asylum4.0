@@ -299,7 +299,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8442245}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.04929635, y: -0.000000017714365, z: 8.7431634e-10, w: 0.99878424}
+  m_LocalRotation: {x: 0.04929635, y: 0.000000017714372, z: -8.743167e-10, w: 0.99878424}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -3792,7 +3792,7 @@ GameObject:
   - component: {fileID: 688951570}
   m_Layer: 0
   m_Name: DoorWall (4)
-  m_TagString: Untagged
+  m_TagString: Environment
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8270,7 +8270,7 @@ GameObject:
   - component: {fileID: 1524619572}
   m_Layer: 0
   m_Name: DoorWall (3)
-  m_TagString: Untagged
+  m_TagString: Environment
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10101,7 +10101,7 @@ Transform:
   m_GameObject: {fileID: 1804791686}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -0.44, y: 8.3, z: 122.86}
+  m_LocalPosition: {x: -0.44, y: 8.3, z: 124.23}
   m_LocalScale: {x: 2.0674, y: 6.376203, z: 13.461334}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -13134,7 +13134,7 @@ GameObject:
   - component: {fileID: 2119671050}
   m_Layer: 0
   m_Name: DoorWall (5)
-  m_TagString: Untagged
+  m_TagString: Environment
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
