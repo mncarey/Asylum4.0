@@ -46,6 +46,7 @@ public class PlayerController : MonoBehaviour
         PlayerJump();
         if (transform.position.y < -15)//if the player falls off platform
         {
+            LoseALife();
             Respawn();
         }
 
@@ -57,18 +58,26 @@ public class PlayerController : MonoBehaviour
         PlayerMove();
     }
 
-    /// <summary>
-    /// This will bring the player back to the statPos and lose a life
-    /// </summary>
-    private void Respawn()
+    public void LoseALife()
     {
         lives--;
-        transform.position = currentCheckpoint;
-
-        if (lives == 0)
+        if (lives > 0)
+        {
+            Debug.Log("Lives = " + lives);
+        }
+        else
         {
             SceneManager.LoadScene(2);
         }
+    
+    }
+    /// <summary>
+    /// This will bring the player back to the statPos and lose a life
+    /// </summary>
+    /// 
+    private void Respawn()
+    {
+        transform.position = currentCheckpoint;
     }
 
     /// <summary>
@@ -208,6 +217,7 @@ public class PlayerController : MonoBehaviour
 
         if (other.gameObject.tag == "Obstacle")
         {
+            LoseALife();
             Respawn();
         }
         
