@@ -12,6 +12,7 @@ TagManager:
   - Room2EntranceDoor
   - Room2ExitDoor
   - Obstacle
+  - Spike
   layers:
   - Default
   - TransparentFX
