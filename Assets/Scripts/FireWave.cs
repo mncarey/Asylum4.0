@@ -24,6 +24,8 @@ public class FireWave : MonoBehaviour
         StartCoroutine(SelfDestruct());
     }
 
+    //this is for destroying the game object after 5 seconds so it doesnt move forever
+
     IEnumerator SelfDestruct()
     {
         yield return new WaitForSeconds(5f);

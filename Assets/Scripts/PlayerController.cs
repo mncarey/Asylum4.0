@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 /*
  * Author: [Carey, Madison], [Barajas, Daniela]
  * Date Created: [10/02/2025]
- * Last Updated: [10/15/2025]
+ * Last Updated: [10/21/2025]
  * [This will handle movement and collision for the player.]
  */
 
