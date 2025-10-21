@@ -207,35 +207,7 @@ public class PlayerController : MonoBehaviour
         {
             Respawn();
         }
-        /*
-        if (other.gameObject.tag == "Coin")
-        {
-            other.gameObject.SetActive(false);
-            coinCount++;
-        }
-        if (other.gameObject.tag == "Enemy")
-        {
-            Respawn();
-        }
-        if (other.gameObject.tag == "Laser")
-        {
-            StartCoroutine(Stun());
-        }
-      
-        if (other.gameObject.tag == "Portal")
-        {
-            //reset the start pos to the spawn point pos
-            startPos = other.gameObject.GetComponent<Portal>().spawnPoint1.transform.position;
-
-            //bring the player
-            transform.position = startPos;
-        }
-        if (other.gameObject.tag == "Portal 2")
-        {
-            startPos = other.gameObject.GetComponent<Portal>().spawnPoint2.transform.position;
-            transform.position = startPos;
-        }
-        */
+        
     }
 
     /// <summary>
