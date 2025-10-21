@@ -22,4 +22,10 @@ public class KeyPopupAnimation : MonoBehaviour
         time += Time.deltaTime;
         
     }
+
+    IEnumerator SelfDestruct()
+    {
+        yield return new WaitForSeconds(5f);
+        Destroy(gameObject);
+    }
 }

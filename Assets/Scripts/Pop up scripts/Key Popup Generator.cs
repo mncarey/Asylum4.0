@@ -26,4 +26,10 @@ public class KeyPopupGenerator : MonoBehaviour
         var temp = popup.transform.GetChild(0).GetComponent<TextMeshProUGUI>();
         temp.text = text;
     }
+
+    IEnumerator SelfDestruct()
+    {
+        yield return new WaitForSeconds(5f);
+        Destroy(gameObject);
+    }
 }
