@@ -93,7 +93,6 @@ public class PlayerController : MonoBehaviour
                 Debug.Log("The player is not touching the ground.");
             }
 
-
         }
     }
 
@@ -282,49 +281,4 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    /// <summary>
-    /// Check above the player using a raycast
-    /// </summary>
-    private void CheckAbove()
-    {
-        RaycastHit hit;
-
-        if (Physics.Raycast(transform.position, Vector3.up, out hit, 1f))// <- position of player, shoot raycast upward, use output of raycast, how far we shoot the raycast
-        {
-            if (hit.collider.gameObject.tag == "Thwomp")
-            {
-                Respawn();
-            }
-        }
-    }
-
-    /// <summary>
-    /// Check below the player using a raycast
-    /// </summary>
-    private void CheckBelow()
-    {
-        RaycastHit hit;
-
-        if (Physics.Raycast(transform.position, Vector3.down, out hit, 1f))
-        {
-            if (hit.collider.gameObject.tag == "Flying Koopa")
-            {
-                Debug.Log("Hit flying koopa");
-                Destroy(hit.collider.gameObject);
-            }
-        }
-    }
-
-    /// <summary>
-    /// Stuns player after getting hit with laser
-    /// </summary>
-    /// <returns></returns>
-    IEnumerator Stun()
-    {
-        int currentPlayerSpeed = moveSpeed;
-        moveSpeed = 0;
-        yield return new WaitForSeconds(stunTimer);
-        moveSpeed = currentPlayerSpeed;
-
-    }
 }
