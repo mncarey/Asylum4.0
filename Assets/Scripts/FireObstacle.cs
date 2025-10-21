@@ -14,11 +14,13 @@ public class FireObstacle : MonoBehaviour
 {
 
     public GameObject firePrefab;
-    public float fireSpawnRate = 0.5f;
+    public float fireSpawnRate;
     // Start is called before the first frame update
     void Start()
     {
-        InvokeRepeating("SpawnFire", 1, fireSpawnRate);
+        //InvokeRepeating("SpawnFire", 1, fireSpawnRate);
+        //("SpawnFire" is the name of the function, seconds to wait before starting, how often to call the function)
+        InvokeRepeating("SpawnFire", Random.Range(1, 4), Random.Range(2, 8));
     }
 
     // Update is called once per frame

@@ -220,7 +220,13 @@ public class PlayerController : MonoBehaviour
             LoseALife();
             Respawn();
         }
-        
+
+        if (other.gameObject.tag == "Fire")
+        {
+            LoseALife();
+            Respawn();
+        }
+
     }
 
     /// <summary>
