@@ -152,8 +152,6 @@ public class PlayerController : MonoBehaviour
     /// </summary>
     private void PlayerMove()
     {
-       
-
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
 
@@ -173,13 +171,21 @@ public class PlayerController : MonoBehaviour
         {
             moveDirection.Normalize();
 
-            //Handle rotation based on gravity flip
+            
             //Rotate player to face movement direction
             Quaternion targetRotation = Quaternion.LookRotation(moveDirection);
-            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, 10f * Time.deltaTime);
 
-            //Apply movement
-            rigidBody.MovePosition(rigidBody.position + moveDirection * moveSpeed * Time.fixedDeltaTime);
+            RaycastHit hit;
+
+            if (Physics.Raycast(transform.position, Vector3.up, out hit, 1.5f)){//player is on ceiling
+                Quaternion flipRotation = Quaternion.Euler(180f, 180f, 0f);//rotate the player downwards
+                targetRotation *= flipRotation;
+            }
+
+            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, 10f * Time.deltaTime);//rotate the player upwards
+
+             //Apply movement
+             rigidBody.MovePosition(rigidBody.position + moveDirection * moveSpeed * Time.fixedDeltaTime);
         }
     }
 
