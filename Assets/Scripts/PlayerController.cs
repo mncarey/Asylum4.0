@@ -55,8 +55,6 @@ public class PlayerController : MonoBehaviour
     public void FixedUpdate()//called in fixed intervals at the same rate as the physics system - 50 rates per frame
     {
         PlayerMove();
-        CheckAbove();
-        CheckBelow();
     }
 
     /// <summary>
