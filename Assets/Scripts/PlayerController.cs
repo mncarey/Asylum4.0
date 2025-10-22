@@ -206,8 +206,10 @@ public class PlayerController : MonoBehaviour
             Debug.Log("Collected lab Key");
             labKeys++;
 
+            string message = "Picked up a Lab Key!";
+
             //show floating text
-            FloatingText.ShowFloatingText(FloatingTextPrefab, transform, other.transform.position);
+            FloatingText.ShowFloatingText(FloatingTextPrefab, other.transform.position, message);
 
             other.gameObject.SetActive(false);
 
@@ -217,6 +219,11 @@ public class PlayerController : MonoBehaviour
         {
             currentCheckpoint = other.transform.position;
             Debug.Log("Checkpoint reached at: " + currentCheckpoint);
+
+            string message = "Checkpoint reached!";
+
+            //show floating text
+            FloatingText.ShowFloatingText(FloatingTextPrefab, other.transform.position, message);
         }
 
         if (other.gameObject.tag == "Obstacle")
@@ -247,15 +254,35 @@ public class PlayerController : MonoBehaviour
                 //labKeys -= collision.transform.GetComponent<Door>().Locks;
                 collision.gameObject.SetActive(false);
                 Debug.Log("Unlocked Lab Door");
+
+                //pop up text
+                string message = "Unlocked Lab Door";
+
+                //show floating text
+                FloatingText.ShowFloatingText(FloatingTextPrefab, collision.gameObject.transform.position, message);
+
                 labKeys = 0;
                 Debug.Log("Keys left: " + labKeys);
+
+                //pop up text
+                string message2 = "Keys Left: " + labKeys;
+
+                //show floating text
+                FloatingText.ShowFloatingText(FloatingTextPrefab, collision.gameObject.transform.position, message2);
             }
             else
             {
                 if (labKeys < collision.transform.GetComponent<Door>().Locks)
                 {
                     int missingLabKeys = collision.transform.GetComponent<Door>().Locks - labKeys;
+
                     Debug.Log("need " + missingLabKeys + " more lab key(s)");
+
+                    //pop up text
+                    string message = "need " + missingLabKeys + " more lab key(s)";
+
+                    //show floating text
+                    FloatingText.ShowFloatingText(FloatingTextPrefab, collision.gameObject.transform.position, message);
                 }
             }
             
@@ -268,6 +295,12 @@ public class PlayerController : MonoBehaviour
                 collision.gameObject.SetActive(false);
                 Debug.Log("Unlocked Lab Door");
                 labKeys = 0;
+
+                //pop up text
+                string message = "Unlocked Lab Door";
+
+                //show floating text
+                FloatingText.ShowFloatingText(FloatingTextPrefab, collision.gameObject.transform.position, message);
             }
             else
             {
@@ -275,6 +308,12 @@ public class PlayerController : MonoBehaviour
                 {
                     int missingLabKeys = collision.transform.GetComponent<Door>().Locks - labKeys;
                     Debug.Log("need " + missingLabKeys + " more lab key(s)");
+
+                    //pop up text
+                    string message = "need " + missingLabKeys + " more lab key(s)";
+
+                    //show floating text
+                    FloatingText.ShowFloatingText(FloatingTextPrefab, collision.gameObject.transform.position, message);
                 }
             }
          
@@ -287,6 +326,12 @@ public class PlayerController : MonoBehaviour
                 collision.gameObject.SetActive(false);
                 Debug.Log("Unlocked Lab Door");
                 labKeys = 0;
+
+                //pop up text
+                string message = "Unlocked Lab Door";
+
+                //show floating text
+                FloatingText.ShowFloatingText(FloatingTextPrefab, collision.gameObject.transform.position, message);
             }
             else
             {
@@ -294,6 +339,12 @@ public class PlayerController : MonoBehaviour
                 {
                     int missingLabKeys = collision.transform.GetComponent<Door>().Locks - labKeys;
                     Debug.Log("need " + missingLabKeys + " more lab key(s)");
+
+                    //pop up text
+                    string message = "need " + missingLabKeys + " more lab key(s)";
+
+                    //show floating text
+                    FloatingText.ShowFloatingText(FloatingTextPrefab, collision.gameObject.transform.position, message);
                 }
             }
         }
