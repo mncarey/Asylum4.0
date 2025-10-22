@@ -27,7 +27,7 @@ public class PlayerController : MonoBehaviour
     private Vector3 originalGravity;
 
     public int labKeys = 0;
-
+    public GameObject FloatingTextPrefab;
 
 
     // Start is called before the first frame update
@@ -125,7 +125,7 @@ public class PlayerController : MonoBehaviour
                         Physics.gravity = originalGravity;
                     }
 
-                    transform.Rotate(0, 0, 180);//rotate player to be upright //impulse gives it velocity as the player jumps upwards with some force
+                    //transform.Rotate(0, 0, 180);//rotate player to be upright //impulse gives it velocity as the player jumps upwards with some force
                 }
                 if (Physics.Raycast(transform.position, Vector3.up, out hit, 1f))
                 {
@@ -141,11 +141,11 @@ public class PlayerController : MonoBehaviour
                         Physics.gravity = originalGravity;
                     }
 
-                    transform.Rotate(0, 0, 180);//rotate player to be upright //impulse gives it velocity as the player jumps upwards with some force
+                    //transform.Rotate(0, 0, 180);//rotate player to be upright //impulse gives it velocity as the player jumps upwards with some force
                 }
                 else
                 {
-                    Debug.Log("The player is not touching the ground.");
+                    //Debug.Log("The player is not touching the ground.");
                 }
 
 
@@ -198,13 +198,17 @@ public class PlayerController : MonoBehaviour
     /// <summary>
     /// Detects collision using a trigger event
     /// </summary>
-    /// <param name="other"> the other object the playeer is colliding with that is triggered</param>
+    /// <param name="other"> the other object the player is colliding with that is triggered</param>
     private void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.tag == "LabKey")
         {
             Debug.Log("Collected lab Key");
             labKeys++;
+
+            //show floating text
+            FloatingText.ShowFloatingText(FloatingTextPrefab, transform, other.transform.position);
+
             other.gameObject.SetActive(false);
 
         }
