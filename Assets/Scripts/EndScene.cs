@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
  * Author: [Barajas, Daniela]
  * Date Created: [10/20/2025]
  * Last Updated: [10/20/2025]
- * [This will handle Game Over scene.]
+ * [This will handle Main Menu and Game Over scene.]
  */
 public class EndScene : MonoBehaviour
 {
