@@ -264,11 +264,7 @@ public class PlayerController : MonoBehaviour
                 labKeys = 0;
                 Debug.Log("Keys left: " + labKeys);
 
-                //pop up text
-                string message2 = "Keys Left: " + labKeys;
-
-                //show floating text
-                FloatingText.ShowFloatingText(FloatingTextPrefab, collision.gameObject.transform.position, message2);
+       
             }
             else
             {
