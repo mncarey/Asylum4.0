@@ -13,6 +13,11 @@ TagManager:
   - Room2ExitDoor
   - Obstacle
   - Spike
+  - Fire
+  - LockedDoorInfo
+  - StartingPointInfo
+  - FireInfo
+  - HammersInfo
   layers:
   - Default
   - TransparentFX

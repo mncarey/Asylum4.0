@@ -28,6 +28,7 @@ public class PlayerController : MonoBehaviour
 
     public int labKeys = 0;
     public GameObject FloatingTextPrefab;
+    private StringVariables stringVars;
 
 
     // Start is called before the first frame update
@@ -206,7 +207,7 @@ public class PlayerController : MonoBehaviour
             Debug.Log("Collected lab Key");
             labKeys++;
 
-            string message = "Picked up a Lab Key!";
+            string message = StringVariables.addedKey;
 
             //show floating text
             FloatingText.ShowFloatingText(FloatingTextPrefab, other.transform.position, message);
@@ -220,7 +221,51 @@ public class PlayerController : MonoBehaviour
             currentCheckpoint = other.transform.position;
             Debug.Log("Checkpoint reached at: " + currentCheckpoint);
 
-            string message = "Checkpoint reached!";
+            string message = StringVariables.checkpoint;
+
+            //show floating text
+            FloatingText.ShowFloatingText(FloatingTextPrefab, other.transform.position, message);
+        }
+
+        if (other.gameObject.tag == "LockedDoorInfo")
+        {
+            currentCheckpoint = other.transform.position;
+            Debug.Log("Checkpoint reached at: " + currentCheckpoint);
+
+            string message = StringVariables.lockedDoor;
+
+            //show floating text
+            FloatingText.ShowFloatingText(FloatingTextPrefab, other.transform.position, message);
+        }
+
+        if (other.gameObject.tag == "StartingPointInfo")
+        {
+            currentCheckpoint = other.transform.position;
+            Debug.Log("Checkpoint reached at: " + currentCheckpoint);
+
+            string message = StringVariables.isThisALab;
+
+            //show floating text
+            FloatingText.ShowFloatingText(FloatingTextPrefab, other.transform.position, message);
+        }
+
+        if (other.gameObject.tag == "FireInfo")
+        {
+            currentCheckpoint = other.transform.position;
+            Debug.Log("Checkpoint reached at: " + currentCheckpoint);
+
+            string message = StringVariables.dontTouchMeFire;
+
+            //show floating text
+            FloatingText.ShowFloatingText(FloatingTextPrefab, other.transform.position, message);
+        }
+
+        if (other.gameObject.tag == "HammersInfo")
+        {
+            currentCheckpoint = other.transform.position;
+            Debug.Log("Checkpoint reached at: " + currentCheckpoint);
+
+            string message = StringVariables.dontTouchMeObstacles;
 
             //show floating text
             FloatingText.ShowFloatingText(FloatingTextPrefab, other.transform.position, message);
@@ -293,7 +338,7 @@ public class PlayerController : MonoBehaviour
                 labKeys = 0;
 
                 //pop up text
-                string message = "Unlocked Lab Door";
+                string message = StringVariables.unlockedDoor;
 
                 //show floating text
                 FloatingText.ShowFloatingText(FloatingTextPrefab, collision.gameObject.transform.position, message);
