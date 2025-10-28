@@ -5,7 +5,7 @@ using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 
 /*
- * Author: [Carey, Madison], [Barajas, Daniela]
+ * Author: [Carey, Madison], [Barajas, Daniela] [Martinez, Nick]
  * Date Created: [10/02/2025]
  * Last Updated: [10/21/2025]
  * [This will handle movement and collision for the player.]
@@ -34,6 +34,7 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Cursor.lockState = CursorLockMode.Locked;
         //set the reference to the rigidBody thats attached to the player
         rigidBody = GetComponent<Rigidbody>();
         //startPos = spawnPoint;
@@ -68,6 +69,7 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
+            Cursor.lockState = CursorLockMode.None;
             SceneManager.LoadScene(2);
         }
     
