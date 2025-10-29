@@ -46,7 +46,7 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         PlayerJump();
-        if (transform.position.y < -15 )//if the player falls off platform
+        if (transform.position.y < -15 || transform.position.y > 60)//if the player falls off platform
         {
             LoseALife();
             Respawn();

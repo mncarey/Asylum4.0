@@ -14,7 +14,7 @@ public class FireObstacle : MonoBehaviour
 {
 
     public GameObject firePrefab;
-    public float fireSpawnRate;
+    private float fireSpawnRate;
     // Start is called before the first frame update
     void Start()
     {
