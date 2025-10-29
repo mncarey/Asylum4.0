@@ -178,7 +178,7 @@ public class PlayerController : MonoBehaviour
         //Normalize the movement direction if there is any input
         if (moveDirection.magnitude > 0)
         {
-           //moveDirection.Normalize();
+           moveDirection.Normalize();
 
             
             //Rotate player to face movement direction
