@@ -78,7 +78,7 @@ public class PlayerController : MonoBehaviour
     /// This will bring the player back to the statPos and lose a life
     /// </summary>
     /// 
-    private void Respawn()
+    public void Respawn()
     {
         transform.position = currentCheckpoint;
     }
