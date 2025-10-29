@@ -46,13 +46,23 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         PlayerJump();
-        if (transform.position.y < -15 || transform.position.y > 60)//if the player falls off platform
+        if (transform.position.y < -15)//if the player falls off platform
         {
+            
             LoseALife();
             Respawn();
         }
+        if(transform.position.y > 60)
+        {
 
-        GravityFlip();
+            Physics.gravity = originalGravity;
+            LoseALife();
+            Respawn();
+
+        }
+        
+
+       GravityFlip();
     }
 
     public void FixedUpdate()//called in fixed intervals at the same rate as the physics system - 50 rates per frame
@@ -78,7 +88,7 @@ public class PlayerController : MonoBehaviour
     /// This will bring the player back to the statPos and lose a life
     /// </summary>
     /// 
-    private void Respawn()
+    public void Respawn()
     {
         transform.position = currentCheckpoint;
     }
