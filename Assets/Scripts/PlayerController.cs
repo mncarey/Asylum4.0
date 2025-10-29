@@ -90,7 +90,10 @@ public class PlayerController : MonoBehaviour
     /// 
     public void Respawn()
     {
+
+        Physics.gravity = originalGravity;
         transform.position = currentCheckpoint;
+
     }
 
     /// <summary>
