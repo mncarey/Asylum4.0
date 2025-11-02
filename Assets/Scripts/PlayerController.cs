@@ -30,6 +30,8 @@ public class PlayerController : MonoBehaviour
     public GameObject FloatingTextPrefab;
     private StringVariables stringVars;
 
+    public LayerMask groundLayer;
+
 
     // Start is called before the first frame update
     void Start()
@@ -60,7 +62,6 @@ public class PlayerController : MonoBehaviour
             Respawn();
 
         }
-        
 
        GravityFlip();
     }
@@ -70,6 +71,31 @@ public class PlayerController : MonoBehaviour
         PlayerMove();
     }
 
+    private void GravityFlip()
+    {
+        //checking player position
+        bool isOnGround = Physics.CheckSphere(transform.position - Vector3.up * 0.55f, 0.15f, groundLayer);
+        bool isOnCeiling = Physics.CheckSphere(transform.position + Vector3.up * 0.55f, 0.15f, groundLayer);
+
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            if (isOnGround || isOnCeiling)
+            {
+                isGravityFlipped = !isGravityFlipped;//change to opposite
+
+                if (isGravityFlipped)
+                {
+                    Physics.gravity = -originalGravity;//if og gravity, flip it
+                }
+                else
+                {
+                    Physics.gravity = originalGravity;//if its already flipped, reset it
+                }
+            }
+            else Debug.Log("nah");
+        }
+        
+    }
     public void LoseALife()
     {
         lives--;
@@ -119,6 +145,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    /*
     private void GravityFlip()
     {
         {
@@ -130,6 +157,8 @@ public class PlayerController : MonoBehaviour
                 if (Physics.Raycast(transform.position, Vector3.down, out hit, 1f))
                 {
                     Debug.Log("Touching the ground.");
+                    Debug.DrawRay(transform.position, Vector3.down * 1f, Color.red);
+                   
                     isGravityFlipped = !isGravityFlipped;
                     //pressing f inverts gravity
                     if (isGravityFlipped)
@@ -145,6 +174,7 @@ public class PlayerController : MonoBehaviour
                 }
                 if (Physics.Raycast(transform.position, Vector3.up, out hit, 1f))
                 {
+                    Debug.DrawRay(transform.position, Vector3.up * 1f, Color.blue);
                     Debug.Log("Touching the ceiling.");
                     isGravityFlipped = !isGravityFlipped;
                     //pressing f inverts gravity
@@ -168,6 +198,7 @@ public class PlayerController : MonoBehaviour
             }
         }
     }
+    */
 
     /// <summary>
     /// The player will move using a and d keys to move left or right
