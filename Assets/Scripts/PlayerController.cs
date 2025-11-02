@@ -70,12 +70,34 @@ public class PlayerController : MonoBehaviour
     {
         PlayerMove();
     }
+    void OnDrawGizmosSelected()
+    {
+        // Only run if the game is playing (so Physics works properly)
+        if (!Application.isPlaying) return;
+
+        float checkOffset = 0.5f; // distance from center
+        float checkRadius = 0.2f; // radius of the sphere
+
+        // Perform the same checks used in GravityFlip()
+        bool isGrounded = Physics.CheckSphere(transform.position - Vector3.up * checkOffset, checkRadius, groundLayer);
+        bool isCeilinged = Physics.CheckSphere(transform.position + Vector3.up * checkOffset, checkRadius, groundLayer);
+
+        // Determine if gravity can flip
+        bool canFlip = isGrounded || isCeilinged;
+
+        // Color based on state
+        Gizmos.color = canFlip ? Color.green : Color.red;
+
+        // Draw both spheres (green = can flip, red = cannot flip)
+        Gizmos.DrawWireSphere(transform.position - Vector3.up * checkOffset, checkRadius);
+        Gizmos.DrawWireSphere(transform.position + Vector3.up * checkOffset, checkRadius);
+    }
 
     private void GravityFlip()
     {
         //checking player position
-        bool isOnGround = Physics.CheckSphere(transform.position - Vector3.up * 0.55f, 0.15f, groundLayer);
-        bool isOnCeiling = Physics.CheckSphere(transform.position + Vector3.up * 0.55f, 0.15f, groundLayer);
+        bool isOnGround = Physics.CheckSphere(transform.position - Vector3.up * 0.5f, 0.2f, groundLayer);
+        bool isOnCeiling = Physics.CheckSphere(transform.position + Vector3.up * 0.5f, 0.2f, groundLayer);
 
         if (Input.GetKeyDown(KeyCode.F))
         {
