@@ -762,6 +762,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Table Mesh (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 6573456343658413698, guid: 3469d058d37719c4a9b08d844575a56f, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1528,7 +1532,7 @@ GameObject:
   - component: {fileID: 214219761}
   - component: {fileID: 214219760}
   - component: {fileID: 214219759}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Room 2 Ceiling
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1753,7 +1757,7 @@ Transform:
   m_GameObject: {fileID: 266337047}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -14.63, y: 2.129, z: 15.76}
+  m_LocalPosition: {x: -16.5, y: 2.207, z: 39.94}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2397,6 +2401,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Table Mesh
       objectReference: {fileID: 0}
+    - target: {fileID: 6573456343658413698, guid: 3469d058d37719c4a9b08d844575a56f, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2506,7 +2514,7 @@ GameObject:
   - component: {fileID: 371928529}
   - component: {fileID: 371928528}
   - component: {fileID: 371928527}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ground (8)
   m_TagString: Environment
   m_Icon: {fileID: 0}
@@ -3231,7 +3239,7 @@ GameObject:
   - component: {fileID: 484249247}
   - component: {fileID: 484249246}
   - component: {fileID: 484249245}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ground (12)
   m_TagString: Environment
   m_Icon: {fileID: 0}
@@ -3548,6 +3556,10 @@ PrefabInstance:
     - target: {fileID: 1743041665359154064, guid: a36de2ea7a590a0408b814fceb838cc0, type: 3}
       propertyPath: m_Name
       value: Chair Mesh
+      objectReference: {fileID: 0}
+    - target: {fileID: 1743041665359154064, guid: a36de2ea7a590a0408b814fceb838cc0, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4425,6 +4437,10 @@ PrefabInstance:
     - target: {fileID: 1743041665359154064, guid: a36de2ea7a590a0408b814fceb838cc0, type: 3}
       propertyPath: m_Name
       value: Chair Mesh (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1743041665359154064, guid: a36de2ea7a590a0408b814fceb838cc0, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5841,7 +5857,7 @@ GameObject:
   - component: {fileID: 921861865}
   - component: {fileID: 921861864}
   - component: {fileID: 921861863}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ground (13)
   m_TagString: Environment
   m_Icon: {fileID: 0}
@@ -6811,7 +6827,7 @@ GameObject:
   - component: {fileID: 1070975685}
   - component: {fileID: 1070975684}
   - component: {fileID: 1070975683}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ground (4)
   m_TagString: Environment
   m_Icon: {fileID: 0}
@@ -7096,8 +7112,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1091257265}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.016495416, y: -0.00038111207, z: 0.0000062874583, w: 0.9998639}
-  m_LocalPosition: {x: -14.63, y: 2.129, z: 15.76}
+  m_LocalRotation: {x: 0.016495418, y: -0.00038111527, z: 0.000006287512, w: 0.9998639}
+  m_LocalPosition: {x: -16.5, y: 2.207, z: 39.94}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7165,7 +7181,7 @@ GameObject:
   - component: {fileID: 1095320280}
   - component: {fileID: 1095320279}
   - component: {fileID: 1095320278}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Room 2 Celiling2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7832,7 +7848,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1208370596}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.025358064, y: -0.00038104563, z: -0.000009665689, w: 0.9996784}
+  m_LocalRotation: {x: -0.025358064, y: -0.00038104132, z: -0.0000096655795, w: 0.9996784}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -8138,7 +8154,7 @@ GameObject:
   - component: {fileID: 1258863857}
   - component: {fileID: 1258863856}
   - component: {fileID: 1258863855}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ground (2)
   m_TagString: Environment
   m_Icon: {fileID: 0}
@@ -10378,7 +10394,7 @@ MonoBehaviour:
   FloatingTextPrefab: {fileID: 2228326724249031274, guid: aa74ecd3ffc84524f86f63bd37de18ae, type: 3}
   groundLayer:
     serializedVersion: 2
-    m_Bits: 1
+    m_Bits: 64
 --- !u!54 &1648615350
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -10488,7 +10504,7 @@ Transform:
   m_GameObject: {fileID: 1648615348}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0.038526062, z: -0, w: 0.9992576}
-  m_LocalPosition: {x: -14.63, y: 1.129, z: 18.76}
+  m_LocalPosition: {x: -16.5, y: 1.207, z: 42.94}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -11131,7 +11147,7 @@ GameObject:
   - component: {fileID: 1808188407}
   - component: {fileID: 1808188406}
   - component: {fileID: 1808188405}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11647,7 +11663,7 @@ GameObject:
   - component: {fileID: 1856565903}
   - component: {fileID: 1856565902}
   - component: {fileID: 1856565901}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ground (9)
   m_TagString: Environment
   m_Icon: {fileID: 0}
@@ -12038,7 +12054,7 @@ GameObject:
   - component: {fileID: 1885326775}
   - component: {fileID: 1885326774}
   - component: {fileID: 1885326773}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ground (1)
   m_TagString: Environment
   m_Icon: {fileID: 0}
@@ -12307,7 +12323,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1933218880}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.016495414, y: -0.00038111312, z: 0.000006287475, w: 0.9998639}
+  m_LocalRotation: {x: 0.016495416, y: -0.00038111527, z: 0.000006287511, w: 0.9998639}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -12569,7 +12585,7 @@ GameObject:
   - component: {fileID: 1997105801}
   - component: {fileID: 1997105800}
   - component: {fileID: 1997105799}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Floor 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13587,7 +13603,7 @@ GameObject:
   - component: {fileID: 2105825467}
   - component: {fileID: 2105825466}
   - component: {fileID: 2105825465}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Floor 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}

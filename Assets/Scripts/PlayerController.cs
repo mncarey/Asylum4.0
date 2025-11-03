@@ -75,8 +75,8 @@ public class PlayerController : MonoBehaviour
         // Only run if the game is playing (so Physics works properly)
         if (!Application.isPlaying) return;
 
-        float checkOffset = 0.5f; // distance from center
-        float checkRadius = 0.2f; // radius of the sphere
+        float checkOffset = 0.55f; // distance from center
+        float checkRadius = 0.5f; // radius of the sphere
 
         // Perform the same checks used in GravityFlip()
         bool isGrounded = Physics.CheckSphere(transform.position - Vector3.up * checkOffset, checkRadius, groundLayer);
@@ -96,8 +96,8 @@ public class PlayerController : MonoBehaviour
     private void GravityFlip()
     {
         //checking player position
-        bool isOnGround = Physics.CheckSphere(transform.position - Vector3.up * 0.5f, 0.2f, groundLayer);
-        bool isOnCeiling = Physics.CheckSphere(transform.position + Vector3.up * 0.5f, 0.2f, groundLayer);
+        bool isOnGround = Physics.CheckSphere(transform.position - Vector3.up * 0.55f, 0.5f, groundLayer);
+        bool isOnCeiling = Physics.CheckSphere(transform.position + Vector3.up * 0.55f, 0.5f, groundLayer);
 
         if (Input.GetKeyDown(KeyCode.F))
         {
