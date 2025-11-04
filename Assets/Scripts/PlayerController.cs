@@ -387,9 +387,6 @@ public class PlayerController : MonoBehaviour
             Respawn();
         }
 
-        
-
-
     }
 
     private void OnTriggerExit(Collider other)
