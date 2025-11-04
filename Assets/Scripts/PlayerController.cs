@@ -17,6 +17,7 @@ public class PlayerController : MonoBehaviour
     public float jumpForce;
     private Rigidbody rigidBody;
     public int moveSpeed;
+
     public int coinCount;
     public int lives;
     public Object spawnPoint;
@@ -70,6 +71,8 @@ public class PlayerController : MonoBehaviour
     {
         PlayerMove();
     }
+
+    //Function to draw sphere check gizmos
     void OnDrawGizmosSelected()
     {
         // Only run if the game is playing (so Physics works properly)
@@ -244,23 +247,31 @@ public class PlayerController : MonoBehaviour
         //Normalize the movement direction if there is any input
         if (moveDirection.magnitude > 0)
         {
-           moveDirection.Normalize();
+            // Base speed
+            float currentSpeed = moveSpeed;
 
-            
+            // Check for sprint input (hold Left Shift)
+            if (Input.GetKey(KeyCode.LeftShift))
+            {
+                currentSpeed *= 1.8f; // Sprint multiplier (you can tweak this)
+            }
+
             //Rotate player to face movement direction
             Quaternion targetRotation = Quaternion.LookRotation(moveDirection);
 
             RaycastHit hit;
 
-            if (Physics.Raycast(transform.position, Vector3.up, out hit, 1.5f)){//player is on ceiling
+            if (Physics.Raycast(transform.position, Vector3.up, out hit, 1.5f))
+            {
+                //player is on ceiling
                 Quaternion flipRotation = Quaternion.Euler(180f, 180f, 0f);//rotate the player downwards
                 targetRotation *= flipRotation;
             }
 
-            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, 10f * Time.deltaTime);//rotate the player upwards
+            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, 10f * Time.deltaTime);
 
-             //Apply movement
-             rigidBody.MovePosition(rigidBody.position + moveDirection * moveSpeed * Time.fixedDeltaTime);
+            // Apply movement
+            rigidBody.MovePosition(rigidBody.position + moveDirection * currentSpeed * Time.fixedDeltaTime);
         }
     }
 

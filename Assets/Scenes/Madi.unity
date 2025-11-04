@@ -10386,6 +10386,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   jumpForce: 5
   moveSpeed: 7
+  sprintSpeed: 20
   coinCount: 0
   lives: 3
   spawnPoint: {fileID: 0}
