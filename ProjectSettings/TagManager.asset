@@ -18,6 +18,7 @@ TagManager:
   - StartingPointInfo
   - FireInfo
   - HammersInfo
+  - Button 1
   layers:
   - Default
   - TransparentFX
