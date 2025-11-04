@@ -5,27 +5,21 @@ using UnityEngine.SceneManagement;
 
 /*
  * Author: [Barajas, Daniela] 
- * Date Created: [10/02/2025]
- * Last Updated: [10/21/2025]
+ * Date Created: [11/02/2025]
+ * Last Updated: [11/4/2025]
  * [This will manage the pause menu.]
  */
 public class PauseMenu : MonoBehaviour
 {
-    public static bool isPaused;
+    public static bool isPaused = false;
     public GameObject pauseMenu;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        //pauseMenu.SetActive(false);
-        isPaused = false;
-    }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.R)){
+        if (Input.GetKeyDown(KeyCode.Q)){
             Debug.Log("Esc pressed:V");
+            Cursor.lockState = CursorLockMode.None;
             if (isPaused)
             {
                 ResumeGame();
@@ -36,6 +30,7 @@ public class PauseMenu : MonoBehaviour
             }
         }
     }
+    
     /// <summary>
     /// This function resumes game.
     /// </summary>
@@ -43,8 +38,10 @@ public class PauseMenu : MonoBehaviour
     {
         pauseMenu.SetActive(false);
         Time.timeScale = 1f;
+        Cursor.lockState = CursorLockMode.Locked;
         isPaused = false;
     }
+    
     /// <summary>
     /// This function handles pauses game.
     /// </summary>
@@ -54,11 +51,21 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 0f;
         isPaused = true;
     }
+    
     /// <summary>
     /// This function handles scene management.
     /// </summary>
     public void SwitchScene(int sceneIndex)
     {
         SceneManager.LoadScene(sceneIndex);
+        Time.timeScale = 1f;
+    }
+    
+    /// <summary>
+    /// This function quits the game.
+    /// </summary>
+    public void QuitGame()
+    {
+        Application.Quit();
     }
 }

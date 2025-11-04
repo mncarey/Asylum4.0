@@ -16,7 +16,9 @@ public class RotatingHammers : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Rotate(0, .5f, 0);
-
+        if (!PauseMenu.isPaused)
+        {
+            transform.Rotate(0, .5f, 0);
+        }
     }
 }

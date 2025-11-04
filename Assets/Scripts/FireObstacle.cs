@@ -18,15 +18,17 @@ public class FireObstacle : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //InvokeRepeating("SpawnFire", 1, fireSpawnRate);
-        //("SpawnFire" is the name of the function, seconds to wait before starting, how often to call the function)
-        InvokeRepeating("SpawnFire", Random.Range(1, 4), Random.Range(2, 8));
+        if (!PauseMenu.isPaused)
+        {
+            //InvokeRepeating("SpawnFire", 1, fireSpawnRate);
+            //("SpawnFire" is the name of the function, seconds to wait before starting, how often to call the function)
+            InvokeRepeating("SpawnFire", Random.Range(1, 4), Random.Range(2, 8));
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        
     }
 
     private void SpawnFire()
