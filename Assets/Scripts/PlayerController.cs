@@ -29,6 +29,8 @@ public class PlayerController : MonoBehaviour
 
     public int labKeys = 0;
     public GameObject FloatingTextPrefab;
+    public LaserScript laserScriptReference;
+
     private StringVariables stringVars;
 
     public LayerMask groundLayer;
@@ -361,6 +363,15 @@ public class PlayerController : MonoBehaviour
             LoseALife();
             Respawn();
         }
+
+        if (other.gameObject.tag == "Button 1")
+        {
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                laserScriptReference.lr.enabled = !laserScriptReference.lr.enabled;
+            }
+        }
+
 
     }
 
