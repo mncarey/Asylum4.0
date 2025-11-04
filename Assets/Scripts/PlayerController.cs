@@ -18,6 +18,7 @@ public class PlayerController : MonoBehaviour
     private Rigidbody rigidBody;
     public int moveSpeed;
 
+    private bool isOnButton;
     public int coinCount;
     public int lives;
     public Object spawnPoint;
@@ -45,6 +46,8 @@ public class PlayerController : MonoBehaviour
         //startPos = spawnPoint;
         originalGravity = Physics.gravity;
         currentCheckpoint = startPos;
+
+        
     }
 
     // Update is called once per frame
@@ -67,6 +70,11 @@ public class PlayerController : MonoBehaviour
         }
 
        GravityFlip();
+
+        if (isOnButton && Input.GetKeyDown(KeyCode.E))
+        {
+            laserScriptReference.lr.enabled = !laserScriptReference.lr.enabled;
+        }
     }
 
     public void FixedUpdate()//called in fixed intervals at the same rate as the physics system - 50 rates per frame
@@ -308,6 +316,21 @@ public class PlayerController : MonoBehaviour
             FloatingText.ShowFloatingText(FloatingTextPrefab, other.transform.position, message);
         }
 
+        if (other.gameObject.tag == "Button")
+        {
+            currentCheckpoint = other.transform.position;
+            Debug.Log("Button reached");
+
+            //help
+            string message = "E";
+
+            //show floating text
+            FloatingText.ShowFloatingText(FloatingTextPrefab, other.transform.position, message);
+
+            isOnButton = true;
+            
+        }
+
         if (other.gameObject.tag == "LockedDoorInfo")
         {
             currentCheckpoint = other.transform.position;
@@ -364,24 +387,36 @@ public class PlayerController : MonoBehaviour
             Respawn();
         }
 
-        if (other.gameObject.tag == "Button 1")
-        {
-            if (Input.GetKeyDown(KeyCode.E))
-            {
-                laserScriptReference.lr.enabled = !laserScriptReference.lr.enabled;
-            }
-        }
+        
 
 
     }
 
-    /// <summary>
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Button"))
+        {
+            isOnButton = false;
+        }
+    }
+
+    /// <summary    
     /// This function handles collision events for the doors.
     /// </summary>
     /// <param name="collision">The collision that is being returned.</param>
 
     private void OnCollisionEnter(Collision collision)
     {
+        /*
+        if (collision.gameObject.tag == "Button 1")
+        {
+
+            laserScriptReference.lr.enabled = !laserScriptReference.lr.enabled;
+
+            Debug.Log("Button");
+        }
+        */
+
         if (collision.gameObject.tag == "Room1ExitDoor")
         {
             if (labKeys >= collision.transform.GetComponent<Door>().Locks)
