@@ -20,6 +20,9 @@ TagManager:
   - HammersInfo
   - Button
   - Button 1 Info
+  - LaserHallwayEntranceDoor
+  - LaserHallwayExitDoor
+  - TurnOffLasers
   layers:
   - Default
   - TransparentFX
