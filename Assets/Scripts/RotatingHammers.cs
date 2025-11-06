@@ -14,7 +14,7 @@ public class RotatingHammers : MonoBehaviour
 
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if (!PauseMenu.isPaused)
         {
