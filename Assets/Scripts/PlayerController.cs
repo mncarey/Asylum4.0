@@ -33,6 +33,7 @@ public class PlayerController : MonoBehaviour
     public LaserScript laserScriptReference;
 
     private StringVariables stringVars;
+    public int movementSpeed = 25;
 
     public LayerMask groundLayer;
 
@@ -74,6 +75,7 @@ public class PlayerController : MonoBehaviour
         if (isOnButton && Input.GetKeyDown(KeyCode.E))
         {
             laserScriptReference.lr.enabled = !laserScriptReference.lr.enabled;
+            
         }
     }
 

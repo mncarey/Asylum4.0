@@ -8,6 +8,7 @@ public class LaserScript : MonoBehaviour
     [SerializeField]
     private Transform startPoint;
     public GameObject Player;
+    public float movementSpeed = 25;
 
     void Start()
     {
@@ -17,7 +18,10 @@ public class LaserScript : MonoBehaviour
 
     void Update()
     {
+        
+
         lr.SetPosition(0, startPoint.position);
+        
         RaycastHit hit;
         if (Physics.Raycast(transform.position, -transform.right, out hit))
         {
@@ -39,6 +43,11 @@ public class LaserScript : MonoBehaviour
             lr.enabled = !lr.enabled;
         }
         */
+    }
+
+    private void FixedUpdate()
+    {
+        transform.position += Vector3.back * movementSpeed * Time.deltaTime;
     }
 
 
