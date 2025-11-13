@@ -23,6 +23,7 @@ TagManager:
   - LaserHallwayEntranceDoor
   - LaserHallwayExitDoor
   - TurnOffLasers
+  - TurnOnLasers
   layers:
   - Default
   - TransparentFX
