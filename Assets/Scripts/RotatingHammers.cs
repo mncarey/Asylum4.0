@@ -18,7 +18,7 @@ public class RotatingHammers : MonoBehaviour
     {
         if (!PauseMenu.isPaused)
         {
-            transform.Rotate(0, .5f, 0);
+            transform.Rotate(0, 3f, 0);
         }
     }
 }
