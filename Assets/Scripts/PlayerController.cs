@@ -31,6 +31,7 @@ public class PlayerController : MonoBehaviour
     public int labKeys = 0;
     public GameObject FloatingTextPrefab;
     public LaserScript laserScriptReference;
+    public bool lasersVisible = false;
 
     private StringVariables stringVars;
     public int movementSpeed = 25;
@@ -316,6 +317,19 @@ public class PlayerController : MonoBehaviour
 
             //show floating text
             FloatingText.ShowFloatingText(FloatingTextPrefab, other.transform.position, message);
+        }
+
+        //the followinf 2 are for the Laser Hallways
+        if(other.gameObject.tag == "TurnOffLasers")
+        {
+            lasersVisible = false;
+            Debug.Log("turning off lasers");
+        }
+
+        if (other.gameObject.tag == "TurnOnLasers")
+        {
+            lasersVisible = true;
+            Debug.Log("turning on lasers");
         }
 
         if (other.gameObject.tag == "Button")
