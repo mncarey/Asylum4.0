@@ -25,8 +25,8 @@ public class PlayerController : MonoBehaviour
     private Vector3 startPos;
     private Vector3 currentCheckpoint;
     public float stunTimer;
-    private bool isGravityFlipped = false;
-    private Vector3 originalGravity;
+    public bool isGravityFlipped = false;
+    public Vector3 originalGravity;
 
     public int labKeys = 0;
     public GameObject FloatingTextPrefab;
