@@ -28,13 +28,14 @@ public class FloatingText : MonoBehaviour
 
     void Update()
     {
-        /*
+        
         if (player != null)
         {
             transform.LookAt(player);
+            
             transform.rotation = Quaternion.LookRotation(transform.position - player.position);
         }
-        */
+        
     }
 
     public void SetText(string message)
