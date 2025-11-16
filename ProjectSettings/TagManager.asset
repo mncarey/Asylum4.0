@@ -24,6 +24,11 @@ TagManager:
   - LaserHallwayExitDoor
   - TurnOffLasers
   - TurnOnLasers
+  - LaserWave1
+  - LaserWave2
+  - LaserWave3
+  - LaserWave4
+  - LaserWave5
   layers:
   - Default
   - TransparentFX

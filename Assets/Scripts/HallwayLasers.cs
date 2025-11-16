@@ -16,40 +16,40 @@ public class HallwayLasers : MonoBehaviour
     private Transform startPoint;
     public GameObject Player;
     public float movementSpeed = 25;
+    public PlayerController player;
 
     void Start()
     {
         lr = GetComponent<LineRenderer>();
+
         lr.enabled = true;
     }
 
 
     void FixedUpdate()
     {
-        //transform.position += Vector3.back * movementSpeed * Time.deltaTime;
-        lr.SetPosition(0, startPoint.position);
+        if(player.lasersVisible == true) {
+            //transform.position += Vector3.forward * movementSpeed * Time.deltaTime;
+            lr.SetPosition(0, startPoint.position);
 
-        RaycastHit hit;
-        if (Physics.Raycast(transform.position, -transform.right, out hit))
-        {
-            if (hit.collider)
+            RaycastHit hit;
+            if (Physics.Raycast(transform.position, -transform.right, out hit))
             {
-                lr.SetPosition(1, hit.point);
+                if (hit.collider)
+                {
+                    lr.SetPosition(1, hit.point);
+                }
+                if (hit.transform.tag == "Player")
+                {
+                    // Destroy(hit.transform.gameObject);
+                    Player.GetComponent<PlayerController>().Respawn();
+                }
             }
-            if (hit.transform.tag == "Player")
-            {
-                // Destroy(hit.transform.gameObject);
-                Player.GetComponent<PlayerController>().Respawn();
-            }
-        }
-        else lr.SetPosition(1, -transform.right * 5000);
+            else lr.SetPosition(1, -transform.right * 5000);
+       }
 
-        /*
-        if (Input.GetMouseButtonDown(0))
-        {
-            lr.enabled = !lr.enabled;
-        }
-        */
+        
+
     }
 
 
