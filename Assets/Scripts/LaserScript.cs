@@ -45,10 +45,6 @@ public class LaserScript : MonoBehaviour
         */
     }
 
-    private void FixedUpdate()
-    {
-        transform.position += Vector3.back * movementSpeed * Time.deltaTime;
-    }
 
 
 }
