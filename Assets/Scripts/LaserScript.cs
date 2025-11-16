@@ -18,8 +18,6 @@ public class LaserScript : MonoBehaviour
 
     void Update()
     {
-        
-
         lr.SetPosition(0, startPoint.position);
         
         RaycastHit hit;
