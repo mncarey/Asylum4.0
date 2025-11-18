@@ -159,8 +159,8 @@ LineRenderer:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
-        time: 0.034402993
-        value: 0.0385967
+        time: 1
+        value: 1
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -223,5 +223,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9b7281705ac8ad4f902aaac185d9393, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lr: {fileID: 0}
   startPoint: {fileID: 2208745038326702109}
   Player: {fileID: 0}
+  movementSpeed: 25
