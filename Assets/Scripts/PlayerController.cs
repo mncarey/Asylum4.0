@@ -30,7 +30,7 @@ public class PlayerController : MonoBehaviour
 
     public int labKeys = 0;
     public GameObject FloatingTextPrefab;
-    public LaserScript laserScriptReference;
+    public ButtonLaserSpawner laserScriptReference;
     public bool lasersVisible = false;
 
     private StringVariables stringVars;
@@ -72,17 +72,23 @@ public class PlayerController : MonoBehaviour
         }
 
        GravityFlip();
+       laserTrigger();
 
-        if (isOnButton && Input.GetKeyDown(KeyCode.E))
-        {
-            laserScriptReference.lr.enabled = !laserScriptReference.lr.enabled;
-            
-        }
+        
     }
 
     public void FixedUpdate()//called in fixed intervals at the same rate as the physics system - 50 rates per frame
     {
         PlayerMove();
+    }
+
+    public void laserTrigger()
+    {
+        if (isOnButton && Input.GetKeyDown(KeyCode.E))
+        {
+            laserScriptReference.ActivateLasers();
+
+        }
     }
 
     //Function to draw sphere check gizmos
@@ -446,8 +452,6 @@ public class PlayerController : MonoBehaviour
 
                 labKeys = 0;
                 Debug.Log("Keys left: " + labKeys);
-
-       
             }
             else
             {

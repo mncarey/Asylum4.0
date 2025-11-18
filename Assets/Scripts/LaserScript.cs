@@ -35,14 +35,6 @@ public class LaserScript : MonoBehaviour
         }
         else lr.SetPosition(1, -transform.right * 5000);
 
-        /*
-        if (Input.GetMouseButtonDown(0))
-        {
-            lr.enabled = !lr.enabled;
-        }
-        */
     }
-
-
 
 }
