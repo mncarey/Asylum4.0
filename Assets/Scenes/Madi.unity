@@ -1649,11 +1649,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 105701339}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &115870642 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8525963094027807347, guid: 102cea15ab9e3704eb1d7702d4b08fde, type: 3}
-  m_PrefabInstance: {fileID: 1982352698}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &121418225 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3321256736809018448, guid: bc8c1bef56d3f774fb5df98fbb0c32cc, type: 3}
@@ -6502,11 +6497,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3321256736809018448, guid: bc8c1bef56d3f774fb5df98fbb0c32cc, type: 3}
   m_PrefabInstance: {fileID: 232218398}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &553155220 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8525963094027807347, guid: 102cea15ab9e3704eb1d7702d4b08fde, type: 3}
-  m_PrefabInstance: {fileID: 1471212276}
-  m_PrefabAsset: {fileID: 0}
 --- !u!120 &553155222 stripped
 LineRenderer:
   m_CorrespondingSourceObject: {fileID: 2638612091352431223, guid: 102cea15ab9e3704eb1d7702d4b08fde, type: 3}
@@ -6517,6 +6507,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2208745038326702109, guid: 102cea15ab9e3704eb1d7702d4b08fde, type: 3}
   m_PrefabInstance: {fileID: 1471212276}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &553155227 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2747508760064275130, guid: 102cea15ab9e3704eb1d7702d4b08fde, type: 3}
+  m_PrefabInstance: {fileID: 1471212276}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9b7281705ac8ad4f902aaac185d9393, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &565086391
 GameObject:
   m_ObjectHideFlags: 0
@@ -12756,11 +12757,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1523130764}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1021546722 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8525963094027807347, guid: 102cea15ab9e3704eb1d7702d4b08fde, type: 3}
-  m_PrefabInstance: {fileID: 782747829943655708}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1022910072
 GameObject:
   m_ObjectHideFlags: 0
@@ -16057,10 +16053,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   killTheLasers: 0
   player: {fileID: 1648615349}
-  laser1: {fileID: 1021546722}
-  laser2: {fileID: 115870642}
-  laser3: {fileID: 1401658044}
-  laser4: {fileID: 553155220}
+  laser1: {fileID: 782747829943655713}
+  laser2: {fileID: 1982352703}
+  laser3: {fileID: 1401658054}
+  laser4: {fileID: 553155227}
   laserScriptReference: {fileID: 0}
 --- !u!4 &1294120223
 Transform:
@@ -17324,11 +17320,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1399009520}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &1401658044 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8525963094027807347, guid: 102cea15ab9e3704eb1d7702d4b08fde, type: 3}
-  m_PrefabInstance: {fileID: 945392717}
-  m_PrefabAsset: {fileID: 0}
 --- !u!120 &1401658046 stripped
 LineRenderer:
   m_CorrespondingSourceObject: {fileID: 2638612091352431223, guid: 102cea15ab9e3704eb1d7702d4b08fde, type: 3}
@@ -17339,6 +17330,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2208745038326702109, guid: 102cea15ab9e3704eb1d7702d4b08fde, type: 3}
   m_PrefabInstance: {fileID: 945392717}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1401658054 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2747508760064275130, guid: 102cea15ab9e3704eb1d7702d4b08fde, type: 3}
+  m_PrefabInstance: {fileID: 945392717}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9b7281705ac8ad4f902aaac185d9393, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1402764059 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2692213368213716714, guid: bc8c1bef56d3f774fb5df98fbb0c32cc, type: 3}
@@ -18166,7 +18168,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   killTheLasers: 0
-  player: {fileID: 0}
+  player: {fileID: 1648615349}
   laserWave1: {fileID: 59067044}
   laserWave2: {fileID: 1455131636}
   laserWave3: {fileID: 1165909683}
@@ -23337,7 +23339,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1792963473}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.06658987, y: -0.00038033724, z: -0.000025382951, w: 0.9977804}
+  m_LocalRotation: {x: -0.06658987, y: -0.00038030292, z: -0.000025380661, w: 0.9977804}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -26190,6 +26192,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2208745038326702109, guid: 102cea15ab9e3704eb1d7702d4b08fde, type: 3}
   m_PrefabInstance: {fileID: 1982352698}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1982352703 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2747508760064275130, guid: 102cea15ab9e3704eb1d7702d4b08fde, type: 3}
+  m_PrefabInstance: {fileID: 1982352698}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9b7281705ac8ad4f902aaac185d9393, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1983287068
 GameObject:
   m_ObjectHideFlags: 0
@@ -29048,6 +29061,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2208745038326702109, guid: 102cea15ab9e3704eb1d7702d4b08fde, type: 3}
   m_PrefabInstance: {fileID: 782747829943655708}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &782747829943655713 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2747508760064275130, guid: 102cea15ab9e3704eb1d7702d4b08fde, type: 3}
+  m_PrefabInstance: {fileID: 782747829943655708}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9b7281705ac8ad4f902aaac185d9393, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &5630430656812920670
 PrefabInstance:
   m_ObjectHideFlags: 0
