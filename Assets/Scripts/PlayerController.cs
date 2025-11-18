@@ -37,7 +37,7 @@ public class PlayerController : MonoBehaviour
     public int movementSpeed = 25;
 
     public LayerMask groundLayer;
-
+    bool isNearObject = false;
 
     // Start is called before the first frame update
     void Start()
@@ -82,6 +82,17 @@ public class PlayerController : MonoBehaviour
         PlayerMove();
     }
 
+    public bool flipObject()
+    {
+        if(isNearObject && Input.GetKeyDown(KeyCode.E))
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
     public void laserTrigger()
     {
         if (isOnButton && Input.GetKeyDown(KeyCode.E))
@@ -351,6 +362,21 @@ public class PlayerController : MonoBehaviour
 
             isOnButton = true;
             
+        }
+
+        if (other.gameObject.tag == "flippableObejct")
+        {
+            currentCheckpoint = other.transform.position;
+            Debug.Log("object reached");
+
+            //help
+            string message = "E";
+
+            //show floating text
+            FloatingText.ShowFloatingText(FloatingTextPrefab, other.transform.position, message);
+
+            isNearObject = true;
+
         }
 
         if (other.gameObject.tag == "LockedDoorInfo")
