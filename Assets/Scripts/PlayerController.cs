@@ -86,7 +86,7 @@ public class PlayerController : MonoBehaviour
     {
         if (isOnButton && Input.GetKeyDown(KeyCode.E))
         {
-            laserScriptReference.ActivateLasers();
+            laserScriptReference.killTheLasers =! laserScriptReference.killTheLasers;
 
         }
     }
