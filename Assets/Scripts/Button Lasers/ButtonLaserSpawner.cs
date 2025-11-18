@@ -10,6 +10,8 @@ public class ButtonLaserSpawner : MonoBehaviour
     public LaserScript laser2;
     public LaserScript laser3;
     public LaserScript laser4;
+    public LaserScript laser5;
+    public LaserScript laser6;
     public LaserScript laserScriptReference;
 
     // Start is called before the first frame update
@@ -20,7 +22,8 @@ public class ButtonLaserSpawner : MonoBehaviour
         laser2.lr.enabled = false;
         laser3.lr.enabled = false;
         laser4.lr.enabled = false;
-
+        laser5.lr.enabled = false;
+        laser6.lr.enabled = false;
     }
 
     public void ActivateLasers()
@@ -29,6 +32,8 @@ public class ButtonLaserSpawner : MonoBehaviour
         laser2.lr.enabled = true;
         laser3.lr.enabled = true;
         laser4.lr.enabled = true;
+        laser5.lr.enabled = true;
+        laser6.lr.enabled = true;
     }
     // Update is called once per frame
     void Update()
@@ -39,6 +44,8 @@ public class ButtonLaserSpawner : MonoBehaviour
             laser2.lr.enabled = false;
             laser3.lr.enabled = false;
             laser4.lr.enabled = false;
+            laser5.lr.enabled = false;
+            laser6.lr.enabled = false;
         }
         else
         {
