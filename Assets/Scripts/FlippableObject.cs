@@ -8,6 +8,13 @@ public class FlippableObject : MonoBehaviour
     public bool isGravityFlipped = false;
     public Vector3 originalGravity;
     public PlayerController playerReference;
+    private Rigidbody rb;
+
+    private void Start()
+    {
+        rb = GetComponent<Rigidbody>();
+        rb.useGravity = false;
+    }
 
     // Update is called once per frame
     void Update()
@@ -16,13 +23,9 @@ public class FlippableObject : MonoBehaviour
         {
             GravityFlip();
         }
-        
     }
 
-    private void Start()
-    {
-        originalGravity = Physics.gravity;
-    }
+    
     private void GravityFlip()
     {
         //checking object position
