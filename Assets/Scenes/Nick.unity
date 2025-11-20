@@ -5750,6 +5750,7 @@ Transform:
   - {fileID: 1753046342}
   - {fileID: 1977972679}
   - {fileID: 1218531808}
+  - {fileID: 1640821679}
   - {fileID: 1911924783}
   - {fileID: 2127065619}
   - {fileID: 541013497}
@@ -6307,13 +6308,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ce1863025373a645bc0164b7b9b259a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  killTheLasers: 0
-  player: {fileID: 0}
-  laserWave1: {fileID: 1182830537}
-  laserWave2: {fileID: 1980566453}
-  laserWave3: {fileID: 248407830}
-  laserWave4: {fileID: 739154921}
-  movementSpeed: 3
 --- !u!4 &248407832
 Transform:
   m_ObjectHideFlags: 0
@@ -13454,7 +13448,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 541013496}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 2a20bf99838b76a428564ef7baaca14b, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -16860,7 +16854,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 662986464}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.10032728, y: -0.00037832308, z: -0.00003814861, w: 0.99495447}
+  m_LocalRotation: {x: -0.10032728, y: -0.0003782848, z: -0.00003814475, w: 0.99495447}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -18670,7 +18664,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 717145444}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.016495397, y: -0.00038016954, z: 0.000006271901, w: 0.9998639}
+  m_LocalRotation: {x: 0.016495397, y: -0.0003801717, z: 0.0000062719355, w: 0.9998639}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -18752,7 +18746,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 722310473}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 2a20bf99838b76a428564ef7baaca14b, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -19051,13 +19045,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ce1863025373a645bc0164b7b9b259a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  killTheLasers: 0
-  player: {fileID: 0}
-  laserWave1: {fileID: 1182830537}
-  laserWave2: {fileID: 1980566453}
-  laserWave3: {fileID: 248407830}
-  laserWave4: {fileID: 739154921}
-  movementSpeed: 3
 --- !u!1 &743585385
 GameObject:
   m_ObjectHideFlags: 0
@@ -20383,7 +20370,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 776034076}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 2a20bf99838b76a428564ef7baaca14b, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -28880,13 +28867,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ce1863025373a645bc0164b7b9b259a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  killTheLasers: 0
-  player: {fileID: 0}
-  laserWave1: {fileID: 1182830537}
-  laserWave2: {fileID: 1980566453}
-  laserWave3: {fileID: 248407830}
-  laserWave4: {fileID: 739154921}
-  movementSpeed: 3
 --- !u!4 &1182830539
 Transform:
   m_ObjectHideFlags: 0
@@ -32394,7 +32374,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1288554473}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.0164954, y: -0.0003801696, z: 0.0000062719023, w: 0.9998639}
+  m_LocalRotation: {x: 0.0164954, y: -0.00038017175, z: 0.0000062719378, w: 0.9998639}
   m_LocalPosition: {x: 166.57, y: 2.6, z: -74.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -39873,6 +39853,111 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bc8c1bef56d3f774fb5df98fbb0c32cc, type: 3}
+--- !u!1 &1640821678
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1640821679}
+  - component: {fileID: 1640821682}
+  - component: {fileID: 1640821681}
+  - component: {fileID: 1640821680}
+  m_Layer: 6
+  m_Name: Floor 2 (19)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1640821679
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1640821678}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 1.338, y: 12.12, z: 0.175}
+  m_LocalScale: {x: 1.362453, y: 1, z: 0.54244196}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 232256123}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!65 &1640821680
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1640821678}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &1640821681
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1640821678}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: c8856c678a6b95b4492d0dd581754301, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &1640821682
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1640821678}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!4 &1645537410 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3321256736809018448, guid: bc8c1bef56d3f774fb5df98fbb0c32cc, type: 3}
@@ -41300,12 +41385,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f5c34f621f0408499fd219ec9756707, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  laserWave1: {fileID: 1182830537}
-  laserWave2: {fileID: 1980566453}
-  laserWave3: {fileID: 248407830}
-  laserWave4: {fileID: 739154921}
+  laserWave1Prefab: {fileID: 0}
+  laserWave2Prefab: {fileID: 0}
+  laserWave3Prefab: {fileID: 0}
+  laserWave4Prefab: {fileID: 0}
+  laserWaveSpawnRate: 0
   player: {fileID: 272175962}
-  CurrentWave: {fileID: 1182830538}
 --- !u!1 &1703616075
 GameObject:
   m_ObjectHideFlags: 0
@@ -44093,7 +44178,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1816720426}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.04279875, y: -0.00037987618, z: -0.000016273136, w: 0.9990837}
+  m_LocalRotation: {x: -0.04279875, y: -0.00037987187, z: -0.00001627295, w: 0.9990837}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -47475,13 +47560,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ce1863025373a645bc0164b7b9b259a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  killTheLasers: 0
-  player: {fileID: 0}
-  laserWave1: {fileID: 1182830537}
-  laserWave2: {fileID: 1980566453}
-  laserWave3: {fileID: 248407830}
-  laserWave4: {fileID: 739154921}
-  movementSpeed: 3
 --- !u!4 &1980566455
 Transform:
   m_ObjectHideFlags: 0
@@ -48290,8 +48368,8 @@ Transform:
   m_GameObject: {fileID: 2014686414}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.50178206, y: 17.001984, z: 0.191}
-  m_LocalScale: {x: 0.029818201, y: 12.556438, z: 0.79968673}
+  m_LocalPosition: {x: 0.50178206, y: 17.001984, z: 0.151}
+  m_LocalScale: {x: 0.029818201, y: 12.556438, z: 0.7196941}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 232256123}
@@ -49681,7 +49759,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2077547536}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 2a20bf99838b76a428564ef7baaca14b, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
