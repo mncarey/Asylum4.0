@@ -11,56 +11,76 @@ using UnityEngine;
 
 public class HallwayLaserSpawner : MonoBehaviour
 {
-    public GameObject laserWave1;
-    public GameObject laserWave2;
-    public GameObject laserWave3;
-    public GameObject laserWave4;
+    public GameObject laserWave1Prefab;
+    public GameObject laserWave2Prefab;
+    public GameObject laserWave3Prefab;
+    public GameObject laserWave4Prefab;
+    public float laserWaveSpawnRate;
 
     public PlayerController player;
-    private float laserSpawnRate;
-    public HallwayLaserWave CurrentWave;
-    // Start is called before the first frame update
+    private float laserSpawnRate = 4;
+    //public HallwayLaserWave Waves;
+    private int waveNumber = 0;
+    //Start is called before the first frame update
     void Start()
     {
-        
-        //if (!PauseMenu.isPaused && player.lasersVisible == true)
+        //while (CheckIfPlayerHasPassedEntry())
         //{
-        //    Debug.Log("Calling Wave1 from Spawner");
-        //    CurrentWave.StartWave1();
-        //    Debug.Log("After Wave 1 call");
-
-
-
-
-
-        //    //SpawnLaserWave1();
-        //    //InvokeRepeating("SpawnFire", 1, fireSpawnRate);
-        //    //("Spawnlaser" is the name of the function, seconds to wait before starting, how often to call the function)
-        //    //InvokeRepeating("SpawnLaser", 5, 5);
+            waveNumber = GenerateNumber();
+        waveNumber = 1;
+            //("SpawnWave" is the name of the function, seconds to wait before starting, how often to call the function)
+            InvokeRepeating("SpawnWave", 2, laserSpawnRate);
         //}
-
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-  
-        if (!PauseMenu.isPaused && player.lasersVisible == true)
-        {
-            Debug.Log("Calling Wave1 from Spawner");
-            CurrentWave.StartWave1();
-            Debug.Log("After Wave 1 call");
+        CheckIfPlayerHasPassedEntry();
+    }
 
-            //SpawnLaserWave1();
-            //InvokeRepeating("SpawnFire", 1, fireSpawnRate);
-            //("Spawnlaser" is the name of the function, seconds to wait before starting, how often to call the function)
-            //InvokeRepeating("SpawnLaser", 5, 5);
+    private bool CheckIfPlayerHasPassedEntry()
+    {
+        if(player.lasersVisible == true)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
         }
     }
+   
 
-    private void SpawnLaserWave1()
+    private void SpawnWave()
     {
-        laserWave1.SetActive(true);
+        waveNumber = GenerateNumber();
+        if (waveNumber == 1)
+        {
+            Instantiate(laserWave1Prefab, transform.position, transform.rotation);
+            waveNumber++;
+        }
+        else if(waveNumber == 2)
+        {
+            Instantiate(laserWave2Prefab, transform.position, transform.rotation);
+            waveNumber++;
+        }
+        else if (waveNumber == 3)
+        {
+            Instantiate(laserWave3Prefab, transform.position, transform.rotation);
+            waveNumber++;
+        }
+        else if (waveNumber == 4)
+        {
+            Instantiate(laserWave4Prefab, transform.position, transform.rotation);
+            waveNumber = 1;
+        }
+
 
     }
+    private int GenerateNumber()
+    {
+        return Random.Range(1, 5); // returns 1–4
+    }
+
 }
