@@ -73,6 +73,7 @@ public class PlayerController : MonoBehaviour
 
        GravityFlip();
        laserTrigger();
+        flipObject();
 
         
     }
@@ -80,11 +81,19 @@ public class PlayerController : MonoBehaviour
     public void FixedUpdate()//called in fixed intervals at the same rate as the physics system - 50 rates per frame
     {
         PlayerMove();
+
+        Vector3 v = rigidBody.velocity;
+
+        // Lock sideways drift so player does NOT push objects
+        v.x = 0f;
+        v.z = 0f;
+
+        rigidBody.velocity = v;
     }
 
     public bool flipObject()
     {
-        if(isNearObject && Input.GetKeyDown(KeyCode.E))
+        if(isNearObject)
         {
             return true;
         }
@@ -93,6 +102,7 @@ public class PlayerController : MonoBehaviour
             return false;
         }
     }
+
     public void laserTrigger()
     {
         if (isOnButton && Input.GetKeyDown(KeyCode.E))

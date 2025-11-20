@@ -285,13 +285,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ce1863025373a645bc0164b7b9b259a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  killTheLasers: 0
-  player: {fileID: 0}
-  laserWave1: {fileID: 59067044}
-  laserWave2: {fileID: 1455131636}
-  laserWave3: {fileID: 1165909683}
-  laserWave4: {fileID: 6654407}
-  movementSpeed: 3
 --- !u!1001 &6939604
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1004,13 +997,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ce1863025373a645bc0164b7b9b259a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  killTheLasers: 0
-  player: {fileID: 0}
-  laserWave1: {fileID: 59067044}
-  laserWave2: {fileID: 1455131636}
-  laserWave3: {fileID: 1165909683}
-  laserWave4: {fileID: 6654407}
-  movementSpeed: 3
 --- !u!4 &59067046
 Transform:
   m_ObjectHideFlags: 0
@@ -1869,12 +1855,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f5c34f621f0408499fd219ec9756707, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  laserWave1: {fileID: 59067044}
-  laserWave2: {fileID: 1455131636}
-  laserWave3: {fileID: 1165909683}
-  laserWave4: {fileID: 6654407}
+  laserWave1Prefab: {fileID: 0}
+  laserWave2Prefab: {fileID: 0}
+  laserWave3Prefab: {fileID: 0}
+  laserWave4Prefab: {fileID: 0}
+  laserWaveSpawnRate: 0
   player: {fileID: 1648615349}
-  CurrentWave: {fileID: 59067045}
 --- !u!1 &152064900
 GameObject:
   m_ObjectHideFlags: 0
@@ -5903,12 +5889,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 513367857}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: -0.9996067, z: -0, w: 0.02804362}
-  m_LocalPosition: {x: -71.98, y: -19.13, z: -161.36}
-  m_LocalScale: {x: 1.5419186, y: 0.6485701, z: 0.90288556}
+  m_LocalRotation: {x: -0, y: -0.93450034, z: -0, w: -0.3559624}
+  m_LocalPosition: {x: 0.11750481, y: -40.87861, z: -0.2663911}
+  m_LocalScale: {x: 3.3738072, y: 1.649916, z: 1.9755659}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2051430094}
+  m_Father: {fileID: 1501334592}
   m_LocalEulerAnglesHint: {x: 0, y: 183.214, z: 0}
 --- !u!54 &513367859
 Rigidbody:
@@ -5944,7 +5930,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 513367857}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 59efda7c0fdaeed4296b60b18b484f2b, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -6599,12 +6585,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 557645807}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -12.87, y: 1.65, z: 23.15}
-  m_LocalScale: {x: 5.076215, y: 5.076215, z: 5.076215}
+  m_LocalRotation: {x: -0, y: -0.38202915, z: -0, w: 0.92415035}
+  m_LocalPosition: {x: -0.21, y: 1.6093106, z: -0.04}
+  m_LocalScale: {x: 11.107053, y: 12.913528, z: 11.107053}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1501334592}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!135 &557645810
 SphereCollider:
@@ -6613,7 +6599,7 @@ SphereCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 557645807}
-  m_Material: {fileID: 13400000, guid: 2a20bf99838b76a428564ef7baaca14b, type: 2}
+  m_Material: {fileID: 13400000, guid: 59efda7c0fdaeed4296b60b18b484f2b, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -14659,13 +14645,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ce1863025373a645bc0164b7b9b259a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  killTheLasers: 0
-  player: {fileID: 0}
-  laserWave1: {fileID: 59067044}
-  laserWave2: {fileID: 1455131636}
-  laserWave3: {fileID: 1165909683}
-  laserWave4: {fileID: 6654407}
-  movementSpeed: 3
 --- !u!4 &1165909685
 Transform:
   m_ObjectHideFlags: 0
@@ -16112,6 +16091,22 @@ MonoBehaviour:
   laser2: {fileID: 0}
   laser3: {fileID: 0}
   laser4: {fileID: 0}
+  laser5: {fileID: 0}
+  laser6: {fileID: 0}
+  laser7: {fileID: 0}
+  laser8: {fileID: 0}
+  laser9: {fileID: 0}
+  laser10: {fileID: 0}
+  laser11: {fileID: 0}
+  laser12: {fileID: 0}
+  laser13: {fileID: 0}
+  laser14: {fileID: 0}
+  laser15: {fileID: 0}
+  laser16: {fileID: 0}
+  laser17: {fileID: 0}
+  laser18: {fileID: 0}
+  laser19: {fileID: 0}
+  laser20: {fileID: 0}
   laserScriptReference: {fileID: 0}
 --- !u!4 &1294120223
 Transform:
@@ -18200,13 +18195,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ce1863025373a645bc0164b7b9b259a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  killTheLasers: 0
-  player: {fileID: 1648615349}
-  laserWave1: {fileID: 59067044}
-  laserWave2: {fileID: 1455131636}
-  laserWave3: {fileID: 1165909683}
-  laserWave4: {fileID: 6654407}
-  movementSpeed: 3
 --- !u!4 &1455131638
 Transform:
   m_ObjectHideFlags: 0
@@ -19224,7 +19212,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5796778250201752632, guid: 3469d058d37719c4a9b08d844575a56f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 29.57
+      value: 29.63
       objectReference: {fileID: 0}
     - target: {fileID: 5796778250201752632, guid: 3469d058d37719c4a9b08d844575a56f, type: 3}
       propertyPath: m_LocalPosition.z
@@ -19268,7 +19256,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 5796778250201752632, guid: 3469d058d37719c4a9b08d844575a56f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 557645809}
+    - targetCorrespondingSourceObject: {fileID: 5796778250201752632, guid: 3469d058d37719c4a9b08d844575a56f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 513367858}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 6573456343658413698, guid: 3469d058d37719c4a9b08d844575a56f, type: 3}
       insertIndex: -1
@@ -19276,6 +19270,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6573456343658413698, guid: 3469d058d37719c4a9b08d844575a56f, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1501334597}
+    - targetCorrespondingSourceObject: {fileID: 6573456343658413698, guid: 3469d058d37719c4a9b08d844575a56f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1501334600}
   m_SourcePrefab: {fileID: 100100000, guid: 3469d058d37719c4a9b08d844575a56f, type: 3}
 --- !u!4 &1501334592 stripped
 Transform:
@@ -19294,7 +19291,7 @@ MeshCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1501334593}
-  m_Material: {fileID: 13400000, guid: 2a20bf99838b76a428564ef7baaca14b, type: 2}
+  m_Material: {fileID: 13400000, guid: 59efda7c0fdaeed4296b60b18b484f2b, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -19306,7 +19303,7 @@ MeshCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -6317805809608689028, guid: 0aa721e8e983973459c9d432c561b448, type: 3}
 --- !u!114 &1501334597
@@ -19325,8 +19322,34 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   isGravityFlipped: 0
-  originalGravity: {x: 0, y: 0, z: 0}
   playerReference: {fileID: 0}
+--- !u!54 &1501334600
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1501334593}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1001 &1512203120
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21488,7 +21511,7 @@ CapsuleCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1648615348}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 59efda7c0fdaeed4296b60b18b484f2b, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -27467,7 +27490,6 @@ Transform:
   - {fileID: 514337418}
   - {fileID: 44668865}
   - {fileID: 1471425630}
-  - {fileID: 513367858}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2060031371 stripped
@@ -29105,5 +29127,4 @@ SceneRoots:
   - {fileID: 2033563472}
   - {fileID: 573723701}
   - {fileID: 1532571949}
-  - {fileID: 557645809}
   - {fileID: 1751303029}
