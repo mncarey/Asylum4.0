@@ -93,14 +93,7 @@ public class PlayerController : MonoBehaviour
 
     public bool flipObject()
     {
-        if(isNearObject)
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
+        return isNearObject && Input.GetKeyDown(KeyCode.E);
     }
 
     public void laserTrigger()
@@ -452,6 +445,10 @@ public class PlayerController : MonoBehaviour
         if (other.CompareTag("Button"))
         {
             isOnButton = false;
+        }
+        if (other.CompareTag("flippableObejct"))
+        {
+            isNearObject = false;
         }
     }
 

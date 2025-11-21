@@ -12,6 +12,50 @@ public class FlippableObject : MonoBehaviour
     private float gravityStrength = 9.81f;
     private bool ready = false;
 
+    //raycasts
+    public Vector3[] rayCasts = new Vector3[]
+    {
+        new Vector3(0.5f, 0, 0.5f),
+        new Vector3(0.5f, 0, -0.5f),
+        new Vector3(-0.5f, 0, 0.5f),
+        new Vector3(-0.5f, 0, -0.5f),
+        Vector3.zero //<- center ray
+    };
+
+    public float rayLength = 0.5f;
+
+    public bool IsGrounded()
+    {
+        foreach (Vector3 offset in rayCasts)
+        {
+            Vector3 origin = transform.position + offset;
+
+            if (Physics.Raycast(origin, Vector3.down, rayLength, groundLayer))//if the raycast hits
+            {
+                return true;
+            }
+            
+        }
+        Debug.Log("Noot gorunded.");
+        return false;
+    }
+
+    public bool IsOnCeiling()
+    {
+        foreach (Vector3 offset in rayCasts)
+        {
+            Vector3 origin = transform.position + offset;
+
+            if (Physics.Raycast(origin, Vector3.up, rayLength, groundLayer))//if the raycast hits
+            {
+                return true;
+            }
+
+        }
+        Debug.Log("Noot on ceiling.");
+        return false;
+    }
+
     IEnumerator Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -48,19 +92,31 @@ public class FlippableObject : MonoBehaviour
         rb.velocity = v;
     }
 
-    void OnDrawGizmosSelected()
+    private void OnDrawGizmosSelected()
     {
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position + Vector3.down * 0.2f, 0.5f);
+        Gizmos.color = Color.yellow;
+
+        if (rayCasts == null) return;
+
+        foreach (Vector3 offset in rayCasts)
+        {
+            Vector3 origin = transform.position + offset;
+            Vector3 end = origin + Vector3.down * rayLength;
+
+            Gizmos.DrawLine(origin, end);
+            Gizmos.DrawSphere(end, 0.07f); //tiny sphere at the hit point
+        }
     }
+
     private void TryGravityFlip()
     {
         //checking object position
-        bool isOnGround = Physics.CheckSphere(transform.position + Vector3.down * 0.3f, 0.5f, groundLayer);
-        bool isOnCeiling = Physics.CheckSphere(transform.position + Vector3.up * 0.3f, 0.5f, groundLayer);
+       // bool isOnGround = Physics.CheckSphere(transform.position + Vector3.down * 0.3f, 0.5f, groundLayer);
+       // bool isOnCeiling = Physics.CheckSphere(transform.position + Vector3.up * 0.3f, 0.5f, groundLayer);
        
-            if (isOnGround || isOnCeiling)
+            if (IsGrounded() == true || IsOnCeiling() == true)
             {
+            Debug.Log("Object is grounded");
                 if (Input.GetKeyDown(KeyCode.E))
                 {
                     Debug.Log("Trying to anti gravity.");
