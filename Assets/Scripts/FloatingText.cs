@@ -33,10 +33,10 @@ public class FloatingText : MonoBehaviour
             Vector3 direction = Camera.main.transform.position - transform.position;
             direction.y = 0;
 
-            //if (direction.sqrMagnitude > 0.001f)
-            //{
-                transform.rotation = Quaternion.LookRotation(direction);
-            //}
+            if (direction.sqrMagnitude > 0.001f)
+            {
+                transform.rotation = Quaternion.LookRotation(-direction);
+            }
         }
         
     }
