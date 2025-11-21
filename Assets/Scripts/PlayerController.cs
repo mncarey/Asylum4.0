@@ -174,10 +174,8 @@ public class PlayerController : MonoBehaviour
     /// 
     public void Respawn()
     {
-
         Physics.gravity = originalGravity;
         transform.position = currentCheckpoint;
-
     }
 
     /// <summary>
@@ -354,7 +352,7 @@ public class PlayerController : MonoBehaviour
 
         if (other.gameObject.tag == "Button")
         {
-            currentCheckpoint = other.transform.position;
+            
             Debug.Log("Button reached");
 
             //help
@@ -369,7 +367,7 @@ public class PlayerController : MonoBehaviour
 
         if (other.gameObject.tag == "flippableObejct")
         {
-            currentCheckpoint = other.transform.position;
+           
             Debug.Log("object reached");
 
             //help
@@ -384,8 +382,6 @@ public class PlayerController : MonoBehaviour
 
         if (other.gameObject.tag == "LockedDoorInfo")
         {
-            currentCheckpoint = other.transform.position;
-            Debug.Log("Checkpoint reached at: " + currentCheckpoint);
 
             string message = StringVariables.lockedDoor;
 
@@ -406,8 +402,6 @@ public class PlayerController : MonoBehaviour
 
         if (other.gameObject.tag == "FireInfo")
         {
-            currentCheckpoint = other.transform.position;
-            Debug.Log("Checkpoint reached at: " + currentCheckpoint);
 
             string message = StringVariables.dontTouchMeFire;
 
@@ -417,9 +411,7 @@ public class PlayerController : MonoBehaviour
 
         if (other.gameObject.tag == "HammersInfo")
         {
-            currentCheckpoint = other.transform.position;
-            Debug.Log("Checkpoint reached at: " + currentCheckpoint);
-
+            
             string message = StringVariables.dontTouchMeObstacles;
 
             //show floating text

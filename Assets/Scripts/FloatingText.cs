@@ -11,9 +11,8 @@ public class FloatingText : MonoBehaviour
    // public string displayText = "base text";
     public Vector3 offset = new Vector3(0, 2f, 0);
     private Transform player;
-
+    private Rigidbody rb;
     private TextMesh textMesh;
-
 
 
     // Start is called before the first frame update
@@ -28,16 +27,25 @@ public class FloatingText : MonoBehaviour
 
     void Update()
     {
-        
-        if (player != null)
+        if (Camera.main != null)
         {
-            transform.LookAt(player);
-            
-            transform.rotation = Quaternion.LookRotation(transform.position - player.position);
+            //only rotate on y axis
+            Vector3 direction = Camera.main.transform.position - transform.position;
+            direction.y = 0;
+
+            //if (direction.sqrMagnitude > 0.001f)
+            //{
+                transform.rotation = Quaternion.LookRotation(direction);
+            //}
         }
         
     }
 
+    private void FixedUpdate()
+    {
+        //Stop sliding on X/Z
+        
+    }
     public void SetText(string message)
     {
         if (textMesh == null)
