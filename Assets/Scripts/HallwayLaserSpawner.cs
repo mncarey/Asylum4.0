@@ -15,10 +15,11 @@ public class HallwayLaserSpawner : MonoBehaviour
     public GameObject laserWave2Prefab;
     public GameObject laserWave3Prefab;
     public GameObject laserWave4Prefab;
+    public GameObject laserWave5Prefab;
     public float laserWaveSpawnRate;
 
     public PlayerController player;
-    private float laserSpawnRate = 4;
+    private float laserSpawnRate = 5;
     //public HallwayLaserWave Waves;
     private int waveNumber = 0;
     //Start is called before the first frame update
@@ -26,10 +27,10 @@ public class HallwayLaserSpawner : MonoBehaviour
     {
         //while (CheckIfPlayerHasPassedEntry())
         //{
-            waveNumber = GenerateNumber();
+        //waveNumber = GenerateNumber();
         waveNumber = 1;
-            //("SpawnWave" is the name of the function, seconds to wait before starting, how often to call the function)
-            InvokeRepeating("SpawnWave", 2, laserSpawnRate);
+        //("SpawnWave" is the name of the function, seconds to wait before starting, how often to call the function)
+        InvokeRepeating("SpawnWave", 2, laserSpawnRate);
         //}
     }
 
@@ -41,7 +42,7 @@ public class HallwayLaserSpawner : MonoBehaviour
 
     private bool CheckIfPlayerHasPassedEntry()
     {
-        if(player.lasersVisible == true)
+        if (player.lasersVisible == true)
         {
             return true;
         }
@@ -50,17 +51,18 @@ public class HallwayLaserSpawner : MonoBehaviour
             return false;
         }
     }
-   
+
 
     private void SpawnWave()
     {
-        waveNumber = GenerateNumber();
+        //waveNumber = GenerateNumber();
+        waveNumber = 1;
         if (waveNumber == 1)
         {
             Instantiate(laserWave1Prefab, transform.position, transform.rotation);
             waveNumber++;
         }
-        else if(waveNumber == 2)
+        else if (waveNumber == 2)
         {
             Instantiate(laserWave2Prefab, transform.position, transform.rotation);
             waveNumber++;
@@ -73,6 +75,11 @@ public class HallwayLaserSpawner : MonoBehaviour
         else if (waveNumber == 4)
         {
             Instantiate(laserWave4Prefab, transform.position, transform.rotation);
+            waveNumber++;
+        }
+        else if (waveNumber == 5)
+        {
+            Instantiate(laserWave5Prefab, transform.position, transform.rotation);
             waveNumber = 1;
         }
 
@@ -80,7 +87,7 @@ public class HallwayLaserSpawner : MonoBehaviour
     }
     private int GenerateNumber()
     {
-        return Random.Range(1, 5); // returns 1–4
+        return Random.Range(1, 6); // returns 1–5
     }
 
 }
