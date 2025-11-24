@@ -22,30 +22,33 @@ public class HallwayLaserSpawner : MonoBehaviour
     private float laserSpawnRate = 5;
     //public HallwayLaserWave Waves;
     private int waveNumber = 0;
-    //Start is called before the first frame update
-    void Start()
-    {
-        //("SpawnWave" is the name of the function, seconds to wait before starting, how often to call the function)
-        InvokeRepeating("SpawnWave", 0, laserSpawnRate);
-    }
 
-    // Update is called once per frame
-    void FixedUpdate()
+    private bool wavesStarted = false;
+
+    void Update()
     {
-       if(CheckIfPlayerHasPassedEntry())
+        //StartTheWaves() can be called exactly once
+        if (player.lasersVisible && wavesStarted == false)
         {
             StartTheWaves();
         }
+    }
+
+    //Start is called before the first frame update
+    void Start()
+    {
         
     }
+
+    // Update is called once per frame
+   
     private void StartTheWaves()
     {
-
-            //waveNumber = GenerateNumber();
-            waveNumber = 1;
-            ////("SpawnWave" is the name of the function, seconds to wait before starting, how often to call the function)
-            //InvokeRepeating("SpawnWave", 0, laserSpawnRate);
-
+        Debug.Log("Starting waves");
+        //waveNumber = GenerateNumber();
+        wavesStarted = true; //prevents the waves from spawning every update
+        //("SpawnWave" is the name of the function, seconds to wait before starting, how often to call the function)
+        InvokeRepeating("SpawnWave", 0, laserSpawnRate);
     }
 
     private bool CheckIfPlayerHasPassedEntry()
@@ -64,7 +67,12 @@ public class HallwayLaserSpawner : MonoBehaviour
     private void SpawnWave()
     {
         //waveNumber = GenerateNumber();
-        waveNumber = 1;
+        waveNumber++;
+        if (waveNumber > 5)
+        {
+            waveNumber = 1;
+        }
+
         if (waveNumber == 1)
         {
             Instantiate(laserWave1Prefab, transform.position, transform.rotation);

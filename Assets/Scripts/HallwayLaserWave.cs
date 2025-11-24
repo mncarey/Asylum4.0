@@ -28,7 +28,7 @@ public class HallwayLaserWave : MonoBehaviour
         //    RunWaves();
         //}
         transform.position += Vector3.forward * movementSpeed * Time.deltaTime;
-        Debug.Log("Moving Lasers");
+        //Debug.Log("Moving Lasers");
     }
 
     IEnumerator SelfDestruct()
