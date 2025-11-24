@@ -19,7 +19,7 @@ public class HallwayLaserSpawner : MonoBehaviour
     public float laserWaveSpawnRate;
 
     public PlayerController player;
-    private float laserSpawnRate = 5;
+    private float laserSpawnRate = 10;
     //public HallwayLaserWave Waves;
     private int waveNumber = 0;
 
@@ -48,7 +48,7 @@ public class HallwayLaserSpawner : MonoBehaviour
         //waveNumber = GenerateNumber();
         wavesStarted = true; //prevents the waves from spawning every update
         //("SpawnWave" is the name of the function, seconds to wait before starting, how often to call the function)
-        InvokeRepeating("SpawnWave", 0, laserSpawnRate);
+        InvokeRepeating(nameof(SpawnWave), 0, laserSpawnRate);
     }
 
     private bool CheckIfPlayerHasPassedEntry()
