@@ -30,14 +30,14 @@ public class HallwayLaserSpawner : MonoBehaviour
         //waveNumber = GenerateNumber();
         waveNumber = 1;
         //("SpawnWave" is the name of the function, seconds to wait before starting, how often to call the function)
-        InvokeRepeating("SpawnWave", 2, laserSpawnRate);
+        InvokeRepeating("SpawnWave", 0, laserSpawnRate);
         //}
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        CheckIfPlayerHasPassedEntry();
+        //CheckIfPlayerHasPassedEntry();
     }
 
     private bool CheckIfPlayerHasPassedEntry()

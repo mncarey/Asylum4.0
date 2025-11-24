@@ -16,9 +16,11 @@ public class LaserScript : MonoBehaviour
     private Transform startPoint;
     public GameObject Player;
     public float movementSpeed = 25;
+    public PlayerController playerReference;
 
     void Start()
     {
+        Player = GameObject.FindGameObjectWithTag("Player");
         lr = GetComponent<LineRenderer>();
         lr.enabled = true;
         GenerateMeshCollider();
