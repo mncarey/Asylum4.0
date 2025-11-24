@@ -20,6 +20,7 @@ public class HallwayLasers : MonoBehaviour
 
     void Start()
     {
+        Player = GameObject.FindGameObjectWithTag("Player");
         lr = GetComponent<LineRenderer>();
 
         lr.enabled = true;
