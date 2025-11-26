@@ -30,6 +30,7 @@ TagManager:
   - LaserWave4
   - LaserWave5
   - flippableObejct
+  - Bullet
   layers:
   - Default
   - TransparentFX
