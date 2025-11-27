@@ -14,13 +14,14 @@ public class LaserScript : MonoBehaviour
     public LineRenderer lr;
     [SerializeField]
     private Transform startPoint;
-    public GameObject Player;
+    private GameObject Player;
     public float movementSpeed = 25;
-    public PlayerController playerReference;
+    //public PlayerController playerReference;
+    public MeshCollider collider;
+    public bool isActive = true;
 
     void Start()
     {
-        
         Player = GameObject.FindGameObjectWithTag("Player");
         lr = GetComponent<LineRenderer>();
         lr.enabled = true;
@@ -29,28 +30,30 @@ public class LaserScript : MonoBehaviour
 
     void Update()
     {
-        lr.SetPosition(0, startPoint.position);
-        
-        RaycastHit hit;
-        if (Physics.Raycast(transform.position, -transform.right, out hit))
+        if (isActive)
         {
-            if (hit.collider)
-            {
-                lr.SetPosition(1, hit.point);
-            }
-            if (hit.transform.tag == "Player")
-            {
-                // Destroy(hit.transform.gameObject);
-                Player.GetComponent<PlayerController>().Respawn();
-            }
-        }
-        else lr.SetPosition(1, -transform.right * 5000);
+            lr.SetPosition(0, startPoint.position);
 
+            RaycastHit hit;
+            if (Physics.Raycast(transform.position, -transform.right, out hit))
+            {
+                if (hit.collider)
+                {
+                    lr.SetPosition(1, hit.point);
+                }
+                if (hit.transform.tag == "Player")
+                {
+                    // Destroy(hit.transform.gameObject);
+                    Player.GetComponent<PlayerController>().Respawn();
+                }
+            }
+            else lr.SetPosition(1, -transform.right * 5000);
+        }
     }
 
     public void GenerateMeshCollider()
     {
-        MeshCollider collider = GetComponent<MeshCollider>();
+        collider = GetComponent<MeshCollider>();
         if (collider == null)
         {
             collider = gameObject.AddComponent<MeshCollider>();

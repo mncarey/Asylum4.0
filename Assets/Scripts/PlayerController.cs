@@ -30,7 +30,8 @@ public class PlayerController : MonoBehaviour
 
     public int labKeys = 0;
     public GameObject FloatingTextPrefab;
-    public ButtonLaserSpawner laserScriptReference;
+    public ButtonLaserSpawner buttonLaserSpawnerRef;
+    public LaserScript laserScriptRef;
     public bool lasersVisible = false;
 
     private StringVariables stringVars;
@@ -100,8 +101,9 @@ public class PlayerController : MonoBehaviour
     {
         if (isOnButton && Input.GetKeyDown(KeyCode.E))
         {
-            laserScriptReference.killTheLasers =! laserScriptReference.killTheLasers;
-
+            Debug.Log("trying to turn lasers");
+            buttonLaserSpawnerRef.killTheLasers =! buttonLaserSpawnerRef.killTheLasers;
+            laserScriptRef.isActive =! laserScriptRef.isActive;
         }
     }
 

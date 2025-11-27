@@ -6,7 +6,8 @@ public class ButtonLaserSpawner : MonoBehaviour
 {
     public bool killTheLasers;
     public PlayerController player;
-    public LaserScript laser1;
+    /*
+    public LaserScript laser1;  <-- replacing variables with a list
     public LaserScript laser2;
     public LaserScript laser3;
     public LaserScript laser4;
@@ -26,12 +27,17 @@ public class ButtonLaserSpawner : MonoBehaviour
     public LaserScript laser18;
     public LaserScript laser19;
     public LaserScript laser20;
-    public LaserScript laserScriptReference;
+    */
+
+    public List<LaserScript> lasers = new List<LaserScript>(); //<--list declaration
+
 
     // Start is called before the first frame update
     void Start()
     {
         killTheLasers = false;
+
+        /*
         laser1.lr.enabled = false;
         laser2.lr.enabled = false;
         laser3.lr.enabled = false;
@@ -45,6 +51,9 @@ public class ButtonLaserSpawner : MonoBehaviour
         laser11.lr.enabled = false;
         laser12.lr.enabled = false;
         laser13.lr.enabled = false;
+
+        */
+
         //laser14.lr.enabled = false;
         //laser15.lr.enabled = false;
         //laser16.lr.enabled = false;
@@ -52,10 +61,21 @@ public class ButtonLaserSpawner : MonoBehaviour
         //laser18.lr.enabled = false;
         //laser19.lr.enabled = false;
         //laser20.lr.enabled = false;
+
+
+        foreach (LaserScript laser in lasers)  //<--handles every variable of type LaserScript in the List "lasers"
+        {
+            laser.lr.enabled = false;
+            if (laser.collider != null)
+            {
+                laser.collider.enabled = false;
+            }
+        }
     }
 
     public void ActivateLasers()
     {
+        /*
         laser1.lr.enabled = true;
         laser2.lr.enabled = true;
         laser3.lr.enabled = true;
@@ -69,6 +89,7 @@ public class ButtonLaserSpawner : MonoBehaviour
         laser11.lr.enabled = true;
         laser12.lr.enabled = true;
         laser13.lr.enabled = true;
+        */
         //laser14.lr.enabled = true;
         //laser15.lr.enabled = true;
         //laser16.lr.enabled = true;
@@ -77,12 +98,23 @@ public class ButtonLaserSpawner : MonoBehaviour
         //laser19.lr.enabled = true;
         //laser20.lr.enabled = true;
 
+        foreach(LaserScript laser in lasers)
+        {
+            laser.lr.enabled = true;
+            if (laser.collider != null)
+            {
+                laser.collider.enabled = true;
+            }
+        }
+
     }
+
     // Update is called once per frame
     void Update()
     {
         if (killTheLasers == true)
         {
+            /*
             laser1.lr.enabled = false;
             laser2.lr.enabled = false;
             laser3.lr.enabled = false;
@@ -96,6 +128,7 @@ public class ButtonLaserSpawner : MonoBehaviour
             laser11.lr.enabled = false;
             laser12.lr.enabled = false;
             laser13.lr.enabled = false;
+            */
             //laser14.lr.enabled = false;
             //laser15.lr.enabled = false;
             //laser16.lr.enabled = false;
@@ -103,6 +136,15 @@ public class ButtonLaserSpawner : MonoBehaviour
             //laser18.lr.enabled = false;
             //laser19.lr.enabled = false;
             //laser20.lr.enabled = false;
+
+            foreach (LaserScript laser in lasers)
+            {
+                laser.lr.enabled = false;
+                if (laser.collider != null)
+                {
+                    laser.collider.enabled = false;
+                }
+            }
         }
         else
         {
