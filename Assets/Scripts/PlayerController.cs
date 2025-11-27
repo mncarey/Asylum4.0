@@ -429,6 +429,11 @@ public class PlayerController : MonoBehaviour
             LoseALife();
             Respawn();
         }
+        if (other.gameObject.tag == "Bullet")
+        {
+            LoseALife();
+            Respawn();
+        }
 
     }
 
