@@ -19,7 +19,6 @@ public class PlayerController : MonoBehaviour
     public int moveSpeed;
 
     private bool isOnButton;
-    public int coinCount;
     public int lives;
     public Object spawnPoint;
     private Vector3 startPos;
@@ -30,8 +29,7 @@ public class PlayerController : MonoBehaviour
 
     public int labKeys = 0;
     public GameObject FloatingTextPrefab;
-    public ButtonLaserSpawner buttonLaserSpawnerRef;
-    public LaserScript laserScriptRef;
+    private ButtonLaserSpawner buttonLaserSpawnerRef;
     public bool lasersVisible = false;
 
     private StringVariables stringVars;
@@ -74,9 +72,15 @@ public class PlayerController : MonoBehaviour
 
        GravityFlip();
        laserTrigger();
-        flipObject();
+       flipObject();
 
         
+    }
+
+    public void SetCurrentLaserSpawner(ButtonLaserSpawner newSpawner)
+    {
+        buttonLaserSpawnerRef = newSpawner;
+        Debug.Log("Player now controls laser spawner: " + newSpawner.name);
     }
 
     public void FixedUpdate()//called in fixed intervals at the same rate as the physics system - 50 rates per frame
@@ -101,9 +105,16 @@ public class PlayerController : MonoBehaviour
     {
         if (isOnButton && Input.GetKeyDown(KeyCode.E))
         {
+            
             Debug.Log("trying to turn lasers");
             buttonLaserSpawnerRef.killTheLasers =! buttonLaserSpawnerRef.killTheLasers;
-            laserScriptRef.isActive =! laserScriptRef.isActive;
+            //laserScriptRef.isActive =! laserScriptRef.isActive;
+           
+
+            foreach (var laser in buttonLaserSpawnerRef.lasers)
+            {
+                laser.isActive = !laser.isActive;
+            }
         }
     }
 
@@ -436,6 +447,7 @@ public class PlayerController : MonoBehaviour
             LoseALife();
             Respawn();
         }
+
 
     }
 
