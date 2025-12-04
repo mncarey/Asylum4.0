@@ -19,7 +19,7 @@ public class HallwayLaserSpawner : MonoBehaviour
     public float laserWaveSpawnRate;
 
     public PlayerController player;
-    private float laserSpawnRate = 10;
+    private float laserSpawnRate = 5;
     //public HallwayLaserWave Waves;
     private int waveNumber = 0;
 
@@ -66,8 +66,11 @@ public class HallwayLaserSpawner : MonoBehaviour
 
     private void SpawnWave()
     {
+        Debug.Log("In SpawnWave()");
         //waveNumber = GenerateNumber();
         waveNumber++;
+        Debug.Log("Wave: " + waveNumber);       
+        //waveNumber = 1;
         if (waveNumber > 5)
         {
             waveNumber = 1;
@@ -75,16 +78,19 @@ public class HallwayLaserSpawner : MonoBehaviour
 
         if (waveNumber == 1)
         {
+            Debug.Log("Starting wave 1");
             Instantiate(laserWave1Prefab, transform.position, transform.rotation);
             waveNumber++;
         }
         else if (waveNumber == 2)
         {
+            Debug.Log("Starting wave 2");
             Instantiate(laserWave2Prefab, transform.position, transform.rotation);
             waveNumber++;
         }
         else if (waveNumber == 3)
         {
+            Debug.Log("Starting wave 3");
             Instantiate(laserWave3Prefab, transform.position, transform.rotation);
             waveNumber++;
         }

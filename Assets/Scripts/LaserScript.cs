@@ -5,7 +5,7 @@ using UnityEngine;
 /*
  * Author: [Carey, Madison] [Barajas, Daniela] 
  * Date Created: [11/13/2025]
- * Last Updated: [11/21/2025]
+ * Last Updated: [12/04/2025]
  * [This will handle movement and collision for the Lasers.]
  */
 
@@ -60,7 +60,7 @@ public class LaserScript : MonoBehaviour
         {
             collider = gameObject.AddComponent<MeshCollider>();
         }
-        Debug.Log("Generated Mesh Collider");
+        //Debug.Log("Generated Mesh Collider");
         Mesh mesh = new Mesh();
         lr.BakeMesh(mesh, true);
         collider.sharedMesh = mesh;
