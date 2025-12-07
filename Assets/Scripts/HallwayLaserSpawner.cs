@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /*
- * Author: [Barajas, Daniela]
+ * Author: [Barajas, Daniela] [Carey, Madison]
  * Date Created: [11/12/2025]
- * Last Updated: [11/16/2025]
+ * Last Updated: [12/06/2025]
  * [This will handle movement for laser obstacle in the hallway between rooms 3 and 4]
  */
 
@@ -23,11 +23,16 @@ public class HallwayLaserSpawner : MonoBehaviour
     //public HallwayLaserWave Waves;
     private int waveNumber = 0;
 
-    private bool wavesStarted = false;
+    private bool wavesStarted;
 
+    // Update is called once per frame
     void Update()
     {
         //StartTheWaves() can be called exactly once
+        if (!CheckIfPlayerHasPassedEntry())
+        {
+            return;
+        }
         if (player.lasersVisible && wavesStarted == false)
         {
             StartTheWaves();
@@ -40,8 +45,6 @@ public class HallwayLaserSpawner : MonoBehaviour
         
     }
 
-    // Update is called once per frame
-   
     private void StartTheWaves()
     {
         Debug.Log("Starting waves");
