@@ -19,7 +19,8 @@ public class FlippableObject : MonoBehaviour
         new Vector3(0.5f, 0, -0.5f),
         new Vector3(-0.5f, 0, 0.5f),
         new Vector3(-0.5f, 0, -0.5f),
-        Vector3.zero //<- center ray
+
+        Vector3.zero //<- center rays
     };
 
     public float rayLength = 0.5f;
@@ -55,6 +56,8 @@ public class FlippableObject : MonoBehaviour
         Debug.Log("Noot on ceiling.");
         return false;
     }
+
+ 
 
     IEnumerator Start()
     {
