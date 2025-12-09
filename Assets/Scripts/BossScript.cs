@@ -35,6 +35,7 @@ public class BossSprint : MonoBehaviour
 
     private void Update()
     {
+        
         time = time + speed * Time.deltaTime;
 
         if (isAtPointA)
@@ -45,13 +46,14 @@ public class BossSprint : MonoBehaviour
             {
                 pointA = pointB;//old point becomes new point
 
-                pointB = pointA; //+ GetRandomPoint();
+                pointB = pointA + GetRandomPoint();
 
                 time = 0f;
 
                 isAtPointA = true;//trying to go torward new B
             }
         }
+        
 
     }
 
