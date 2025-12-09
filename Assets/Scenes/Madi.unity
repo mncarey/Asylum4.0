@@ -53640,9 +53640,25 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 936409046658049043, guid: ce40d1c48c5ec0449bc16a220dcb2ea0, type: 3}
+      propertyPath: rayLength
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 936409046658049043, guid: ce40d1c48c5ec0449bc16a220dcb2ea0, type: 3}
       propertyPath: playerReference
       value: 
       objectReference: {fileID: 1648615349}
+    - target: {fileID: 2996727331205846049, guid: ce40d1c48c5ec0449bc16a220dcb2ea0, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 6.9139915
+      objectReference: {fileID: 0}
+    - target: {fileID: 2996727331205846049, guid: ce40d1c48c5ec0449bc16a220dcb2ea0, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 6.913992
+      objectReference: {fileID: 0}
+    - target: {fileID: 2996727331205846049, guid: ce40d1c48c5ec0449bc16a220dcb2ea0, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 6.9139915
+      objectReference: {fileID: 0}
     - target: {fileID: 6245609121447827324, guid: ce40d1c48c5ec0449bc16a220dcb2ea0, type: 3}
       propertyPath: m_Name
       value: Flippable Cube
