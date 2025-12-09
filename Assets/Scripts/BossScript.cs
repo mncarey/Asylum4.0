@@ -14,13 +14,15 @@ public class BossSprint : MonoBehaviour
     private float time = 0f;
     private bool isAtPointA = true;
 
+    public int lives = 3;
+
     void Start()
     {
         Vector3 start = transform.position;
 
         pointA = start + new Vector3(
             Random.Range(-10f, 10f),
-            Random.Range(-2f, 2f),
+            0,
             Random.Range(-5f, 5f)
         );
 
@@ -57,8 +59,25 @@ public class BossSprint : MonoBehaviour
     {
         return new Vector3(
             Random.Range(-10f, 10f),
-            Random.Range(-2f, 2f),
+            0,
             Random.Range(-5f, 5f));
     }
-    
+
+    private void takeDamage()
+    {
+        lives--;
+        if (lives <= 0)
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "flippableObejct")
+        {
+            takeDamage();
+        }
+    }
+
 }
