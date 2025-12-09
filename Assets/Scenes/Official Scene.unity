@@ -2344,6 +2344,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   firePrefab: {fileID: 478363259452365076, guid: 276952c0e0d45e043a3c580d8634b971, type: 3}
+  player: {fileID: 1063543152}
 --- !u!65 &217180341
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2787,7 +2788,7 @@ Transform:
   m_GameObject: {fileID: 222203300}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4, y: 8, z: 12}
+  m_LocalPosition: {x: -4, y: 8, z: 70.7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -5140,8 +5141,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 442678831}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.016500385, y: -0.001280005, z: 0.000021123464, w: 0.9998631}
-  m_LocalPosition: {x: -4, y: 8, z: 12}
+  m_LocalRotation: {x: 0.016500363, y: -0.0012799992, z: 0.000021123338, w: 0.9998631}
+  m_LocalPosition: {x: -4, y: 8, z: 70.7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -13366,7 +13367,7 @@ Transform:
   m_GameObject: {fileID: 1063543150}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.13036387, z: -0, w: -0.9914662}
-  m_LocalPosition: {x: -4, y: 7, z: 15}
+  m_LocalPosition: {x: -4, y: 7, z: 73.7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -13396,10 +13397,12 @@ MonoBehaviour:
   labKeys: 0
   FloatingTextPrefab: {fileID: 2228326724249031274, guid: aa74ecd3ffc84524f86f63bd37de18ae, type: 3}
   lasersVisible: 0
+  fireVisible: 0
   movementSpeed: 25
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
+  currentTarget: {fileID: 0}
 --- !u!54 &1063543153
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -14587,7 +14590,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1131369458}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.042793725, y: -0.0012790221, z: -0.000054784345, w: 0.99908316}
+  m_LocalRotation: {x: -0.042793747, y: -0.0012789856, z: -0.000054782802, w: 0.99908316}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -16089,6 +16092,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   firePrefab: {fileID: 478363259452365076, guid: 276952c0e0d45e043a3c580d8634b971, type: 3}
+  player: {fileID: 1063543152}
 --- !u!65 &1263804373
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -21099,7 +21103,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1717075810}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.01650038, y: -0.0012800038, z: 0.00002112344, w: 0.9998631}
+  m_LocalRotation: {x: 0.01650036, y: -0.0012800008, z: 0.000021123362, w: 0.9998631}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -21802,7 +21806,7 @@ MonoBehaviour:
   laserWave4Prefab: {fileID: 7707151260023528866, guid: 26a1cde84511cda43a14e104f9a61273, type: 3}
   laserWave5Prefab: {fileID: 2907506100815743111, guid: 997aac29309994943ae28897154b0a13, type: 3}
   laserWaveSpawnRate: 0
-  player: {fileID: 0}
+  player: {fileID: 1063543152}
 --- !u!65 &1808225645
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -25846,7 +25850,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2106613702}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.10032224, y: -0.0012737184, z: -0.0001284303, w: 0.9949542}
+  m_LocalRotation: {x: -0.10032227, y: -0.0012737095, z: -0.00012842946, w: 0.9949542}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -26382,11 +26386,11 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 1123287078}
+  - {fileID: 222203303}
+  - {fileID: 1063543151}
   - {fileID: 1514140948}
   - {fileID: 1657924253}
   - {fileID: 870753898}
   - {fileID: 1840261156}
   - {fileID: 127110652}
-  - {fileID: 1063543151}
   - {fileID: 442678836}
-  - {fileID: 222203303}
