@@ -35864,6 +35864,7 @@ GameObject:
   - component: {fileID: 1469256606}
   - component: {fileID: 1469256605}
   - component: {fileID: 1469256604}
+  - component: {fileID: 1469256609}
   m_Layer: 0
   m_Name: boss
   m_TagString: Untagged
@@ -35883,8 +35884,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cbdd452367d469e41b0be71d56201e1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minRange: {x: -5, y: 0, z: -5}
-  maxRange: {x: 5, y: 0, z: 5}
   speed: 0.5
 --- !u!135 &1469256605
 SphereCollider:
@@ -35972,6 +35971,33 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &1469256609
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1469256603}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 4
+  m_CollisionDetection: 0
 --- !u!1 &1470925483
 GameObject:
   m_ObjectHideFlags: 0
