@@ -44,26 +44,21 @@ public class FlippableObject : MonoBehaviour
         new Vector3(0.5f, 0, -0.5f),
         new Vector3(-0.5f, 0, 0.5f),
         new Vector3(-0.5f, 0, -0.5f),
-
-        Vector3.zero //<- center rays
+        new Vector3(0.5f, 0, 0),
+        new Vector3(-0.5f, 0, 0),
+        new Vector3(0, 0, 0.5f),
+        new Vector3(0, 0, -0.5f),
+        Vector3.zero
     };
 
     public float rayLength = 0.5f;
 
     public bool IsGrounded()
     {
-        foreach (Vector3 offset in rayCasts)
-        {
-            Vector3 origin = transform.position + offset;
+        Vector3 bottom = transform.position + Vector3.down * 0.5f;
+        Vector3 top = transform.position + Vector3.up * 0.5f;
 
-            if (Physics.Raycast(origin, Vector3.down, rayLength, groundLayer))//if the raycast hits
-            {
-                return true;
-            }
-            
-        }
-        Debug.Log("Noot gorunded.");
-        return false;
+        return Physics.CheckCapsule(top, bottom, 0.4f, groundLayer);
     }
 
     public bool IsOnCeiling()
@@ -98,7 +93,7 @@ public class FlippableObject : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        //TryGravityFlip();
     }
 
     void FixedUpdate()
