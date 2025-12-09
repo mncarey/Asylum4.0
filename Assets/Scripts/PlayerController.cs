@@ -31,6 +31,7 @@ public class PlayerController : MonoBehaviour
     public GameObject FloatingTextPrefab;
     private ButtonLaserSpawner buttonLaserSpawnerRef;
     public bool lasersVisible = false;
+    public bool fireVisible = false;
 
     private StringVariables stringVars;
     public int movementSpeed = 25;
@@ -370,6 +371,17 @@ public class PlayerController : MonoBehaviour
         {
             lasersVisible = true;
             Debug.Log("turning on lasers");
+        }
+        if (other.gameObject.tag == "TurnOnFire")
+        {
+            fireVisible = true;
+            Debug.Log("turning off fire");
+        }
+
+        if (other.gameObject.tag == "TurnOffFire")
+        {
+            fireVisible = false;
+            Debug.Log("turning on fire");
         }
 
         if (other.gameObject.tag == "Button")

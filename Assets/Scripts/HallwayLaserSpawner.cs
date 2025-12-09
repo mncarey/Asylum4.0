@@ -29,20 +29,24 @@ public class HallwayLaserSpawner : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        //CheckIfPlayerHasPassedEntry();
-        laserBool = CheckIfPlayerHasPassedEntry();
-        Debug.Log("Bool is: " + laserBool);
-        //StartTheWaves() can be called exactly once
-        if(!laserBool)
+        if (!PauseMenu.isPaused)
         {
-            StopTheWaves();
-            return;
+            //CheckIfPlayerHasPassedEntry();
+            laserBool = CheckIfPlayerHasPassedEntry();
+            //Debug.Log("Bool is: " + laserBool);
+            //StartTheWaves() can be called exactly once
+            if (!laserBool)
+            {
+                StopTheWaves();
+                return;
+            }
+            if (laserBool && wavesStarted == false)
+            {
+                StartTheWaves();
+                return;
+            }
         }
-        if (laserBool && wavesStarted == false)
-        {
-            StartTheWaves();
-            return;
-        }
+
     }
 
     //Start is called before the first frame update

@@ -31,6 +31,8 @@ TagManager:
   - LaserWave5
   - flippableObejct
   - Bullet
+  - TurnOnFire
+  - TurnOffFire
   layers:
   - Default
   - TransparentFX
