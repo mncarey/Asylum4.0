@@ -44,8 +44,11 @@ public class FlippableObject : MonoBehaviour
         new Vector3(0.5f, 0, -0.5f),
         new Vector3(-0.5f, 0, 0.5f),
         new Vector3(-0.5f, 0, -0.5f),
-
-        Vector3.zero //<- center rays
+        new Vector3(0.5f, 0, 0),
+        new Vector3(-0.5f, 0, 0),
+        new Vector3(0, 0, 0.5f),
+        new Vector3(0, 0, -0.5f),
+        Vector3.zero
     };
 
     public float rayLength = 0.5f;
@@ -98,7 +101,7 @@ public class FlippableObject : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        //TryGravityFlip();
     }
 
     void FixedUpdate()
