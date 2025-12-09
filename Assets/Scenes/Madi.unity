@@ -15717,6 +15717,7 @@ MonoBehaviour:
     m_Bits: 64
   isGravityFlipped: 0
   playerReference: {fileID: 1648615349}
+  parentObject: {fileID: 0}
   rayCasts:
   - {x: -0.5, y: 1, z: -2}
   - {x: 0.5, y: 0, z: -0.5}
@@ -29087,6 +29088,7 @@ MonoBehaviour:
     m_Bits: 64
   isGravityFlipped: 0
   playerReference: {fileID: 1648615349}
+  parentObject: {fileID: 0}
   rayCasts:
   - {x: -0.3, y: 1, z: -2.5}
   - {x: 0.7, y: 0, z: -0.5}
@@ -41271,6 +41273,7 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
+  currentTarget: {fileID: 0}
 --- !u!54 &1648615350
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -51077,6 +51080,10 @@ PrefabInstance:
       value: Flippable Table (1)
       objectReference: {fileID: 0}
     - target: {fileID: 2240160110002593259, guid: 99ba66793ae6b2342b89c6b59857ab72, type: 3}
+      propertyPath: rayLength
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2240160110002593259, guid: 99ba66793ae6b2342b89c6b59857ab72, type: 3}
       propertyPath: playerReference
       value: 
       objectReference: {fileID: 1648615349}
@@ -53695,7 +53702,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 547071227374836454, guid: 99ba66793ae6b2342b89c6b59857ab72, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -8.16
+      value: -0.83
       objectReference: {fileID: 0}
     - target: {fileID: 547071227374836454, guid: 99ba66793ae6b2342b89c6b59857ab72, type: 3}
       propertyPath: m_LocalPosition.y
@@ -53703,7 +53710,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 547071227374836454, guid: 99ba66793ae6b2342b89c6b59857ab72, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -68.10901
+      value: -66.99
       objectReference: {fileID: 0}
     - target: {fileID: 547071227374836454, guid: 99ba66793ae6b2342b89c6b59857ab72, type: 3}
       propertyPath: m_LocalRotation.w
@@ -53736,6 +53743,30 @@ PrefabInstance:
     - target: {fileID: 926693471294832732, guid: 99ba66793ae6b2342b89c6b59857ab72, type: 3}
       propertyPath: m_Name
       value: Flippable Table
+      objectReference: {fileID: 0}
+    - target: {fileID: 2205519657397700013, guid: 99ba66793ae6b2342b89c6b59857ab72, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 20.007153
+      objectReference: {fileID: 0}
+    - target: {fileID: 2205519657397700013, guid: 99ba66793ae6b2342b89c6b59857ab72, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 23.26116
+      objectReference: {fileID: 0}
+    - target: {fileID: 2205519657397700013, guid: 99ba66793ae6b2342b89c6b59857ab72, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 20.007153
+      objectReference: {fileID: 0}
+    - target: {fileID: 2205519657397700013, guid: 99ba66793ae6b2342b89c6b59857ab72, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2205519657397700013, guid: 99ba66793ae6b2342b89c6b59857ab72, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2240160110002593259, guid: 99ba66793ae6b2342b89c6b59857ab72, type: 3}
+      propertyPath: rayLength
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 2240160110002593259, guid: 99ba66793ae6b2342b89c6b59857ab72, type: 3}
       propertyPath: playerReference

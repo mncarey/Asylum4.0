@@ -36,7 +36,9 @@ public class PlayerController : MonoBehaviour
     public int movementSpeed = 25;
 
     public LayerMask groundLayer;
-    bool isNearObject = false;
+    //bool isNearObject = false;
+
+    public FlippableObject currentTarget;
 
     // Start is called before the first frame update
     void Start()
@@ -70,9 +72,14 @@ public class PlayerController : MonoBehaviour
 
         }
 
+        if (Input.GetKeyDown(KeyCode.E) && currentTarget != null)
+        {
+            currentTarget.TryGravityFlip();
+        }
+
        GravityFlip();
        laserTrigger();
-       flipObject();
+       //flipObject();
 
         
     }
@@ -96,11 +103,13 @@ public class PlayerController : MonoBehaviour
         rigidBody.velocity = v;
     }
 
+    /*
     public bool flipObject()
     {
         return isNearObject && Input.GetKeyDown(KeyCode.E);
     }
-
+    */
+    
     public void laserTrigger()
     {
         if (isOnButton && Input.GetKeyDown(KeyCode.E))
@@ -389,7 +398,11 @@ public class PlayerController : MonoBehaviour
             //show floating text
             FloatingText.ShowFloatingText(FloatingTextPrefab, other.transform.position, message);
 
-            isNearObject = true;
+            FlippableObject obj = other.GetComponentInParent<FlippableObject>();
+            if(obj != null)
+            {
+                currentTarget = obj;
+            }
 
         }
 
@@ -464,7 +477,11 @@ public class PlayerController : MonoBehaviour
         }
         if (other.CompareTag("flippableObejct"))
         {
-            isNearObject = false;
+           // isNearObject = false;
+        }
+        if(other.GetComponentInParent<FlippableObject>() != null)
+        {
+            currentTarget = null;
         }
     }
 

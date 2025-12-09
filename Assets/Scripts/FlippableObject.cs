@@ -98,10 +98,7 @@ public class FlippableObject : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(playerReference.flipObject() == true)
-        {
-            TryGravityFlip();
-        }
+        
     }
 
     void FixedUpdate()
@@ -135,7 +132,7 @@ public class FlippableObject : MonoBehaviour
         }
     }
 
-    private void TryGravityFlip()
+    public void TryGravityFlip()
     {
         //checking object position
        // bool isOnGround = Physics.CheckSphere(transform.position + Vector3.down * 0.3f, 0.5f, groundLayer);
@@ -143,9 +140,9 @@ public class FlippableObject : MonoBehaviour
        
             if (IsGrounded() == true || IsOnCeiling() == true)
             {
-            Debug.Log("Object is grounded");
-                if (Input.GetKeyDown(KeyCode.E))
-                {
+                Debug.Log("Object is grounded");
+                
+                
                     Debug.Log("Trying to anti gravity.");
                     // detach impulse
                     rb.velocity = Vector3.zero;
@@ -158,7 +155,7 @@ public class FlippableObject : MonoBehaviour
 
                     // finally flip gravity
                     isGravityFlipped = !isGravityFlipped;
-                }
+                
            
             }
             else Debug.Log("Not touching ground or ceiling.");
