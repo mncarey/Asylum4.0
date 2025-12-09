@@ -70,7 +70,7 @@ public class HallwayLaserSpawner : MonoBehaviour
         {
             return true;
         }
-        Debug.Log("After True IF");
+        
         return false;
     }
 
