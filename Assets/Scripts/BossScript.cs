@@ -45,7 +45,7 @@ public class BossSprint : MonoBehaviour
             {
                 pointA = pointB;//old point becomes new point
 
-                pointB = pointA; //+ GetRandomPoint();
+                pointB = pointA + GetRandomPoint();
 
                 time = 0f;
 
