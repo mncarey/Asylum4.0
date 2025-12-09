@@ -17,6 +17,7 @@ public class HallwayLaserSpawner : MonoBehaviour
     public GameObject laserWave4Prefab;
     public GameObject laserWave5Prefab;
     public float laserWaveSpawnRate;
+    private bool laserBool;
 
     public PlayerController player;
     private float laserSpawnRate = 5;
@@ -26,16 +27,21 @@ public class HallwayLaserSpawner : MonoBehaviour
     private bool wavesStarted;
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
+        //CheckIfPlayerHasPassedEntry();
+        laserBool = CheckIfPlayerHasPassedEntry();
+        Debug.Log("Bool is: " + laserBool);
         //StartTheWaves() can be called exactly once
-        if (!CheckIfPlayerHasPassedEntry())
+        if(!laserBool)
         {
+            StopTheWaves();
             return;
         }
-        if (player.lasersVisible && wavesStarted == false)
+        if (laserBool && wavesStarted == false)
         {
             StartTheWaves();
+            return;
         }
     }
 
@@ -60,10 +66,13 @@ public class HallwayLaserSpawner : MonoBehaviour
         {
             return true;
         }
-        else
-        {
-            return false;
-        }
+        Debug.Log("After True IF");
+        return false;
+    }
+
+    private void StopTheWaves()
+    {
+        CancelInvoke();
     }
 
 

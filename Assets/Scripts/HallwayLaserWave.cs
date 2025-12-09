@@ -10,7 +10,7 @@ using UnityEngine;
  */
 public class HallwayLaserWave : MonoBehaviour
 {
-    private float movementSpeed = 5f;
+    private float movementSpeed = 6f;
     //public Vector3 startpoint; 
     private int waveNumber;
     // Start is called before the first frame update
