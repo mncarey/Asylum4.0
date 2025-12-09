@@ -35,6 +35,7 @@ public class BossSprint : MonoBehaviour
 
     private void Update()
     {
+        
         time = time + speed * Time.deltaTime;
 
         if (isAtPointA)
@@ -52,6 +53,7 @@ public class BossSprint : MonoBehaviour
                 isAtPointA = true;//trying to go torward new B
             }
         }
+        
 
     }
 
