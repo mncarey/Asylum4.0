@@ -305,10 +305,10 @@ public class PlayerController : MonoBehaviour
             float currentSpeed = moveSpeed;
 
             // Check for sprint input (hold Left Shift)
-            if (Input.GetKey(KeyCode.LeftShift))
-            {
-                currentSpeed *= 1.8f; // Sprint multiplier (you can tweak this)
-            }
+            //if (Input.GetKey(KeyCode.LeftShift))
+            //{
+            //    currentSpeed *= 1.8f; // Sprint multiplier (you can tweak this)
+            //}
 
             //Rotate player to face movement direction
             Quaternion targetRotation = Quaternion.LookRotation(moveDirection);
