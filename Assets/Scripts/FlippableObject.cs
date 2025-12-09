@@ -12,6 +12,31 @@ public class FlippableObject : MonoBehaviour
     private float gravityStrength = 9.81f;
     private bool ready = false;
 
+    public FlippableObject parentObject;
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            PlayerController pc = other.GetComponent<PlayerController>();//getting a reference to playerController
+            if(pc != null)
+            {
+                pc.currentTarget = parentObject;
+            }
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            PlayerController pc = other.GetComponent<PlayerController>();
+            if(pc != null && pc.currentTarget == parentObject)
+            {
+                pc.currentTarget = null;
+            }
+        }
+    }
     //raycasts
     public Vector3[] rayCasts = new Vector3[]
     {
@@ -57,7 +82,6 @@ public class FlippableObject : MonoBehaviour
         return false;
     }
 
- 
 
     IEnumerator Start()
     {
