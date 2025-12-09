@@ -55,18 +55,10 @@ public class FlippableObject : MonoBehaviour
 
     public bool IsGrounded()
     {
-        foreach (Vector3 offset in rayCasts)
-        {
-            Vector3 origin = transform.position + offset;
+        Vector3 bottom = transform.position + Vector3.down * 0.5f;
+        Vector3 top = transform.position + Vector3.up * 0.5f;
 
-            if (Physics.Raycast(origin, Vector3.down, rayLength, groundLayer))//if the raycast hits
-            {
-                return true;
-            }
-            
-        }
-        Debug.Log("Noot gorunded.");
-        return false;
+        return Physics.CheckCapsule(top, bottom, 0.4f, groundLayer);
     }
 
     public bool IsOnCeiling()
