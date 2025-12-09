@@ -4234,10 +4234,10 @@ MonoBehaviour:
   isGravityFlipped: 0
   playerReference: {fileID: 272175962}
   rayCasts:
-  - {x: 0.7, y: -0.2, z: 0.7}
+  - {x: 0.4, y: -0.2, z: 1.5}
   - {x: 0.7, y: 0, z: -0.5}
   - {x: -0.7, y: 0, z: 0.5}
-  - {x: -0.7, y: 0, z: -0.5}
+  - {x: -0.7, y: 0, z: -1}
   - {x: 0, y: 0, z: 0}
   rayLength: 1
 --- !u!54 &168515435
@@ -19264,7 +19264,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 717145444}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.016495397, y: -0.0003801695, z: 0.0000062719005, w: 0.9998639}
+  m_LocalRotation: {x: 0.016495397, y: -0.00038017167, z: 0.0000062719355, w: 0.9998639}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -33331,7 +33331,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1288554473}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.0164954, y: -0.00038016957, z: 0.000006271902, w: 0.9998639}
+  m_LocalRotation: {x: 0.0164954, y: -0.00038017172, z: 0.0000062719373, w: 0.9998639}
   m_LocalPosition: {x: 201, y: 2.6, z: -79}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -45835,7 +45835,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1816720426}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.04279875, y: -0.00037987187, z: -0.00001627295, w: 0.9990837}
+  m_LocalRotation: {x: -0.04279875, y: -0.00037987618, z: -0.000016273136, w: 0.9990837}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
