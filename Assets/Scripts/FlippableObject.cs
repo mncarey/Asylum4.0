@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class FlippableObject : MonoBehaviour
@@ -9,10 +10,19 @@ public class FlippableObject : MonoBehaviour
     public PlayerController playerReference;
     private Rigidbody rb;
     private Vector3 originalGravity;
-    private float gravityStrength = 9.81f;
+    
     private bool ready = false;
 
     public FlippableObject parentObject;
+
+    //sphere raycast variables
+    public float sphereRadius = 0.5f;
+    public float maxDistance = 10f;
+
+    public float rayLength = 0.5f;
+
+    private bool isBossGrounded = false;
+    private bool isBossOnCeiling = false;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -51,10 +61,19 @@ public class FlippableObject : MonoBehaviour
         Vector3.zero
     };
 
-    public float rayLength = 0.5f;
 
     public bool IsGrounded()
     {
+       
+
+        if (parentObject.CompareTag("Boss"))
+        {
+            if (isBossGrounded == true)
+            {
+                return true;
+            }
+        }
+
         Vector3 bottom = transform.position + Vector3.down * 0.5f;
         Vector3 top = transform.position + Vector3.up * 0.5f;
 
@@ -63,6 +82,15 @@ public class FlippableObject : MonoBehaviour
 
     public bool IsOnCeiling()
     {
+
+        if (parentObject.CompareTag("Boss"))
+        {
+            if (isBossOnCeiling == true)
+            {
+                return true;
+            }
+        }
+
         foreach (Vector3 offset in rayCasts)
         {
             Vector3 origin = transform.position + offset;
@@ -109,6 +137,38 @@ public class FlippableObject : MonoBehaviour
         v.x = 0;
         v.z = 0;
         rb.velocity = v;
+
+        if (parentObject.CompareTag("Boss"))
+        {
+            //define the origin and direction of the sphere cast
+            Vector3 origin = transform.position;
+            Vector3 direction = transform.up;
+
+            RaycastHit hit;
+
+            if (Physics.SphereCast(origin, sphereRadius, -direction, out hit, maxDistance, groundLayer))
+            {
+                Debug.Log("Spherecast hit");
+
+                Debug.DrawLine(origin, hit.point, Color.red);//see raycast in scene view
+
+                isBossGrounded = true;
+            }
+            else
+            {
+                Debug.DrawLine(origin, origin + direction * maxDistance, Color.green);// if no hit
+                isBossGrounded = false;
+            }
+
+            if (Physics.SphereCast(origin, sphereRadius, direction, out hit, maxDistance, groundLayer))
+            {
+                Debug.Log("Spherecast hit");
+
+                Debug.DrawLine(origin, hit.point, Color.red);//see raycast in scene view
+
+                isBossOnCeiling = true;
+            }
+        }
     }
 
     private void OnDrawGizmosSelected()

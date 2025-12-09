@@ -33,6 +33,7 @@ TagManager:
   - Bullet
   - TurnOnFire
   - TurnOffFire
+  - Boss
   layers:
   - Default
   - TransparentFX
