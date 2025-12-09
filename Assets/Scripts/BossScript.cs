@@ -45,7 +45,7 @@ public class BossSprint : MonoBehaviour
             {
                 pointA = pointB;//old point becomes new point
 
-                pointB = pointA + GetRandomPoint();
+                pointB = pointA; //+ GetRandomPoint();
 
                 time = 0f;
 
@@ -68,6 +68,7 @@ public class BossSprint : MonoBehaviour
         lives--;
         if (lives <= 0)
         {
+            Debug.Log("enemy damage");
             Destroy(gameObject);
         }
     }
