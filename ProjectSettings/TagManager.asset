@@ -34,6 +34,7 @@ TagManager:
   - TurnOnFire
   - TurnOffFire
   - Boss
+  - HealthSyringe
   layers:
   - Default
   - TransparentFX
