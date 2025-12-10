@@ -41,6 +41,12 @@ public class PlayerController : MonoBehaviour
 
     public FlippableObject currentTarget;
 
+    public GameObject Health1;
+    public GameObject Health2;
+    public GameObject Health3;
+    public GameObject Health4;
+    public GameObject Health5;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -57,6 +63,63 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        switch (lives)
+        {
+            case 0:
+                {
+                    Health1.gameObject.SetActive(false);
+                    Health2.gameObject.SetActive(false);
+                    Health3.gameObject.SetActive(false);
+                    Health4.gameObject.SetActive(false);
+                    Health5.gameObject.SetActive(false);
+                    break;
+                }
+            case 1:
+                {
+                    Health1.gameObject.SetActive(true);
+                    Health2.gameObject.SetActive(false);
+                    Health3.gameObject.SetActive(false);
+                    Health4.gameObject.SetActive(false);
+                    Health5.gameObject.SetActive(false);
+                    break;
+                }
+            case 2:
+                {
+                    Health1.gameObject.SetActive(true);
+                    Health2.gameObject.SetActive(true);
+                    Health3.gameObject.SetActive(false);
+                    Health4.gameObject.SetActive(false);
+                    Health5.gameObject.SetActive(false);
+                    break;
+                }
+            case 3:
+                {
+                    Health1.gameObject.SetActive(true);
+                    Health2.gameObject.SetActive(true);
+                    Health3.gameObject.SetActive(true);
+                    Health4.gameObject.SetActive(false);
+                    Health5.gameObject.SetActive(false);
+                    break;
+                }
+            case 4:
+                {
+                    Health1.gameObject.SetActive(true);
+                    Health2.gameObject.SetActive(true);
+                    Health3.gameObject.SetActive(true);
+                    Health4.gameObject.SetActive(true);
+                    Health5.gameObject.SetActive(false);
+                    break;
+                }
+            case 5:
+                {
+                    Health1.gameObject.SetActive(true);
+                    Health2.gameObject.SetActive(true);
+                    Health3.gameObject.SetActive(true);
+                    Health4.gameObject.SetActive(true);
+                    Health5.gameObject.SetActive(true);
+                    break;
+                }
+        }
         PlayerJump();
         if (transform.position.y < -15)//if the player falls off platform
         {
@@ -80,9 +143,7 @@ public class PlayerController : MonoBehaviour
 
        GravityFlip();
        laserTrigger();
-       //flipObject();
-
-        
+       //flipObject();  
     }
 
     public void SetCurrentLaserSpawner(ButtonLaserSpawner newSpawner)
