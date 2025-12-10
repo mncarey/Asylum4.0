@@ -46,7 +46,7 @@ public class LaserScript : MonoBehaviour
                 {
                     // Destroy(hit.transform.gameObject);
                     Player.GetComponent<PlayerController>().LoseALife();
-                    Player.GetComponent<PlayerController>().Respawn();
+                   
                 }
             }
             else lr.SetPosition(1, -transform.right * 5000);
