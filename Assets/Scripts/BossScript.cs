@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using Unity.VisualScripting;
@@ -8,61 +8,55 @@ public class BossSprint : MonoBehaviour
 {
     public float speed = 1.5f;
 
-    private Vector3 pointA;
-    private Vector3 pointB;
-
-    private float time = 0f;
-    private bool isAtPointA = true;
+    public GameObject leftPoint;
+    public GameObject rightPoint;
 
     public int lives = 3;
 
+    public Vector3 rightPos; 
+    public Vector3 leftPos;   
+
+    private float t = 0f;
+    private bool goingLeft = true;
+
     void Start()
     {
-        Vector3 start = transform.position;
+        leftPos = leftPoint.transform.position;
+        rightPos = rightPoint.transform.position;
 
-        pointA = start + new Vector3(
-            Random.Range(-10f, 10f),
-            0,
-            Random.Range(-5f, 5f)
-        );
-
-        pointB = start + new Vector3(
-            Random.Range(-10f, 10f),
-            Random.Range(-2f, 2f),
-            Random.Range(-5f, 5f)
-        );
+        // Force the initial direction based on starting position
+        goingLeft = (transform.position.x > leftPos.x);
     }
 
-    private void Update()
+    void Update()
     {
-        
-        time = time + speed * Time.deltaTime;
+        MoveBoss();
+    }
 
-        if (isAtPointA)
+    private void MoveBoss()
+    {
+        if (goingLeft)
         {
-            transform.position = Vector3.Lerp(pointA, pointB, time);
-
-            if (time >= 1f) //time = 1 is the end, where 0 is the beginning. Lerp uses time.
+            if (transform.position.x <= leftPos.x)
             {
-                pointA = pointB;//old point becomes new point
-
-                pointB = pointA + GetRandomPoint();
-
-                time = 0f;
-
-                isAtPointA = true;//trying to go torward new B
+                goingLeft = false;
+            }
+            else
+            {
+                transform.position += Vector3.left * speed * Time.deltaTime;
             }
         }
-        
-
-    }
-
-    private Vector3 GetRandomPoint()
-    {
-        return new Vector3(
-            Random.Range(-10f, 10f),
-            0,
-            Random.Range(-5f, 5f));
+        else
+        {
+            if (transform.position.x >= rightPos.x)
+            {
+                goingLeft = true;
+            }
+            else
+            {
+                transform.position += Vector3.right * speed * Time.deltaTime;
+            }
+        }
     }
 
     private void takeDamage()
