@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /*
- * Author: [Carey, Madison] [Barajas, Daniela] 
+ * Author: [Carey, Madison] [Barajas, Daniela] [Martinez, Nick]
  * Date Created: [11/13/2025]
- * Last Updated: [12/04/2025]
+ * Last Updated: [12/09/2025]
  * [This will handle movement and collision for the Lasers.]
  */
 
@@ -45,6 +45,7 @@ public class LaserScript : MonoBehaviour
                 if (hit.transform.tag == "Player")
                 {
                     // Destroy(hit.transform.gameObject);
+                    Player.GetComponent<PlayerController>().LoseALife();
                     Player.GetComponent<PlayerController>().Respawn();
                 }
             }
@@ -72,6 +73,7 @@ public class LaserScript : MonoBehaviour
         {
             Debug.Log("Hit Player");
             // Destroy(hit.transform.gameObject);
+            Player.GetComponent<PlayerController>().LoseALife();
             Player.GetComponent<PlayerController>().Respawn();
             Debug.Log("Respawning Player");
         }

@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 /*
  * Author: [Carey, Madison], [Barajas, Daniela] [Martinez, Nick]
  * Date Created: [10/02/2025]
- * Last Updated: [10/21/2025]
+ * Last Updated: [12/9/2025]
  * [This will handle movement and collision for the player.]
  */
 
@@ -47,6 +47,7 @@ public class PlayerController : MonoBehaviour
     public GameObject Health4;
     public GameObject Health5;
 
+    private bool invincible = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -240,17 +241,23 @@ public class PlayerController : MonoBehaviour
     }
     public void LoseALife()
     {
-        lives--;
-        if (lives > 0)
+        if (invincible == false)
         {
-            Debug.Log("Lives = " + lives);
+            lives--;
+            invincible = true;
+            StartCoroutine(InvincibleWait());
+            
+            if (lives > 0)
+            {
+                Debug.Log("Lives = " + lives);
+                Respawn();
+            }
+            else
+            {
+                Cursor.lockState = CursorLockMode.None;
+                SceneManager.LoadScene(2);
+            }
         }
-        else
-        {
-            Cursor.lockState = CursorLockMode.None;
-            SceneManager.LoadScene(2);
-        }
-    
     }
     /// <summary>
     /// This will bring the player back to the statPos and lose a life
@@ -258,8 +265,8 @@ public class PlayerController : MonoBehaviour
     /// 
     public void Respawn()
     {
-        Physics.gravity = originalGravity;
-        transform.position = currentCheckpoint;
+            Physics.gravity = originalGravity;
+            transform.position = currentCheckpoint;
     }
 
     /// <summary>
@@ -388,6 +395,13 @@ public class PlayerController : MonoBehaviour
             // Apply movement
             rigidBody.MovePosition(rigidBody.position + moveDirection * currentSpeed * Time.fixedDeltaTime);
         }
+    }
+
+    // this is how long the player will be invicible after instances of damage. also sets invicible back to false
+    IEnumerator InvincibleWait()
+    {
+        yield return new WaitForSeconds(1f);
+        invincible = false;
     }
 
     /// <summary>
@@ -520,23 +534,22 @@ public class PlayerController : MonoBehaviour
         if (other.gameObject.tag == "Obstacle")
         {
             LoseALife();
-            Respawn();
+            
         }
 
         if (other.gameObject.tag == "Fire")
         {
             LoseALife();
-            Respawn();
+            
         }
         if (other.gameObject.tag == "Bullet")
         {
             LoseALife();
-            Respawn();
+            
         }
         if (other.gameObject.tag == "Spike")
         {
             LoseALife();
-            Respawn();
         }
 
 
