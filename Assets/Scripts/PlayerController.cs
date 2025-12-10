@@ -126,14 +126,14 @@ public class PlayerController : MonoBehaviour
         {
             
             LoseALife();
-            Respawn();
+            
         }
         if(transform.position.y > 60)
         {
 
             Physics.gravity = originalGravity;
             LoseALife();
-            Respawn();
+           
 
         }
 
