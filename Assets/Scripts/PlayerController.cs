@@ -20,6 +20,7 @@ public class PlayerController : MonoBehaviour
 
     private bool isOnButton;
     public int lives;
+    private int maxLives = 5;
     public Object spawnPoint;
     private Vector3 startPos;
     private Vector3 currentCheckpoint;
@@ -404,6 +405,12 @@ public class PlayerController : MonoBehaviour
         invincible = false;
     }
 
+    private void AddLife()
+    {
+        if (lives >= maxLives)
+            return;
+        lives++;
+    }
     /// <summary>
     /// Detects collision using a trigger event
     /// </summary>
@@ -551,7 +558,11 @@ public class PlayerController : MonoBehaviour
         {
             LoseALife();
         }
-
+        if (other.gameObject.tag == "HealthSyringe")
+        {
+            AddLife();
+            Destroy(other.gameObject);
+        }
 
     }
 
