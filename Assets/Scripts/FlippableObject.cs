@@ -24,6 +24,8 @@ public class FlippableObject : MonoBehaviour
     private bool isBossGrounded = false;
     private bool isBossOnCeiling = false;
 
+    public bool isBoss = false;
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
@@ -66,7 +68,7 @@ public class FlippableObject : MonoBehaviour
     {
        
 
-        if (parentObject.CompareTag("Boss"))
+        if (isBoss == true)
         {
             if (isBossGrounded == true)
             {
@@ -83,7 +85,7 @@ public class FlippableObject : MonoBehaviour
     public bool IsOnCeiling()
     {
 
-        if (parentObject.CompareTag("Boss"))
+        if (isBoss)
         {
             if (isBossOnCeiling == true)
             {
@@ -138,7 +140,7 @@ public class FlippableObject : MonoBehaviour
         v.z = 0;
         rb.velocity = v;
 
-        if (parentObject.CompareTag("Boss"))
+        if (isBoss)
         {
             //define the origin and direction of the sphere cast
             Vector3 origin = transform.position;

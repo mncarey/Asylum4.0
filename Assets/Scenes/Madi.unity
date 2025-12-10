@@ -1767,7 +1767,7 @@ PrefabInstance:
       objectReference: {fileID: -5734870785130721262, guid: ee2f697178819614bb33039b15beb242, type: 3}
     - target: {fileID: 6245609121447827324, guid: ce40d1c48c5ec0449bc16a220dcb2ea0, type: 3}
       propertyPath: m_Name
-      value: Flippable Cube (1)
+      value: Boss
       objectReference: {fileID: 0}
     - target: {fileID: 6245609121447827324, guid: ce40d1c48c5ec0449bc16a220dcb2ea0, type: 3}
       propertyPath: m_TagString
@@ -32766,8 +32766,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerController: {fileID: 1648615349}
-  livesText: {fileID: 1485201797}
-  objectiveText: {fileID: 0}
   gravityMechanic: {fileID: 1231315404}
 --- !u!114 &1067662547
 MonoBehaviour:
@@ -37316,7 +37314,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1208370596}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.025352968, y: -0.0012791364, z: -0.000032440355, w: 0.9996778}
+  m_LocalRotation: {x: -0.025352968, y: -0.0012791386, z: -0.000032440414, w: 0.9996778}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -49898,8 +49896,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
-  leftPoint: {fileID: 0}
-  rightPoint: {fileID: 0}
+  leftPoint: {fileID: 1489538048}
+  rightPoint: {fileID: 1854721448}
   lives: 3
   rightPos: {x: 0, y: 0, z: 0}
   leftPos: {x: 0, y: 0, z: 0}
@@ -51451,6 +51449,11 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   currentTarget: {fileID: 0}
+  Health1: {fileID: 0}
+  Health2: {fileID: 0}
+  Health3: {fileID: 0}
+  Health4: {fileID: 0}
+  Health5: {fileID: 0}
 --- !u!54 &1648615350
 Rigidbody:
   m_ObjectHideFlags: 0
