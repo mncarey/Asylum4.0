@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using UnityEngine;
+using static UnityEngine.UI.Image;
 
 public class FlippableObject : MonoBehaviour
 {
@@ -142,37 +143,52 @@ public class FlippableObject : MonoBehaviour
 
         if (isBoss)
         {
-            //define the origin and direction of the sphere cast
-            Vector3 origin = transform.position;
-            Vector3 direction = transform.up;
+            groundCheckBoss();
+            ceilingCheckBoss();
+        }
+    }
+    
+    private void groundCheckBoss()
+    {
+        //define the origin and direction of the sphere cast
+        Vector3 origin = transform.position + (-transform.up * 0.5f);
+        Vector3 direction = transform.up;
 
-            RaycastHit hit;
+        RaycastHit hit;
 
-            if (Physics.SphereCast(origin, sphereRadius, -direction, out hit, maxDistance, groundLayer))
-            {
-                Debug.Log("Spherecast hit");
+        if (Physics.SphereCast(origin, sphereRadius, -direction, out hit, maxDistance, groundLayer))
+        {
+            Debug.Log("Spherecast hit");
 
-                Debug.DrawLine(origin, hit.point, Color.red);//see raycast in scene view
+            Debug.DrawLine(origin, hit.point, Color.red);//see raycast in scene view
 
-                isBossGrounded = true;
-            }
-            else
-            {
-                Debug.DrawLine(origin, origin + direction * maxDistance, Color.green);// if no hit
-                isBossGrounded = false;
-            }
-
-            if (Physics.SphereCast(origin, sphereRadius, direction, out hit, maxDistance, groundLayer))
-            {
-                Debug.Log("Spherecast hit");
-
-                Debug.DrawLine(origin, hit.point, Color.red);//see raycast in scene view
-
-                isBossOnCeiling = true;
-            }
+            isBossGrounded = true;
+        }
+        else
+        {
+            Debug.DrawLine(origin, origin + direction * maxDistance, Color.green);// if no hit
+            isBossGrounded = false;
         }
     }
 
+    private void ceilingCheckBoss()
+    {
+        Vector3 origin = transform.position + (transform.up * 0.5f);
+        Vector3 direction = transform.up;
+
+        RaycastHit hit;
+
+        if (Physics.SphereCast(origin, sphereRadius, direction, out hit, maxDistance, groundLayer))
+        {
+            isBossOnCeiling = true;
+            Debug.DrawLine(origin, hit.point, Color.blue);
+        }
+        else
+        {
+            Debug.DrawLine(origin, origin + direction * maxDistance, Color.black);// if no hit
+            isBossOnCeiling = false;
+        }
+    }
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.yellow;
