@@ -11,25 +11,30 @@ public class BossSprint : MonoBehaviour
     public GameObject leftPoint;
     public GameObject rightPoint;
 
+    private float forwardStep = 2f;
+    private float forwardDelay = 0.15f;
+
     public int lives = 3;
 
     public Vector3 rightPos; 
     public Vector3 leftPos;   
 
-    private float t = 0f;
+  
     private bool goingLeft = true;
+    private bool movingForward = false;
 
     void Start()
     {
         leftPos = leftPoint.transform.position;
         rightPos = rightPoint.transform.position;
 
-        // Force the initial direction based on starting position
+        //Force the initial direction based on starting position
         goingLeft = (transform.position.x > leftPos.x);
     }
 
     void Update()
     {
+
         MoveBoss();
     }
 
@@ -39,6 +44,7 @@ public class BossSprint : MonoBehaviour
         {
             if (transform.position.x <= leftPos.x)
             {
+                StartCoroutine(MoveForward());
                 goingLeft = false;
             }
             else
@@ -50,6 +56,7 @@ public class BossSprint : MonoBehaviour
         {
             if (transform.position.x >= rightPos.x)
             {
+                StartCoroutine(MoveForward());
                 goingLeft = true;
             }
             else
@@ -57,6 +64,34 @@ public class BossSprint : MonoBehaviour
                 transform.position += Vector3.right * speed * Time.deltaTime;
             }
         }
+    }
+
+    private IEnumerator MoveForward()
+    {
+        movingForward = true;
+
+        // optional small pause so it looks less robotic
+        //yield return new WaitForSeconds(forwardDelay);
+
+        Vector3 forward = transform.forward * forwardStep;
+
+        float elapsed = 0f;
+        float duration = 0.2f;
+
+        Vector3 start = transform.position;
+        Vector3 target = start + forward;
+
+        // Smooth forward motion
+        while (elapsed < duration)
+        {
+            transform.position = Vector3.Lerp(start, target, elapsed / duration);
+            elapsed += Time.deltaTime;
+            yield return null;
+        }
+
+        transform.position = target;
+
+        movingForward = false;
     }
 
     private void takeDamage()
