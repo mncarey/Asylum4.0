@@ -15,8 +15,8 @@ using Unity.VisualScripting;
 public class UIManager : MonoBehaviour
 {
     public PlayerController playerController;
-    public TMP_Text livesText;
-    public TMP_Text objectiveText;
+   // public TMP_Text livesText;
+    //public TMP_Text objectiveText;
     public TMP_Text gravityMechanic;
     Vector3 positiveVectors = new Vector3(0f, -9.81f, 0f);
 
@@ -30,7 +30,7 @@ public class UIManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        livesText.text = "Lives: " + playerController.lives;
+        //livesText.text = "Lives: " + playerController.lives;
 
         if (playerController.isGravityFlipped == false)
         {
