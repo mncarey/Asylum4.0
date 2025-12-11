@@ -11,10 +11,12 @@ public class BossSpawner : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            canvasToActivate.SetActive(true);
+
             bossToActivate.SetActive(true);
             Debug.Log("Boss activated!");
 
-            canvasToActivate.SetActive(true);
+           
 
         }
     }
