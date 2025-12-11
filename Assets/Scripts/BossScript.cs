@@ -14,7 +14,7 @@ public class BossSprint : MonoBehaviour
     private float forwardStep = 2f;
     private float forwardDelay = 0.15f;
 
-    public int lives = 3;
+    public int lives = 10;
 
     public Vector3 rightPos; 
     public Vector3 leftPos;   
@@ -24,6 +24,20 @@ public class BossSprint : MonoBehaviour
     private bool movingForward = false;
 
     private Rigidbody rb;
+
+
+    //health
+    public GameObject Health1;
+    public GameObject Health2;
+    public GameObject Health3;
+    public GameObject Health4;
+    public GameObject Health5;
+    public GameObject Health6;
+    public GameObject Health7;
+    public GameObject Health8;
+    public GameObject Health9;
+    public GameObject Health10;
+
 
     void Start()
     {
@@ -38,6 +52,174 @@ public class BossSprint : MonoBehaviour
 
     void Update()
     {
+        switch (lives)
+        {
+            case 0:
+                {
+                    Health1.gameObject.SetActive(false);
+                    Health2.gameObject.SetActive(false);
+                    Health3.gameObject.SetActive(false);
+                    Health4.gameObject.SetActive(false);
+                    Health5.gameObject.SetActive(false);
+                    Health6.gameObject.SetActive(false);
+                    Health6.gameObject.SetActive(false);
+                    Health7.gameObject.SetActive(false);
+                    Health8.gameObject.SetActive(false);
+                    Health9.gameObject.SetActive(false);
+                    Health10.gameObject.SetActive(false);
+                    break;
+                }
+            case 1:
+                {
+                    Health1.gameObject.SetActive(true);
+                    Health2.gameObject.SetActive(false);
+                    Health3.gameObject.SetActive(false);
+                    Health4.gameObject.SetActive(false);
+                    Health5.gameObject.SetActive(false);
+                    Health6.gameObject.SetActive(false);
+                    Health6.gameObject.SetActive(false);
+                    Health7.gameObject.SetActive(false);
+                    Health8.gameObject.SetActive(false);
+                    Health9.gameObject.SetActive(false);
+                    Health10.gameObject.SetActive(false);
+                    break;
+                }
+            case 2:
+                {
+                    Health1.gameObject.SetActive(true);
+                    Health2.gameObject.SetActive(true);
+                    Health3.gameObject.SetActive(false);
+                    Health4.gameObject.SetActive(false);
+                    Health5.gameObject.SetActive(false);
+                    Health6.gameObject.SetActive(false);
+                    Health6.gameObject.SetActive(false);
+                    Health7.gameObject.SetActive(false);
+                    Health8.gameObject.SetActive(false);
+                    Health9.gameObject.SetActive(false);
+                    Health10.gameObject.SetActive(false);
+                    break;
+                }
+            case 3:
+                {
+                    Health1.gameObject.SetActive(true);
+                    Health2.gameObject.SetActive(true);
+                    Health3.gameObject.SetActive(true);
+                    Health4.gameObject.SetActive(false);
+                    Health5.gameObject.SetActive(false);
+                    Health6.gameObject.SetActive(false);
+                    Health6.gameObject.SetActive(false);
+                    Health7.gameObject.SetActive(false);
+                    Health8.gameObject.SetActive(false);
+                    Health9.gameObject.SetActive(false);
+                    Health10.gameObject.SetActive(false);
+                    break;
+                }
+            case 4:
+                {
+                    Health1.gameObject.SetActive(true);
+                    Health2.gameObject.SetActive(true);
+                    Health3.gameObject.SetActive(true);
+                    Health4.gameObject.SetActive(true);
+                    Health5.gameObject.SetActive(false);
+                    Health6.gameObject.SetActive(false);
+                    Health6.gameObject.SetActive(false);
+                    Health7.gameObject.SetActive(false);
+                    Health8.gameObject.SetActive(false);
+                    Health9.gameObject.SetActive(false);
+                    Health10.gameObject.SetActive(false);
+                    break;
+                }
+            case 5:
+                {
+                    Health1.gameObject.SetActive(true);
+                    Health2.gameObject.SetActive(true);
+                    Health3.gameObject.SetActive(true);
+                    Health4.gameObject.SetActive(true);
+                    Health5.gameObject.SetActive(true);
+                    Health6.gameObject.SetActive(false);
+                    Health6.gameObject.SetActive(false);
+                    Health7.gameObject.SetActive(false);
+                    Health8.gameObject.SetActive(false);
+                    Health9.gameObject.SetActive(false);
+                    Health10.gameObject.SetActive(false);
+                    break;
+                }
+            case 6:
+                {
+                    Health1.gameObject.SetActive(true);
+                    Health2.gameObject.SetActive(true);
+                    Health3.gameObject.SetActive(true);
+                    Health4.gameObject.SetActive(true);
+                    Health5.gameObject.SetActive(true);
+                    Health6.gameObject.SetActive(true);
+                    Health6.gameObject.SetActive(false);
+                    Health7.gameObject.SetActive(false);
+                    Health8.gameObject.SetActive(false);
+                    Health9.gameObject.SetActive(false);
+                    Health10.gameObject.SetActive(false);
+                    break;
+                }
+            case 7:
+                {
+                    Health1.gameObject.SetActive(true);
+                    Health2.gameObject.SetActive(true);
+                    Health3.gameObject.SetActive(true);
+                    Health4.gameObject.SetActive(true);
+                    Health5.gameObject.SetActive(true);
+                    Health6.gameObject.SetActive(true);
+                    Health6.gameObject.SetActive(true);
+                    Health7.gameObject.SetActive(false);
+                    Health8.gameObject.SetActive(false);
+                    Health9.gameObject.SetActive(false);
+                    Health10.gameObject.SetActive(false);
+                    break;
+                }
+            case 8:
+                {
+                    Health1.gameObject.SetActive(true);
+                    Health2.gameObject.SetActive(true);
+                    Health3.gameObject.SetActive(true);
+                    Health4.gameObject.SetActive(true);
+                    Health5.gameObject.SetActive(true);
+                    Health6.gameObject.SetActive(true);
+                    Health7.gameObject.SetActive(true);
+                    Health8.gameObject.SetActive(true);
+                    Health9.gameObject.SetActive(false);
+                    Health10.gameObject.SetActive(false);
+                    break;
+                }
+            case 9:
+                {
+                    Health1.gameObject.SetActive(true);
+                    Health2.gameObject.SetActive(true);
+                    Health3.gameObject.SetActive(true);
+                    Health4.gameObject.SetActive(true);
+                    Health5.gameObject.SetActive(true);
+                    Health6.gameObject.SetActive(true);
+                    Health6.gameObject.SetActive(true);
+                    Health7.gameObject.SetActive(true);
+                    Health8.gameObject.SetActive(true);
+                    Health9.gameObject.SetActive(true);
+                    Health10.gameObject.SetActive(false);
+                    break;
+                }
+            case 10:
+                {
+                    Health1.gameObject.SetActive(true);
+                    Health2.gameObject.SetActive(true);
+                    Health3.gameObject.SetActive(true);
+                    Health4.gameObject.SetActive(true);
+                    Health5.gameObject.SetActive(true);
+                    Health6.gameObject.SetActive(true);
+                    Health6.gameObject.SetActive(true);
+                    Health7.gameObject.SetActive(true);
+                    Health8.gameObject.SetActive(true);
+                    Health9.gameObject.SetActive(true);
+                    Health10.gameObject.SetActive(true);
+                    break;
+                }
+        }
+
         //lock sliding
         Vector3 v = rb.velocity;
         v.x = 0;
