@@ -766,6 +766,41 @@ public class PlayerController : MonoBehaviour
             }
 
         }
+
+        if (collision.gameObject.tag == "FourthRoomExitDoor")
+        {
+            if (labKeys >= collision.transform.GetComponent<Door>().Locks)
+            {
+                //labKeys -= collision.transform.GetComponent<Door>().Locks;
+                collision.gameObject.SetActive(false);
+                Debug.Log("Unlocked Lab Door");
+
+                //pop up text
+                string message = "Unlocked Lab Door";
+
+                //show floating text
+                FloatingText.ShowFloatingText(FloatingTextPrefab, collision.gameObject.transform.position, message);
+
+                labKeys = 0;
+                Debug.Log("Keys left: " + labKeys);
+            }
+            else
+            {
+                if (labKeys < collision.transform.GetComponent<Door>().Locks)
+                {
+                    int missingLabKeys = collision.transform.GetComponent<Door>().Locks - labKeys;
+
+                    Debug.Log("need " + missingLabKeys + " more lab key(s)");
+
+                    //pop up text
+                    string message = "need " + missingLabKeys + " more lab key(s)";
+
+                    //show floating text
+                    FloatingText.ShowFloatingText(FloatingTextPrefab, collision.gameObject.transform.position, message);
+                }
+            }
+
+        }
     }
 
 }

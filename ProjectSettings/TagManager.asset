@@ -37,6 +37,7 @@ TagManager:
   - HealthSyringe
   - CeilingFan
   - BossSpawner
+  - FourthRoomExitDoor
   layers:
   - Default
   - TransparentFX
