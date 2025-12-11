@@ -160,6 +160,10 @@ PrefabInstance:
       propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].value
       value: 0.7151737
       objectReference: {fileID: 0}
+    - target: {fileID: 2747508760064275130, guid: 102cea15ab9e3704eb1d7702d4b08fde, type: 3}
+      propertyPath: lr
+      value: 
+      objectReference: {fileID: 7163761562727239912}
     - target: {fileID: 8525963094027807347, guid: 102cea15ab9e3704eb1d7702d4b08fde, type: 3}
       propertyPath: m_Name
       value: Laser Spawner (3)
@@ -238,6 +242,10 @@ PrefabInstance:
       propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].value
       value: 0.7151737
       objectReference: {fileID: 0}
+    - target: {fileID: 2747508760064275130, guid: 102cea15ab9e3704eb1d7702d4b08fde, type: 3}
+      propertyPath: lr
+      value: 
+      objectReference: {fileID: 3249623454852369701}
     - target: {fileID: 8525963094027807347, guid: 102cea15ab9e3704eb1d7702d4b08fde, type: 3}
       propertyPath: m_Name
       value: Laser Spawner
@@ -250,6 +258,11 @@ PrefabInstance:
 --- !u!4 &1666834406679172943 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2208745038326702109, guid: 102cea15ab9e3704eb1d7702d4b08fde, type: 3}
+  m_PrefabInstance: {fileID: 686448092485810002}
+  m_PrefabAsset: {fileID: 0}
+--- !u!120 &3249623454852369701 stripped
+LineRenderer:
+  m_CorrespondingSourceObject: {fileID: 2638612091352431223, guid: 102cea15ab9e3704eb1d7702d4b08fde, type: 3}
   m_PrefabInstance: {fileID: 686448092485810002}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &959642202129080259
@@ -316,6 +329,10 @@ PrefabInstance:
       propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].value
       value: 0.7151737
       objectReference: {fileID: 0}
+    - target: {fileID: 2747508760064275130, guid: 102cea15ab9e3704eb1d7702d4b08fde, type: 3}
+      propertyPath: lr
+      value: 
+      objectReference: {fileID: 3012748481216128436}
     - target: {fileID: 8525963094027807347, guid: 102cea15ab9e3704eb1d7702d4b08fde, type: 3}
       propertyPath: m_Name
       value: Laser Spawner (15)
@@ -328,6 +345,11 @@ PrefabInstance:
 --- !u!4 &1438438936375345118 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2208745038326702109, guid: 102cea15ab9e3704eb1d7702d4b08fde, type: 3}
+  m_PrefabInstance: {fileID: 959642202129080259}
+  m_PrefabAsset: {fileID: 0}
+--- !u!120 &3012748481216128436 stripped
+LineRenderer:
+  m_CorrespondingSourceObject: {fileID: 2638612091352431223, guid: 102cea15ab9e3704eb1d7702d4b08fde, type: 3}
   m_PrefabInstance: {fileID: 959642202129080259}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1100305911141023464
@@ -394,6 +416,10 @@ PrefabInstance:
       propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].value
       value: 0.7151737
       objectReference: {fileID: 0}
+    - target: {fileID: 2747508760064275130, guid: 102cea15ab9e3704eb1d7702d4b08fde, type: 3}
+      propertyPath: lr
+      value: 
+      objectReference: {fileID: 3160165545799451807}
     - target: {fileID: 8525963094027807347, guid: 102cea15ab9e3704eb1d7702d4b08fde, type: 3}
       propertyPath: m_Name
       value: Laser Spawner (14)
@@ -406,6 +432,11 @@ PrefabInstance:
 --- !u!4 &1288622737682341621 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2208745038326702109, guid: 102cea15ab9e3704eb1d7702d4b08fde, type: 3}
+  m_PrefabInstance: {fileID: 1100305911141023464}
+  m_PrefabAsset: {fileID: 0}
+--- !u!120 &3160165545799451807 stripped
+LineRenderer:
+  m_CorrespondingSourceObject: {fileID: 2638612091352431223, guid: 102cea15ab9e3704eb1d7702d4b08fde, type: 3}
   m_PrefabInstance: {fileID: 1100305911141023464}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1529314685046701265
@@ -472,6 +503,10 @@ PrefabInstance:
       propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].value
       value: 0.7151737
       objectReference: {fileID: 0}
+    - target: {fileID: 2747508760064275130, guid: 102cea15ab9e3704eb1d7702d4b08fde, type: 3}
+      propertyPath: lr
+      value: 
+      objectReference: {fileID: 3577841820188772006}
     - target: {fileID: 8525963094027807347, guid: 102cea15ab9e3704eb1d7702d4b08fde, type: 3}
       propertyPath: m_Name
       value: Laser Spawner (13)
@@ -484,6 +519,11 @@ PrefabInstance:
 --- !u!4 &837175242351811788 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2208745038326702109, guid: 102cea15ab9e3704eb1d7702d4b08fde, type: 3}
+  m_PrefabInstance: {fileID: 1529314685046701265}
+  m_PrefabAsset: {fileID: 0}
+--- !u!120 &3577841820188772006 stripped
+LineRenderer:
+  m_CorrespondingSourceObject: {fileID: 2638612091352431223, guid: 102cea15ab9e3704eb1d7702d4b08fde, type: 3}
   m_PrefabInstance: {fileID: 1529314685046701265}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1936339923265170548
@@ -550,6 +590,10 @@ PrefabInstance:
       propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].value
       value: 0.7151737
       objectReference: {fileID: 0}
+    - target: {fileID: 2747508760064275130, guid: 102cea15ab9e3704eb1d7702d4b08fde, type: 3}
+      propertyPath: lr
+      value: 
+      objectReference: {fileID: 4486000093706327555}
     - target: {fileID: 8525963094027807347, guid: 102cea15ab9e3704eb1d7702d4b08fde, type: 3}
       propertyPath: m_Name
       value: Laser Spawner (19)
@@ -562,6 +606,11 @@ PrefabInstance:
 --- !u!4 &322089898376825961 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2208745038326702109, guid: 102cea15ab9e3704eb1d7702d4b08fde, type: 3}
+  m_PrefabInstance: {fileID: 1936339923265170548}
+  m_PrefabAsset: {fileID: 0}
+--- !u!120 &4486000093706327555 stripped
+LineRenderer:
+  m_CorrespondingSourceObject: {fileID: 2638612091352431223, guid: 102cea15ab9e3704eb1d7702d4b08fde, type: 3}
   m_PrefabInstance: {fileID: 1936339923265170548}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2164781050603980983
@@ -628,6 +677,10 @@ PrefabInstance:
       propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].value
       value: 0.7151737
       objectReference: {fileID: 0}
+    - target: {fileID: 2747508760064275130, guid: 102cea15ab9e3704eb1d7702d4b08fde, type: 3}
+      propertyPath: lr
+      value: 
+      objectReference: {fileID: 4221248696184206016}
     - target: {fileID: 8525963094027807347, guid: 102cea15ab9e3704eb1d7702d4b08fde, type: 3}
       propertyPath: m_Name
       value: Laser Spawner (10)
@@ -640,6 +693,11 @@ PrefabInstance:
 --- !u!4 &48925027174836394 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2208745038326702109, guid: 102cea15ab9e3704eb1d7702d4b08fde, type: 3}
+  m_PrefabInstance: {fileID: 2164781050603980983}
+  m_PrefabAsset: {fileID: 0}
+--- !u!120 &4221248696184206016 stripped
+LineRenderer:
+  m_CorrespondingSourceObject: {fileID: 2638612091352431223, guid: 102cea15ab9e3704eb1d7702d4b08fde, type: 3}
   m_PrefabInstance: {fileID: 2164781050603980983}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2238365991033629549
@@ -706,6 +764,10 @@ PrefabInstance:
       propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].value
       value: 0.7151737
       objectReference: {fileID: 0}
+    - target: {fileID: 2747508760064275130, guid: 102cea15ab9e3704eb1d7702d4b08fde, type: 3}
+      propertyPath: lr
+      value: 
+      objectReference: {fileID: 4291505715463541018}
     - target: {fileID: 8525963094027807347, guid: 102cea15ab9e3704eb1d7702d4b08fde, type: 3}
       propertyPath: m_Name
       value: Laser Spawner (4)
@@ -718,6 +780,11 @@ PrefabInstance:
 --- !u!4 &123655383834250096 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2208745038326702109, guid: 102cea15ab9e3704eb1d7702d4b08fde, type: 3}
+  m_PrefabInstance: {fileID: 2238365991033629549}
+  m_PrefabAsset: {fileID: 0}
+--- !u!120 &4291505715463541018 stripped
+LineRenderer:
+  m_CorrespondingSourceObject: {fileID: 2638612091352431223, guid: 102cea15ab9e3704eb1d7702d4b08fde, type: 3}
   m_PrefabInstance: {fileID: 2238365991033629549}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2251952434594998907
@@ -784,6 +851,10 @@ PrefabInstance:
       propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].value
       value: 0.7151737
       objectReference: {fileID: 0}
+    - target: {fileID: 2747508760064275130, guid: 102cea15ab9e3704eb1d7702d4b08fde, type: 3}
+      propertyPath: lr
+      value: 
+      objectReference: {fileID: 4314080627491131404}
     - target: {fileID: 8525963094027807347, guid: 102cea15ab9e3704eb1d7702d4b08fde, type: 3}
       propertyPath: m_Name
       value: Laser Spawner (18)
@@ -796,6 +867,11 @@ PrefabInstance:
 --- !u!4 &137222513490053734 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2208745038326702109, guid: 102cea15ab9e3704eb1d7702d4b08fde, type: 3}
+  m_PrefabInstance: {fileID: 2251952434594998907}
+  m_PrefabAsset: {fileID: 0}
+--- !u!120 &4314080627491131404 stripped
+LineRenderer:
+  m_CorrespondingSourceObject: {fileID: 2638612091352431223, guid: 102cea15ab9e3704eb1d7702d4b08fde, type: 3}
   m_PrefabInstance: {fileID: 2251952434594998907}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2492377572407729540
@@ -862,6 +938,10 @@ PrefabInstance:
       propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].value
       value: 0.7151737
       objectReference: {fileID: 0}
+    - target: {fileID: 2747508760064275130, guid: 102cea15ab9e3704eb1d7702d4b08fde, type: 3}
+      propertyPath: lr
+      value: 
+      objectReference: {fileID: 434755169673013235}
     - target: {fileID: 8525963094027807347, guid: 102cea15ab9e3704eb1d7702d4b08fde, type: 3}
       propertyPath: m_Name
       value: Laser Spawner (9)
@@ -871,6 +951,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 102cea15ab9e3704eb1d7702d4b08fde, type: 3}
+--- !u!120 &434755169673013235 stripped
+LineRenderer:
+  m_CorrespondingSourceObject: {fileID: 2638612091352431223, guid: 102cea15ab9e3704eb1d7702d4b08fde, type: 3}
+  m_PrefabInstance: {fileID: 2492377572407729540}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &4337456662708092313 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2208745038326702109, guid: 102cea15ab9e3704eb1d7702d4b08fde, type: 3}
@@ -940,6 +1025,10 @@ PrefabInstance:
       propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].value
       value: 0.7151737
       objectReference: {fileID: 0}
+    - target: {fileID: 2747508760064275130, guid: 102cea15ab9e3704eb1d7702d4b08fde, type: 3}
+      propertyPath: lr
+      value: 
+      objectReference: {fileID: 508842486535924493}
     - target: {fileID: 8525963094027807347, guid: 102cea15ab9e3704eb1d7702d4b08fde, type: 3}
       propertyPath: m_Name
       value: Laser Spawner (8)
@@ -949,6 +1038,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 102cea15ab9e3704eb1d7702d4b08fde, type: 3}
+--- !u!120 &508842486535924493 stripped
+LineRenderer:
+  m_CorrespondingSourceObject: {fileID: 2638612091352431223, guid: 102cea15ab9e3704eb1d7702d4b08fde, type: 3}
+  m_PrefabInstance: {fileID: 2563109197634146682}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &4410985378406445415 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2208745038326702109, guid: 102cea15ab9e3704eb1d7702d4b08fde, type: 3}
@@ -1018,6 +1112,10 @@ PrefabInstance:
       propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].value
       value: 0.7151737
       objectReference: {fileID: 0}
+    - target: {fileID: 2747508760064275130, guid: 102cea15ab9e3704eb1d7702d4b08fde, type: 3}
+      propertyPath: lr
+      value: 
+      objectReference: {fileID: 256179589274779295}
     - target: {fileID: 8525963094027807347, guid: 102cea15ab9e3704eb1d7702d4b08fde, type: 3}
       propertyPath: m_Name
       value: Laser Spawner (16)
@@ -1027,6 +1125,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 102cea15ab9e3704eb1d7702d4b08fde, type: 3}
+--- !u!120 &256179589274779295 stripped
+LineRenderer:
+  m_CorrespondingSourceObject: {fileID: 2638612091352431223, guid: 102cea15ab9e3704eb1d7702d4b08fde, type: 3}
+  m_PrefabInstance: {fileID: 2814778686135403752}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &4158814383724537077 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2208745038326702109, guid: 102cea15ab9e3704eb1d7702d4b08fde, type: 3}
@@ -1096,6 +1199,10 @@ PrefabInstance:
       propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].value
       value: 0.7151737
       objectReference: {fileID: 0}
+    - target: {fileID: 2747508760064275130, guid: 102cea15ab9e3704eb1d7702d4b08fde, type: 3}
+      propertyPath: lr
+      value: 
+      objectReference: {fileID: 1510161869377485145}
     - target: {fileID: 8525963094027807347, guid: 102cea15ab9e3704eb1d7702d4b08fde, type: 3}
       propertyPath: m_Name
       value: Laser Spawner (17)
@@ -1105,6 +1212,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 102cea15ab9e3704eb1d7702d4b08fde, type: 3}
+--- !u!120 &1510161869377485145 stripped
+LineRenderer:
+  m_CorrespondingSourceObject: {fileID: 2638612091352431223, guid: 102cea15ab9e3704eb1d7702d4b08fde, type: 3}
+  m_PrefabInstance: {fileID: 3488908241499915054}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &3372103650676024115 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2208745038326702109, guid: 102cea15ab9e3704eb1d7702d4b08fde, type: 3}
@@ -1174,6 +1286,10 @@ PrefabInstance:
       propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].value
       value: 0.7151737
       objectReference: {fileID: 0}
+    - target: {fileID: 2747508760064275130, guid: 102cea15ab9e3704eb1d7702d4b08fde, type: 3}
+      propertyPath: lr
+      value: 
+      objectReference: {fileID: 7048438124452004851}
     - target: {fileID: 8525963094027807347, guid: 102cea15ab9e3704eb1d7702d4b08fde, type: 3}
       propertyPath: m_Name
       value: Laser Spawner (1)
@@ -1186,6 +1302,11 @@ PrefabInstance:
 --- !u!4 &6622586674713614745 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2208745038326702109, guid: 102cea15ab9e3704eb1d7702d4b08fde, type: 3}
+  m_PrefabInstance: {fileID: 4994261737052371332}
+  m_PrefabAsset: {fileID: 0}
+--- !u!120 &7048438124452004851 stripped
+LineRenderer:
+  m_CorrespondingSourceObject: {fileID: 2638612091352431223, guid: 102cea15ab9e3704eb1d7702d4b08fde, type: 3}
   m_PrefabInstance: {fileID: 4994261737052371332}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5185033607523658399
@@ -1252,6 +1373,10 @@ PrefabInstance:
       propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].value
       value: 0.7151737
       objectReference: {fileID: 0}
+    - target: {fileID: 2747508760064275130, guid: 102cea15ab9e3704eb1d7702d4b08fde, type: 3}
+      propertyPath: lr
+      value: 
+      objectReference: {fileID: 7163761562727239912}
     - target: {fileID: 8525963094027807347, guid: 102cea15ab9e3704eb1d7702d4b08fde, type: 3}
       propertyPath: m_Name
       value: Laser Spawner (2)
@@ -1264,6 +1389,11 @@ PrefabInstance:
 --- !u!4 &6436762555166116482 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2208745038326702109, guid: 102cea15ab9e3704eb1d7702d4b08fde, type: 3}
+  m_PrefabInstance: {fileID: 5185033607523658399}
+  m_PrefabAsset: {fileID: 0}
+--- !u!120 &7163761562727239912 stripped
+LineRenderer:
+  m_CorrespondingSourceObject: {fileID: 2638612091352431223, guid: 102cea15ab9e3704eb1d7702d4b08fde, type: 3}
   m_PrefabInstance: {fileID: 5185033607523658399}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5838922552278164801
@@ -1330,6 +1460,10 @@ PrefabInstance:
       propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].value
       value: 0.7151737
       objectReference: {fileID: 0}
+    - target: {fileID: 2747508760064275130, guid: 102cea15ab9e3704eb1d7702d4b08fde, type: 3}
+      propertyPath: lr
+      value: 
+      objectReference: {fileID: 8473028569395765046}
     - target: {fileID: 8525963094027807347, guid: 102cea15ab9e3704eb1d7702d4b08fde, type: 3}
       propertyPath: m_Name
       value: Laser Spawner (12)
@@ -1342,6 +1476,11 @@ PrefabInstance:
 --- !u!4 &5741822106934445404 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2208745038326702109, guid: 102cea15ab9e3704eb1d7702d4b08fde, type: 3}
+  m_PrefabInstance: {fileID: 5838922552278164801}
+  m_PrefabAsset: {fileID: 0}
+--- !u!120 &8473028569395765046 stripped
+LineRenderer:
+  m_CorrespondingSourceObject: {fileID: 2638612091352431223, guid: 102cea15ab9e3704eb1d7702d4b08fde, type: 3}
   m_PrefabInstance: {fileID: 5838922552278164801}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6206146322316801672
@@ -1408,6 +1547,10 @@ PrefabInstance:
       propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].value
       value: 0.7151737
       objectReference: {fileID: 0}
+    - target: {fileID: 2747508760064275130, guid: 102cea15ab9e3704eb1d7702d4b08fde, type: 3}
+      propertyPath: lr
+      value: 
+      objectReference: {fileID: 8268207066914917631}
     - target: {fileID: 8525963094027807347, guid: 102cea15ab9e3704eb1d7702d4b08fde, type: 3}
       propertyPath: m_Name
       value: Laser Spawner (5)
@@ -1420,6 +1563,11 @@ PrefabInstance:
 --- !u!4 &5226322751372170901 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2208745038326702109, guid: 102cea15ab9e3704eb1d7702d4b08fde, type: 3}
+  m_PrefabInstance: {fileID: 6206146322316801672}
+  m_PrefabAsset: {fileID: 0}
+--- !u!120 &8268207066914917631 stripped
+LineRenderer:
+  m_CorrespondingSourceObject: {fileID: 2638612091352431223, guid: 102cea15ab9e3704eb1d7702d4b08fde, type: 3}
   m_PrefabInstance: {fileID: 6206146322316801672}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7670849722386762197
@@ -1486,6 +1634,10 @@ PrefabInstance:
       propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].value
       value: 0.7151737
       objectReference: {fileID: 0}
+    - target: {fileID: 2747508760064275130, guid: 102cea15ab9e3704eb1d7702d4b08fde, type: 3}
+      propertyPath: lr
+      value: 
+      objectReference: {fileID: 5686479085758903202}
     - target: {fileID: 8525963094027807347, guid: 102cea15ab9e3704eb1d7702d4b08fde, type: 3}
       propertyPath: m_Name
       value: Laser Spawner (6)
@@ -1495,6 +1647,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 102cea15ab9e3704eb1d7702d4b08fde, type: 3}
+--- !u!120 &5686479085758903202 stripped
+LineRenderer:
+  m_CorrespondingSourceObject: {fileID: 2638612091352431223, guid: 102cea15ab9e3704eb1d7702d4b08fde, type: 3}
+  m_PrefabInstance: {fileID: 7670849722386762197}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &8418174137391573448 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2208745038326702109, guid: 102cea15ab9e3704eb1d7702d4b08fde, type: 3}
@@ -1564,6 +1721,10 @@ PrefabInstance:
       propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].value
       value: 0.7151737
       objectReference: {fileID: 0}
+    - target: {fileID: 2747508760064275130, guid: 102cea15ab9e3704eb1d7702d4b08fde, type: 3}
+      propertyPath: lr
+      value: 
+      objectReference: {fileID: 5431382803169718560}
     - target: {fileID: 8525963094027807347, guid: 102cea15ab9e3704eb1d7702d4b08fde, type: 3}
       propertyPath: m_Name
       value: Laser Spawner (7)
@@ -1573,6 +1734,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 102cea15ab9e3704eb1d7702d4b08fde, type: 3}
+--- !u!120 &5431382803169718560 stripped
+LineRenderer:
+  m_CorrespondingSourceObject: {fileID: 2638612091352431223, guid: 102cea15ab9e3704eb1d7702d4b08fde, type: 3}
+  m_PrefabInstance: {fileID: 8069920938805955415}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &8167585506639129418 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2208745038326702109, guid: 102cea15ab9e3704eb1d7702d4b08fde, type: 3}
@@ -1642,6 +1808,10 @@ PrefabInstance:
       propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].value
       value: 0.7151737
       objectReference: {fileID: 0}
+    - target: {fileID: 2747508760064275130, guid: 102cea15ab9e3704eb1d7702d4b08fde, type: 3}
+      propertyPath: lr
+      value: 
+      objectReference: {fileID: 6725578266632543309}
     - target: {fileID: 8525963094027807347, guid: 102cea15ab9e3704eb1d7702d4b08fde, type: 3}
       propertyPath: m_Name
       value: Laser Spawner (20)
@@ -1651,6 +1821,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 102cea15ab9e3704eb1d7702d4b08fde, type: 3}
+--- !u!120 &6725578266632543309 stripped
+LineRenderer:
+  m_CorrespondingSourceObject: {fileID: 2638612091352431223, guid: 102cea15ab9e3704eb1d7702d4b08fde, type: 3}
+  m_PrefabInstance: {fileID: 8775323777293936186}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &7453245811707233831 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2208745038326702109, guid: 102cea15ab9e3704eb1d7702d4b08fde, type: 3}
@@ -1720,6 +1895,10 @@ PrefabInstance:
       propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].value
       value: 0.7151737
       objectReference: {fileID: 0}
+    - target: {fileID: 2747508760064275130, guid: 102cea15ab9e3704eb1d7702d4b08fde, type: 3}
+      propertyPath: lr
+      value: 
+      objectReference: {fileID: 6384988696705863885}
     - target: {fileID: 8525963094027807347, guid: 102cea15ab9e3704eb1d7702d4b08fde, type: 3}
       propertyPath: m_Name
       value: Laser Spawner (11)
@@ -1729,6 +1908,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 102cea15ab9e3704eb1d7702d4b08fde, type: 3}
+--- !u!120 &6384988696705863885 stripped
+LineRenderer:
+  m_CorrespondingSourceObject: {fileID: 2638612091352431223, guid: 102cea15ab9e3704eb1d7702d4b08fde, type: 3}
+  m_PrefabInstance: {fileID: 8935760498634599098}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &7108152718439189159 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2208745038326702109, guid: 102cea15ab9e3704eb1d7702d4b08fde, type: 3}
