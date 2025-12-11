@@ -14,7 +14,7 @@ public class FireWave : MonoBehaviour
 {
 
     //movement speed in units per second
-    public float movementSpeed = 15f;
+    public float movementSpeed = 12f;
     //private Rigidbody2D _rb;
 
 
