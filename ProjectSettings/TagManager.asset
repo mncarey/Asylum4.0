@@ -36,6 +36,7 @@ TagManager:
   - Boss
   - HealthSyringe
   - CeilingFan
+  - BossSpawner
   layers:
   - Default
   - TransparentFX
