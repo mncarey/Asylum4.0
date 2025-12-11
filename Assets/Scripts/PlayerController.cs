@@ -500,11 +500,6 @@ public class PlayerController : MonoBehaviour
 
         }
 
-        if(other.gameObject.tag == "BossSpawner")
-        {
-            FindObjectOfType<BossSpawner>().SpawnBoss();
-        }
-
         if (other.gameObject.tag == "LockedDoorInfo")
         {
 

@@ -4,11 +4,14 @@ using UnityEngine;
 
 public class BossSpawner : MonoBehaviour
 {
-    public GameObject bossPrefab;
-    public Transform spawnPoint;
+    public GameObject bossToActivate;
 
-    public void SpawnBoss()
+    private void OnTriggerEnter(Collider other)
     {
-        Instantiate(bossPrefab, spawnPoint.position, spawnPoint.rotation);
+        if (other.CompareTag("Player"))
+        {
+            bossToActivate.SetActive(true);
+            Debug.Log("Boss activated!");
+        }
     }
 }
