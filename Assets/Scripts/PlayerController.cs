@@ -543,8 +543,12 @@ public class PlayerController : MonoBehaviour
             LoseALife();
             
         }
-
         if (other.gameObject.tag == "Fire")
+        {
+            LoseALife();
+
+        }
+        if (other.gameObject.tag == "CeilingFan")
         {
             LoseALife();
             

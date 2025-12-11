@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class BossSprint : MonoBehaviour
 {
@@ -296,6 +297,8 @@ public class BossSprint : MonoBehaviour
         {
             Debug.Log("enemy damage");
             Destroy(gameObject);
+            Cursor.lockState = CursorLockMode.None;
+            SceneManager.LoadScene(6);
         }
     }
 
@@ -305,7 +308,7 @@ public class BossSprint : MonoBehaviour
         {
             takeDamage();
         }
-        if (collision.gameObject.tag == "ceilingFan")
+        if (collision.gameObject.tag == "CeilingFan")
         {
             takeDamage();
         }
