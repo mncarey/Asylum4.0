@@ -39,11 +39,15 @@ public class CeilingTurret : MonoBehaviour
     private bool playerInRange = false;
     // this will check whether or not the player is inside the detection zone
 
+    public bool isBoss = false;
+
+    private Rigidbody rb;
+
     // Start is called before the first frame update
     void Start()
     {
-    // Update is called once per frame
-        
+        // Update is called once per frame
+        rb = GetComponent<Rigidbody>();
     }
 
     void Update()
@@ -57,7 +61,36 @@ public class CeilingTurret : MonoBehaviour
 
     //this function handles the rotation of the turret head towards the player
     private void RotateTowardPlayer()
-    { 
+    {
+        if (isBoss)
+        {
+            Vector3 flatDirection = player.position - head.position;
+            flatDirection.y = 0;   // <-- removes X/Z tilt so it rotates only horizontally
+
+            if (flatDirection.sqrMagnitude < 0.0001f) return;
+
+            //create rotation ONLY around Y
+            Quaternion targetYRotation = Quaternion.LookRotation(flatDirection);
+
+            // Apply rotation offset if desired
+            targetYRotation *= Quaternion.Euler(rotationOffsetEuler);
+
+            //smooth rotation
+            head.rotation = Quaternion.Slerp(
+                head.rotation,
+                targetYRotation,
+                rotationSpeed * Time.deltaTime
+            );
+
+            //freeze body rotation
+            if (rb != null)
+            {
+                rb.freezeRotation = true;
+            }
+
+            return;
+        }
+
         Vector3 direction = player.position - head.position;
 
         if (direction == Vector3.zero)
@@ -68,6 +101,8 @@ public class CeilingTurret : MonoBehaviour
         targetRotation *= Quaternion.Euler(rotationOffsetEuler);
 
         head.rotation = Quaternion.Slerp(head.rotation,targetRotation, rotationSpeed * Time.deltaTime);
+
+        
     }
 
     //this function handles the fire rate of the bullets

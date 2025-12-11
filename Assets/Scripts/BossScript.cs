@@ -23,8 +23,12 @@ public class BossSprint : MonoBehaviour
     private bool goingLeft = true;
     private bool movingForward = false;
 
+    private Rigidbody rb;
+
     void Start()
     {
+        rb = GetComponent<Rigidbody>();
+
         leftPos = leftPoint.transform.position;
         rightPos = rightPoint.transform.position;
 
@@ -34,7 +38,16 @@ public class BossSprint : MonoBehaviour
 
     void Update()
     {
+        //lock sliding
+        Vector3 v = rb.velocity;
+        v.x = 0;
+        v.z = 0;
+        rb.velocity = v;
 
+        Quaternion r = rb.rotation;
+        r.x = 0;
+        r.z = 0;
+        rb.rotation = r;
         MoveBoss();
     }
 

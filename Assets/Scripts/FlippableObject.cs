@@ -166,7 +166,7 @@ public class FlippableObject : MonoBehaviour
         }
         else
         {
-            Debug.DrawLine(origin, origin + direction * maxDistance, Color.green);// if no hit
+            Debug.DrawLine(origin, origin + (-direction) * maxDistance, Color.green);// if no hit
             isBossGrounded = false;
         }
     }
