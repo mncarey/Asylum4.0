@@ -123,6 +123,10 @@ public class BossSprint : MonoBehaviour
         {
             takeDamage();
         }
+        if (collision.gameObject.tag == "ceilingFan")
+        {
+            takeDamage();
+        }
     }
 
 }

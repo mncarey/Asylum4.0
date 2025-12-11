@@ -35,6 +35,7 @@ TagManager:
   - TurnOffFire
   - Boss
   - HealthSyringe
+  - CeilingFan
   layers:
   - Default
   - TransparentFX
